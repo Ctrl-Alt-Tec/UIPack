@@ -1029,7 +1029,8 @@ UI.AppBar = function(logo, toolbar){
 
   	let AppBarToolbar =  document.createElement( 'div' );
   	AppBarToolbar.classList.add('altUI_AppBarToolbar');
-	AppToolbar.add(toolbar);
+	AppBarToolbar.innerHTML = "<h1></h1>"
+	AppBarToolbar.add(toolbar);
 	
 	this.dom.append(AppBarToolbar)
   
@@ -1039,9 +1040,13 @@ UI.AppBar = function(logo, toolbar){
 UI.AppBar.prototype = Object.create(UI.Element.prototype);
 UI.AppBar.prototype.constructor = UI.AppBar;
 UI.AppBar.prototype.showBackButton = function(callback){
-  let AppBarBack = document.createElement('div');
-  AppBarBack.classList.add('altUI_AppBarBack');
-  AppBarBack.innerHTML = "<i class='material-icons'>arrow_back</i>"
-  this.containter.querySelector(".altUI_AppBarToolbar").prepend(AppBarBack)
-  return this;
+	let AppBarBack = document.createElement('div');
+  	AppBarBack.classList.add('altUI_AppBarBack');
+  	AppBarBack.innerHTML = "<i class='material-icons'>arrow_back</i>"
+  	this.containter.querySelector(".altUI_AppBarToolbar").prepend(AppBarBack)
+  	return this;
+}
+UI.AppBar.prototype.setTitle = function(title){
+	this.container.querySelector(".altUI_AppBarToolbar").querySelector("h1").textContent = title;
+	return this;
 }
