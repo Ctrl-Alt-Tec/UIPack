@@ -1015,20 +1015,22 @@ UI.AppBar = function(logo){
   UI.Element.call( this );
 
 	this.dom = document.createElement( 'div' );
-  this.dom.classList.add('altUI_AppBar');
-  
-  let AppBarTop = document.createElement('div');
-  AppBarTop.classList.add('altUI_AppBarTop');
-  
-  let AppBarLogo = document.createElement('img');
-  AppBarLogo.classList.add('altUI_AppBarLogo');
-  AppBarLogo.src = logo;
-  
-  AppBarTop.append(AppBarLogo);
-  this.dom.append(AppBarTop);
-  
-  let AppBarToolbar =  document.createElement( 'div' );
-  this.dom.classList.add('altUI_AppBarToolbar');
+	this.dom.classList.add('altUI_AppBar');
+
+	let AppBarTop = document.createElement('div');
+	AppBarTop.classList.add('altUI_AppBarTop');
+
+	let AppBarLogo = document.createElement('img');
+	AppBarLogo.classList.add('altUI_AppBarLogo');
+  	AppBarLogo.src = logo;
+
+  	AppBarTop.append(AppBarLogo);
+  	this.dom.append(AppBarTop);
+
+  	let AppBarToolbar =  document.createElement( 'div' );
+  	AppBarToolbar.classList.add('altUI_AppBarToolbar');
+	
+	this.dom.append(AppBarToolbar)
   
 	return this;
 }
