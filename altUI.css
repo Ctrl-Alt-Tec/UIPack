@@ -13,4 +13,7 @@ html, body{
   padding: 16px;
   box-sizing: border-box
 }
-  
+  .altUI_AppBarLogo{
+    max-height: 48px;
+    margin-right: 8px
+}
