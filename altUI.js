@@ -1043,10 +1043,10 @@ UI.AppBar.prototype.showBackButton = function(callback){
 	let AppBarBack = document.createElement('div');
   	AppBarBack.classList.add('altUI_AppBarBack');
   	AppBarBack.innerHTML = "<i class='material-icons'>arrow_back</i>"
-  	this.containter.querySelector(".altUI_AppBarToolbar").prepend(AppBarBack)
+  	this.querySelector(".altUI_AppBarToolbar").prepend(AppBarBack)
   	return this;
 }
 UI.AppBar.prototype.setTitle = function(title){
-	this.container.querySelector(".altUI_AppBarToolbar").querySelector("h1").textContent = title;
+	this.querySelector(".altUI_AppBarToolbar").querySelector("h1").textContent = title;
 	return this;
 }
