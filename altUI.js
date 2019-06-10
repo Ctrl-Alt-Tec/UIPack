@@ -1011,7 +1011,7 @@ UI.Modal.prototype.hide = function () {
 
 
 //
-UI.AppBar = function(logo){
+UI.AppBar = function(logo, toolbar){
   UI.Element.call( this );
 
 	this.dom = document.createElement( 'div' );
@@ -1029,6 +1029,7 @@ UI.AppBar = function(logo){
 
   	let AppBarToolbar =  document.createElement( 'div' );
   	AppBarToolbar.classList.add('altUI_AppBarToolbar');
+	AppToolbar.add(toolbar);
 	
 	this.dom.append(AppBarToolbar)
   
