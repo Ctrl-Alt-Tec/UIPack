@@ -290,7 +290,7 @@ UI.InputView = function (hint, value, name, type) {
 	this.dom.append(hintText);
 	this.dom.append(input);
 	
-	this.setValue( value );
+	//this.setValue( value );
 
 	return this;
 
@@ -301,13 +301,13 @@ UI.InputView.prototype.constructor = UI.InputView;
 
 UI.InputView.prototype.getValue = function () {
 
-	return this.dom.querySelector('input').value;
+	return this.dom.querySelector('.altUI_InputViewInput').value;
 
 };
 
 UI.InputView.prototype.setValue = function ( value ) {
 
- 	this.dom.querySelector('input').value = value;
+ 	this.dom.querySelector('.altUI_InputViewInput').value = value;
 
 	return this;
 
