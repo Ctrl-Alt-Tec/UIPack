@@ -76,7 +76,7 @@ html, body{
 	justify-content: space-between;
 	padding: 8px 0px;
 	border-bottom: 1px solid rgb(160, 160, 160);
-	align-content: center
+	align-items: center
 }
 	.altUI_ListViewItemMaster .altUI_ListViewItemCenter{
 		display: flex;
