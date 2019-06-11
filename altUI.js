@@ -1076,7 +1076,7 @@ UI.TabView.prototype.addTab = function(label, content){
 	TabContent.innerHTML = content;
 	this.dom.querySelector('.altUI_TabViewTabs').append(TabLabel);
 	this.dom.querySelector('.altUI_TabViewViews').append(TabContent);
-	TabLabel.addEventListener('click', this.setTab(label));
+	TabLabel.addEventListener('click', function(){this.setTab(label)});
 	this.setTab(label);
 	return this;
 }
