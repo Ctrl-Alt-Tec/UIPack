@@ -1083,10 +1083,10 @@ UI.TabView.prototype.setTab = function(tab){
 		l.classList.remove('altUI_TabViewContentActive')
 	})
 	this.dom.querySelector('.altUI_TabViewViews').querySelector(`#${tab}`).classList.add('.altUI_TabViewContentActive')
-	this.dom.querySelector('.altUI_TabViewTabs').querySelectorAll('.altUI_TabViewTav').forEach(function(l){
+	this.dom.querySelector('.altUI_TabViewTabs').querySelectorAll('.altUI_TabViewTab').forEach(function(l){
 		l.classList.remove('altUI_TabViewTabActive')
 	})
-	this.dom.querySelector('.altUI_TabViewTab').querySelector(`#${tab}`).classList.add('.altUI_TabViewTabctive')
+	this.dom.querySelector('.altUI_TabViewTabs').querySelector(`#${tab}`).classList.add('.altUI_TabViewTabctive')
 	return this;
 }
 /*UI.App = function(view){
