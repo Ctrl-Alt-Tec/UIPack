@@ -93,6 +93,14 @@ html, body{
 		font-siez: 1.2em
 	}
 
+.altUI_ListViewItemCard{
+	padding: 8px;
+	border-radius: 8px;
+	border: 1px solid rgb(160, 160, 160);
+	margin: 8px;
+	font-size: 18px
+}
+
 .altUI_TabView{
 	width: 100%;
 	margin: 8px;
