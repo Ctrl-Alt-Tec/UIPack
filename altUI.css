@@ -44,6 +44,10 @@ html, body{
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
+		padding: 8px;
+		padding-bottom: 0px;
+		background: rgb(240,240,240)
+		box-sixing: border-box;
 	}
 		.altUI_TabViewTabs .altUI_TabViewTab{
 			font-sixe: 16px;
@@ -51,8 +55,12 @@ html, body{
 			font-weight: 400;
 			border-top-left-radius: 8px;
 			border-top-right-radius: 8px;
-			border: 1px solid rgb(200,200,200);
-			border-bottom: none;
 			padding: 4px 8px;
 			flex: 1;
 		}
+		.altUI_TabVIewTabs .altUI_TabViewTabActive{
+			backgground: white
+		}
+	.altUI_TabViewContent{
+		padding: 8px;
+}
