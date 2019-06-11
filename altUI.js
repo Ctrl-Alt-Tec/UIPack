@@ -1107,17 +1107,17 @@ UI.ListViewItemMaster = function(leftElement, textLabel, detailTextLabel, rightE
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_ListViewItem');
 	this.dom.classList.add('altUI_ListViewItemMaster');
-	leftElement.style.width = '24px';
-	leftElement.style.height = '24px';
-	leftElement.style.marginRight = '8px';
+	leftElement.style.width = '40px';
+	leftElement.style.height = '40px';
+	leftElement.style.marginRight = '16px';
 	leftElement.classList.add('altUI_ListViewItemLeft')
 	this.dom.append(leftElement);
 	let textContainer = document.createElement('div');
 	textContainer.classList.add('altUI_ListViewItemCenter');
 	textContainer.innerHTML = `<span class="altUI_ListViewItemLabel">${textLabel}</span><span class="altUI_ListViewItemDetail">${detailTextLabel}</span>`
 	this.dom.append(textContainer);
-	rightElement.style.width = '16px';
-	rightElement.style.height = '16px';
+	rightElement.style.width = '24px';
+	rightElement.style.height = '24px';
 	rightElement.style.marginLeft = '8px';
 	rightElement.classList.add('altUI_ListViewItemRight');
 	this.dom.append(rightElement);
