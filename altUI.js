@@ -282,6 +282,7 @@ UI.InputView = function (hint, value, name, type) {
 	input.classList.add('altUI_InputViewInput');
 	input.name = name;
 	input.type = type;
+	input.value = value;
 	input.addEventListener( 'keydown', function ( event ) {
 		event.stopPropagation();
 	}, false );
