@@ -38,11 +38,10 @@ html, body{
 
 .altUI_InputVIew{}
 	.altUI_InputView input.altUI_InputViewInput{
-		font-size: inherit;
+		font-size: 1.5em;
 		padding: 4px;
 		border-radius: 4px;
-		bordeer: 1px solid rgb(200,200,200);
-		border-bottom-color: rgb(0,122,255);
+		border: 1px solid rgb(200,200,200);
 		margin: 8px; 
 	}
 
