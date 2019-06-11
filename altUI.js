@@ -274,12 +274,12 @@ UI.InputView = function (hint, value, name, type) {
 	this.dom.classList.add('altUI_InputView');
 	
 	let hintText = document.createElement('label');
-	hintText.for=name;
-	hintText.classList.add('altUI_InputVIewHint');
+	&&hintText.for=name;
+	hintText.classList.add('altUI_InputViewHint');
 	hintText.textContent = hint;
 	
 	let input = document.createElement( 'input' );
-	input.classList.add('altUI_Input');
+	input.classList.add('altUI_InputViewInput');
 	input.name = input;
 	input.type = type;
 	input.addEventListener( 'keydown', function ( event ) {
@@ -295,16 +295,16 @@ UI.InputView = function (hint, value, name, type) {
 
 };
 
-UI.Input.prototype = Object.create( UI.Element.prototype );
-UI.Input.prototype.constructor = UI.Input;
+UI.InputView.prototype = Object.create( UI.Element.prototype );
+UI.InputView.prototype.constructor = UI.InputView;
 
-UI.Input.prototype.getValue = function () {
+UI.InputView.prototype.getValue = function () {
 
 	return this.dom.querySelector('input').value;
 
 };
 
-UI.Input.prototype.setValue = function ( value ) {
+UI.InputView.prototype.setValue = function ( value ) {
 
  	this.dom.querySelector('input').value = value;
 
