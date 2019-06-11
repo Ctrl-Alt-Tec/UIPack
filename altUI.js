@@ -274,7 +274,7 @@ UI.InputView = function (hint, value, name, type) {
 	this.dom.classList.add('altUI_InputView');
 	
 	let hintText = document.createElement('label');
-	&&hintText.for=name;
+	//hintText.for=name;
 	hintText.classList.add('altUI_InputViewHint');
 	hintText.textContent = hint;
 	
