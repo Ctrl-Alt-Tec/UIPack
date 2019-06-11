@@ -1066,6 +1066,7 @@ UI.TabView = function(){
 UI.TabView.prototype = Object.create(UI.Element.prototype);
 UI.TabView.prototype.constructor = UI.TabView;
 UI.TabView.prototype.addTab = function(label, content){
+	let t = this;
 	let TabLabel = document.createElement('div');
 	TabLabel.classList.add('altUI_TabViewTab');
 	TabLabel.textContent = label;
@@ -1076,7 +1077,7 @@ UI.TabView.prototype.addTab = function(label, content){
 	TabContent.innerHTML = content;
 	this.dom.querySelector('.altUI_TabViewTabs').append(TabLabel);
 	this.dom.querySelector('.altUI_TabViewViews').append(TabContent);
-	TabLabel.addEventListener('click', function(){this.setTab(label)});
+	TabLabel.addEventListener('click', function(){t.prototype.setTab(label)});
 	this.setTab(label);
 	return this;
 }
