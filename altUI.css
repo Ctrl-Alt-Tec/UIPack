@@ -37,7 +37,7 @@ html, body{
 
 
 .altUI_InputVIew{}
-	.altUI_InputView input.altUI_InputView{
+	.altUI_InputView input.altUI_InputViewInput{
 		font-size: inherit;
 		padding: 4px;
 		border-radius: 4px;
