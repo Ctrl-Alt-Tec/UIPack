@@ -264,25 +264,28 @@ UI.Text.prototype.setValue = function ( value ) {
 
 // Input
 
-UI.Input = function ( text ) {
+UI.InputView = function (hint, value, name, type) {
 
 	UI.Element.call( this );
 
 	var scope = this;
 
-	var dom = document.createElement( 'input' );
-	dom.className = 'Input';
-	dom.style.padding = '2px';
-	dom.style.border = '1px solid transparent';
-
-	dom.addEventListener( 'keydown', function ( event ) {
-
+	this.dom = document.createElement('div');
+	this.dom.classList.add('altUI_InputView');
+	
+	let hint = document.createElement('label');
+	hint.for=name;
+	hint.classList.add('altUI_InputVIewHint');
+	
+	let input = document.createElement( 'input' );
+	input.classList.add('altUI_Input');
+	input.name = input;
+	input.type = type;
+	this.dom.addEventListener( 'keydown', function ( event ) {
 		event.stopPropagation();
-
 	}, false );
 
-	this.dom = dom;
-	this.setValue( text );
+	this.setValue( value );
 
 	return this;
 
