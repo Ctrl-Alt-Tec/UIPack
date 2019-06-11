@@ -40,7 +40,8 @@ html, body{
 	font-family: 'Source Sans Pro', Arial, sans-serif;
 	display: flex;
 	flex-direction: column;
-	font-size: 16px
+	font-size: 16px;
+	padding: 8px
 }
 	.altUI_InputView input.altUI_InputViewInput{
 		font-size: 1.2em;
