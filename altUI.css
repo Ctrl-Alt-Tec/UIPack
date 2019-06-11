@@ -3,6 +3,13 @@ html, body{
 	padding: 0;
  	height: 100%;
 }
+.altUI_AppSecHor{
+	display: flex;
+	padding: 8px;
+	justify-content: space-around;
+	flex: 1;
+	box-sizing: border-box
+}
 .altUI_AppBar{
 	position: sticky;
   	top: 0;
