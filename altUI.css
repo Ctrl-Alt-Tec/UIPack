@@ -72,11 +72,22 @@ html, body{
 
 .altUI_ListViewItem{
 	display: flex;
+	flex: 1;
 	justify-content: space-between;
-	padding: 4px;
-	border-bottom: 1px solid rgb(240,240,240);
+	padding: 8px 4px;
+	border-bottom: 1px solid rgb(160, 160, 160);
+	align-content: center
 }
-
+	.altUI_ListViewItemMaster .altUI_ListViewItemCenter{
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		font-family: 'Source Sans Pro', Arial, sans-serif;
+	}
+	.altUI_ListViewItemMaster .altUI_ListViewItemLabel{
+		font-weight: 600;
+		font-size: 1.5em
+	}
 
 .altUI_TabView{
 	width: 100%;
