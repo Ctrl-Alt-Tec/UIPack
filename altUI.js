@@ -1110,6 +1110,7 @@ UI.ListViewItemMaster = function(leftElement, textLabel, detailTextLabel, rightE
 	leftElement.style.width = '2em';
 	leftElement.style.height = '2em';
 	leftElement.style.marginRight = '16px';
+	leftElement.style.fontSize = '2em';
 	leftElement.classList.add('altUI_ListViewItemLeft')
 	this.dom.append(leftElement);
 	let textContainer = document.createElement('div');
