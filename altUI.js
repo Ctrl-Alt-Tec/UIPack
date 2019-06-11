@@ -1121,7 +1121,8 @@ UI.ListViewItemMaster = function(leftElement, textLabel, detailTextLabel, rightE
 	rightElement.style.marginLeft = '8px';
 	rightElement.classList.add('altUI_ListViewItemRight');
 	container.append(rightElement);
-	return this.dom.append(container)
+	this.dom.append(container);
+	return this;
 }
 UI.ListViewItemMaster.prototype = Object.create(UI.Element.prototype);
 UI.ListViewItemMaster.prototype.constructor = UI.ListViewItemMaster;
