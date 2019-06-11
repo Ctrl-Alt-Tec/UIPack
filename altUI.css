@@ -63,4 +63,8 @@ html, body{
 		}
 	.altUI_TabViewContent{
 		padding: 8px;
-}
+		display: none
+	}
+	.altUI_TabViewContentActive{
+		display: flex;
+	}
