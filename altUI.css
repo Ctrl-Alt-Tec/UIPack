@@ -36,13 +36,17 @@ html, body{
 	}
 
 
-.altUI_InputVIew{}
+.altUI_InputVIew{
+	font-family: 'Source Sans Pro', Arial, sans-serif;
+	display: flex;
+	flex-direction: column;
+	font-size: 16px
+}
 	.altUI_InputView input.altUI_InputViewInput{
-		font-size: 1.5em;
+		font-size: 1.2em;
 		padding: 4px;
 		border-radius: 4px;
 		border: 1px solid rgb(200,200,200);
-		margin: 8px; 
 	}
 
 
