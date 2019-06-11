@@ -1126,6 +1126,10 @@ UI.ListViewItemMaster = function(leftElement, textLabel, detailTextLabel, rightE
 }
 UI.ListViewItemMaster.prototype = Object.create(UI.Element.prototype);
 UI.ListViewItemMaster.prototype.constructor = UI.ListViewItemMaster;
+UI.ListViewItemMaster.prototype.makeCard = function(){
+	this.dom.classList.add('altUI_ListViewItemCard');
+	return this;
+}
 /*UI.App = function(view){
 	UI.Element.call(this)
 	this.dom = document.createElement('div');
