@@ -89,6 +89,9 @@ html, body{
 		font-weight: 600;
 		font-size: 1.5em
 	}
+	.altUI_ListViewItemMaster .altUI_ListViewItemDetail{
+		font-siez: 1.2em
+	}
 
 .altUI_TabView{
 	width: 100%;
