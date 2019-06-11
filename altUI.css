@@ -36,6 +36,17 @@ html, body{
 	}
 
 
+.altUI_InputVIew{}
+	.altUI_InputView input.altUI_InputView{
+		font-size: inherit;
+		padding: 4px;
+		border-radius: 4px;
+		bordeer: 1px solid rgb(200,200,200);
+		border-bottom-color: rgb(0,122,255);
+		margin: 8px;
+	}
+
+
 .altUI_TabView{
 	width: 100%;
 	margin: 8px;
