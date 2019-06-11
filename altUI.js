@@ -1104,24 +1104,23 @@ UI.TabView.prototype.setTab = function(tab){
 
 UI.ListViewItemMaster = function(leftElement, textLabel, detailTextLabel, rightElement){
 	UI.Element.call(this);
-	let container = document.createElement('div');
-	container.classList.add('altUI_ListViewItem');
-	container.classList.add('altUI_ListViewItemMaster');
+	this.dom = document.createElement('div');
+	this.dom.classList.add('altUI_ListViewItem');
+	this.dom.classList.add('altUI_ListViewItemMaster');
 	leftElement.style.width = '24px';
 	leftElement.style.height = '24px';
 	leftElement.style.marginRight = '8px';
 	leftElement.classList.add('altUI_ListViewItemLeft')
-	container.append(leftElement);
+	this.dom.append(leftElement);
 	let textContainer = document.createElement('div');
 	textContainer.classList.add('altUI_ListViewItemCenter');
 	textContainer.innerHTML = `<span class="altUI_ListViewItemLabel">${textLabel}</span><span class="altUI_ListViewItemDetail">${detailTextLabel}</span>`
-	container.append(textContainer);
+	this.dom.append(textContainer);
 	rightElement.style.width = '16px';
 	rightElement.style.height = '16px';
 	rightElement.style.marginLeft = '8px';
 	rightElement.classList.add('altUI_ListViewItemRight');
-	container.append(rightElement);
-	this.dom.append(container);
+	this.dom.append(rightElement);
 	return this;
 }
 UI.ListViewItemMaster.prototype = Object.create(UI.Element.prototype);
