@@ -1058,7 +1058,7 @@ UI.TabView = function(){
 	let tabs = document.createElement('div');
 	tabs.classList.add('altUI_TabViewTabs');
 	let views = document.createElement('div');
-	tabs.classList.add('altUI_TabViewViews');
+	views.classList.add('altUI_TabViewViews');
 	this.dom.append(tabs);
 	this.dom.append(views)
 	return this;
