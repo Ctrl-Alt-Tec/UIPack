@@ -273,9 +273,10 @@ UI.InputView = function (hint, value, name, type) {
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_InputView');
 	
-	let hint = document.createElement('label');
-	hint.for=name;
-	hint.classList.add('altUI_InputVIewHint');
+	let hintText = document.createElement('label');
+	hintText.for=name;
+	hintText.classList.add('altUI_InputVIewHint');
+	hintText.textContent = hint;
 	
 	let input = document.createElement( 'input' );
 	input.classList.add('altUI_Input');
@@ -285,7 +286,7 @@ UI.InputView = function (hint, value, name, type) {
 		event.stopPropagation();
 	}, false );
 
-	this.dom.append(hint);
+	this.dom.append(hintText);
 	this.dom.append(input);
 	
 	this.setValue( value );
