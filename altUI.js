@@ -300,13 +300,13 @@ UI.Input.prototype.constructor = UI.Input;
 
 UI.Input.prototype.getValue = function () {
 
-	return this.dom.value;
+	return this.dom.querySelector('input').value;
 
 };
 
 UI.Input.prototype.setValue = function ( value ) {
 
-	this.dom.value = value;
+ 	this.dom.querySelector('input').value = value;
 
 	return this;
 
