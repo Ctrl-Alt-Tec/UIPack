@@ -74,9 +74,10 @@ html, body{
 		font-size: 1.2em;
 		padding: 8px;
 		border-radius: 8px;
-		background: rgb(245,245,245)
+		background: rgb(245,245,245);
+		border: none;
 	}
-	input.altUI_InputViewInput:not([type="button"]):focus{
+	input.altUI_InputViewInput:not([type="button"], [type="submit"]):focus{
 		border-radius: 0px;
 		border-bottom: 2px solid rgb(0,122,255);
 		background: transparent
