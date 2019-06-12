@@ -918,11 +918,9 @@ UI.HorizontalRule = function () {
 
 	UI.Element.call( this );
 
-	var dom = document.createElement( 'hr' );
-	dom.className = 'HorizontalRule';
-
-	this.dom = dom;
-
+	this.dom = document.createElement( 'hr' );
+	this.dom.classList.add('altUI_HorizontalRule');
+	
 	return this;
 
 };
