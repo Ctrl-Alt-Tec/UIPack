@@ -1206,6 +1206,12 @@ UI.ListViewItemMaster.prototype.makeCard = function(){
 	this.dom.classList.add('altUI_ListViewItemCard');
 	return this;
 }
+
+/*UI.ToggleSwitch = function(hint, value, name){
+	UI.Element.call(this);
+	this.dom = document.createElement('label');
+	this.dom.classList.add('alt')
+}*/
 /*UI.App = function(view){
 	UI.Element.call(this)
 	this.dom = document.createElement('div');
