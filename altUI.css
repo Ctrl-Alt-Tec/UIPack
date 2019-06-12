@@ -67,7 +67,7 @@ html, body{
 }
 	.altUI_InputView input.altUI_InputViewInput{
 		font-size: 1.2em;
-		padding: 4px;
+		padding: 8px !important;
 		border-radius: 4px;
 		border: 1px solid rgb(200,200,200);
 		margin: 0 !important
