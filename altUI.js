@@ -1041,7 +1041,7 @@ UI.Modal.prototype.constructor = UI.Modal;
 UI.Modal.prototype.show = function ( content ) {
 
 	this.container.clear();
-	this.container.add( content );
+	this.container.append( content );
 
 	this.dom.style.display = 'flex';
 
