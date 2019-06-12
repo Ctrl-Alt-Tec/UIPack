@@ -1023,11 +1023,11 @@ UI.Modal = function ( value ) {
 		scope.hide();
 	} );
 	
-	this.container = new UI.Panel();
-	this.container.dom.style.width = '200px';
-	this.container.dom.style.padding = '20px';
-	this.container.dom.style.backgroundColor = '#ffffff';
-	this.container.dom.style.boxShadow = '0px 5px 10px rgba(0,0,0,0.5)';
+	this.container = document.createElement('div');
+	this.container.style.width = '200px';
+	this.container.style.padding = '20px';
+	this.container.style.backgroundColor = '#ffffff';
+	this.container.style.boxShadow = '0px 5px 10px rgba(0,0,0,0.5)';
 
 	this.dom.append( this.container );
 
@@ -1040,8 +1040,8 @@ UI.Modal.prototype.constructor = UI.Modal;
 
 UI.Modal.prototype.show = function ( content ) {
 
-	this.container.dom.innerHTML = "";
-	this.container.dom.append( content );
+	this.container.innerHTML = "";
+	this.container.append( content );
 
 	this.dom.style.display = 'flex';
 
