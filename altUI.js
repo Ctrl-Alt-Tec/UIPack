@@ -1039,8 +1039,8 @@ UI.Modal = function ( value ) {
 	}
 	this.backButton = document.createElement('div');
 		this.backButton.classList.add('altUI_ModalTitleEsc');
-		this.backButton.classList.add('arrow_back_ios');
-		this.backButton.innerText = 'back';
+		this.backButton.classList.add('material-icons');
+		this.backButton.innerText = 'arrow_back_ios';
 		this.backButton.addEventListener('click', function(e){
 			scope.hide()
 		})
