@@ -68,9 +68,13 @@ html, body{
 }
 	.altUI_InputView input.altUI_InputViewInput, .altUI_Button{
 		font-size: 1.2em;
-		padding: 8px !important;
-		border-radius: 4px;
+		padding: 8px;
+		border-radius: 8px;
 		border: 1px solid rgb(200,200,200);
+	}
+	input[type="button"].altUI_InputViewInput, input[type="submit"].altUI_InputViewInput, .altUI_Button{
+		padding: 16px;
+		font-weight: 600
 	}
 	.altUI_InputView input.altUI_InputViewInput{
 		margin: 0 !important;
