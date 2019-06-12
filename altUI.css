@@ -126,10 +126,14 @@ html, body{
 			border-top-right-radius: 8px;
 			padding: 4px 8px;
 			flex: 1;
-			text-align: center
+			text-align: center;
+			border-bottom: 1px solid rgb(160,160,160)
 		}
 		.altUI_TabVIewTabs .altUI_TabViewTabActive{
-			background: white
+			background: white;
+			border: 1px solid rgb(160,160,160);
+			border-bottom-color: transparent;
+			font-weight: 600;
 		}
 	.altUI_TabViewContent{
 		padding: 8px;
