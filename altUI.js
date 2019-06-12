@@ -1035,7 +1035,7 @@ UI.Modal = function ( value ) {
 	this.content = document.createElement('div');
 	this.content.classList.add('altUI_ModalContent')
 	this.container.addEventListener('click', function(e){
-		e.preventDefault();
+		//e.preventDefault();
 		e.stopImmediatePropagation();
 		e.stopPropagation();
 	})
