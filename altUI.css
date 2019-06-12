@@ -107,7 +107,8 @@ html, body{
 
 .altUI_TabView{
 	width: 100%;
-	margin: 8px;
+	display: flex;
+	flex-direction: column
 }
 	.altUI_TabViewTabs{
 		display: flex;
