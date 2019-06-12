@@ -78,7 +78,8 @@ html, body{
 	}
 	input[type="button"].altUI_InputViewInput, input[type="submit"].altUI_InputViewInput, .altUI_Button{
 		padding: 16px;
-		font-weight: 600
+		font-weight: 600;
+		font-size: 18px
 	}
 	.altUI_InputView input.altUI_InputViewInput{
 		margin: 0 !important;
