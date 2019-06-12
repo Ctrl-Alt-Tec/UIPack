@@ -133,10 +133,13 @@ html, body{
 		border-top-left-radius: 8px;
 		border-top-right-radius: 8px;
 		background: rgb(240,240,240);
-		border: 1px solid rgb(200,200,200)
+		border: 1px solid rgb(200,200,200);
+		font-family: 'Source Sans Pro', sans-serif;
+		font-size: 20px;
+		font-weight: 600;
 	}
 	.altUI_ModalContent{
-		padding: 24px;
+		padding: 16px;
 	}
 
 .altUI_TabView{
