@@ -1025,14 +1025,20 @@ UI.Modal = function ( value ) {
 		e.stopPropagation();
 		e.stopImmediatePropagation();
 	} );
-	
 	this.container = document.createElement('div');
-	this.container.classList.add('altUI_Modal')
+	this.container.classList.add('altUI_Modal');
+	
+	this.titlebar = document.createElement('div');
+	this.titleBar.classList.add('altUI_ModalTitle');
+	
+	this.content = document.createElement('div');
+	this.content.classList.add('altUI_ModalContent')
 	this.container.addEventListener('click', function(e){
 		e.preventDefault();
 		e.stopImmediatePropagation();
 		e.stopPropagation();
 	})
+	this.container.append(this.titleBar, this.content);
 	this.dom.append( this.container );
 
 	return this;
@@ -1043,24 +1049,20 @@ UI.Modal.prototype = Object.create( UI.Element.prototype );
 UI.Modal.prototype.constructor = UI.Modal;
 
 UI.Modal.prototype.show = function ( content ) {
-
-	this.container.innerHTML = "";
-	this.container.append( content );
-
+	this.content.innerHTML = "";
+	this.content.append( content );
 	this.dom.style.display = 'flex';
-
 	return this;
-
 };
 
 UI.Modal.prototype.hide = function () {
-
 	this.dom.style.display = 'none';
-
 	return this;
-
 };
-
+UI.Modal.prototype.setTitle = function (newTitle){
+	this.titleBar.innerHTML = newTitle;
+	return this;
+}
 
 
 //
