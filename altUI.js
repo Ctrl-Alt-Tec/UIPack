@@ -1021,6 +1021,9 @@ UI.Modal = function ( value ) {
 	this.dom.style.justifyContent = 'center';
 	this.dom.addEventListener( 'click', function ( event ) {
 		scope.hide();
+		console.log(event.target);
+		e.stopPropagation();
+		e.stopImmediatePropagation();
 	} );
 	
 	this.container = document.createElement('div');
