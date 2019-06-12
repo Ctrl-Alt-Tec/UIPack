@@ -952,43 +952,43 @@ UI.Button.prototype.setLabel = function ( value ) {
 	return this;
 };
 UI.Button.prototype.blue = function(){
-	this.dom.style.backgroundColor: 'rgb(0,122,255)';
+	this.dom.style.backgroundColor = 'rgb(0,122,255)';
 	return this;
 }
 UI.Button.prototype.gray = function(){
-	this.dom.style.backgroundColor: 'rgb(142,142,147)';
+	this.dom.style.backgroundColor ='rgb(142,142,147)';
 	return this;
 }
 UI.Button.prototype.green = function(){
-	this.dom.style.backgroundColor: 'rgb(52,199,89)';
+	this.dom.style.backgroundColor = 'rgb(52,199,89)';
 	return this;
 }
 UI.Button.prototype.indigo = function(){
-	this.dom.style.backgroundColor: 'rgb(88,86,214)';
+	this.dom.style.backgroundColor = 'rgb(88,86,214)';
 	return this;
 }
 UI.Button.prototype.orange = function(){
-	this.dom.style.backgroundColor: 'rgb(255,149,0)';
+	this.dom.style.backgroundColor = 'rgb(255,149,0)';
 	return this;
 }
 UI.Button.prototype.pink = function(){
-	this.dom.style.backgroundColor: 'rgb(255,45,85)';
+	this.dom.style.backgroundColor = 'rgb(255,45,85)';
 	return this;
 }
 UI.Button.prototype.purple = function(){
-	this.dom.style.backgroundColor: 'rgb(175,82,22)';
+	this.dom.style.backgroundColor = 'rgb(175,82,22)';
 	return this;
 }
 UI.Button.prototype.red = function(){
-	this.dom.style.backgroundColor: 'rgb(255,59,48)';
+	this.dom.style.backgroundColor = 'rgb(255,59,48)';
 	return this;
 }
 UI.Button.prototype.teal = function(){
-	this.dom.style.backgroundColor: 'rgb(90,200,250)';
+	this.dom.style.backgroundColor = 'rgb(90,200,250)';
 	return this;
 }
 UI.Button.prototype.yellow = function(){
-	this.dom.style.backgroundColor: 'rgb(255,204,0)';
+	this.dom.style.backgroundColor = 'rgb(255,204,0)';
 	return this;
 }
 
