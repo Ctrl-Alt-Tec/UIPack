@@ -145,6 +145,12 @@ html, body{
 	.altUI_ModalContent{
 		padding: 16px;
 	}
+.altUI_Modal.altUI_ModalFull{
+	height: 100%;
+	width: 100%;
+	margin: 16px;
+}
+
 
 .altUI_TabView{
 	width: 100%;
