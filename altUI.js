@@ -1040,8 +1040,8 @@ UI.Modal.prototype.constructor = UI.Modal;
 
 UI.Modal.prototype.show = function ( content ) {
 
-	this.dom.container.innerHTML = "";
-	this.dom.container.append( content );
+	this.container.dom.innerHTML = "";
+	this.container.dom.append( content );
 
 	this.dom.style.display = 'flex';
 
