@@ -74,7 +74,12 @@ html, body{
 		font-size: 1.2em;
 		padding: 8px;
 		border-radius: 8px;
-		border: 1px solid rgb(200,200,200);
+		background: rgb(245,245,245)
+	}
+	input.altUI_InputViewInput:not([type="button"]):focus{
+		border-radius: 0px;
+		border-bottom: 2px solid rgb(0,122,255);
+		background: transparent
 	}
 	.altUI_InputView:has(>input[type="hidden"]){
 		padding: 0;
