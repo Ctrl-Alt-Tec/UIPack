@@ -149,7 +149,10 @@ html, body{
 	height: 100%;
 	max-width: 100%;
 }
-
+	.altUI_Modal.alUI_ModalFull .altUI_ModalTitle{
+		border: none;
+		font-size: 40px;
+	}
 
 .altUI_TabView{
 	width: 100%;
