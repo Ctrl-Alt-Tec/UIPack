@@ -137,7 +137,7 @@ html, body{
 			font-weight: 600;
 		}
 	.altUI_TabViewContent{
-		padding: 8px;
+		padding: 16px;
 		display: none
 	}
 	.altUI_TabViewContentActive{
