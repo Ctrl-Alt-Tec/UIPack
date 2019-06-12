@@ -1068,6 +1068,9 @@ UI.Modal.prototype.show = function ( content, newTitle ) {
 	this.content.append( content );
 	this.titleBar.innerText = newTitle;
 	this.dom.style.display = 'flex';
+	if(this.actionRequired){
+		this.titleBar.prepend(this.backButton);
+	}
 	return this;
 };
 
