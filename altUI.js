@@ -1028,7 +1028,11 @@ UI.Modal = function ( value ) {
 	
 	this.container = document.createElement('div');
 	this.container.classList.add('altUI_Modal')
-
+	this.container.addEventListener('click', function(e){
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		e.stopPropagation();
+	})
 	this.dom.append( this.container );
 
 	return this;
