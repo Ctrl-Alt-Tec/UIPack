@@ -935,12 +935,11 @@ UI.Button = function ( value ) {
 
 	UI.Element.call( this );
 
-	var dom = document.createElement( 'button' );
-	dom.className = 'Button';
-
-	this.dom = dom;
-	this.dom.textContent = value;
-
+	this.dom = document.createElement( 'button' );
+	this.dom.classList.add('altUI_Button');
+	if(value){
+		this.dom.textContent = value;
+	}
 	return this;
 
 };
