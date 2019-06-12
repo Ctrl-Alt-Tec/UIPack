@@ -1048,9 +1048,10 @@ UI.Modal = function ( value ) {
 UI.Modal.prototype = Object.create( UI.Element.prototype );
 UI.Modal.prototype.constructor = UI.Modal;
 
-UI.Modal.prototype.show = function ( content ) {
+UI.Modal.prototype.show = function ( content, newTitle ) {
 	this.content.innerHTML = "";
 	this.content.append( content );
+	this.titleBar.innerHTML = newTitle;
 	this.dom.style.display = 'flex';
 	return this;
 };
