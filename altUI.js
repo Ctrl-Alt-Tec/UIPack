@@ -1065,8 +1065,9 @@ UI.Modal.prototype.setTitle = function (newTitle){
 	this.titleBar.innerHTML = newTitle;
 	return this;
 }
-UI.Modal.prototype.requireAction(){
+UI.Modal.prototype.requireAction = function(){
 	this.actionRequired = true;
+	return this;
 }
 
 //
