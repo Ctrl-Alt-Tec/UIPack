@@ -137,6 +137,7 @@ html, body{
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 20px;
 		font-weight: 600;
+		padding: 16px 24px;
 	}
 	.altUI_ModalContent{
 		padding: 16px;
