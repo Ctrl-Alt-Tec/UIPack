@@ -1024,10 +1024,7 @@ UI.Modal = function ( value ) {
 	} );
 	
 	this.container = document.createElement('div');
-	this.container.style.width = '200px';
-	this.container.style.padding = '20px';
-	this.container.style.backgroundColor = '#ffffff';
-	this.container.style.boxShadow = '0px 5px 10px rgba(0,0,0,0.5)';
+	this.container.classList.add('altUI_Modal')
 
 	this.dom.append( this.container );
 
