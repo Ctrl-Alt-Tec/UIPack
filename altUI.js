@@ -1033,6 +1033,17 @@ UI.Modal = function ( value ) {
 	
 	this.titleBar = document.createElement('div');
 	this.titleBar.classList.add('altUI_ModalTitle');
+	if(this.actionRequired){
+		this.titleBar.classList.add('altUI_ModalTitleFull')
+		let backButton = document.createElement('div');
+			backButton.classList.add('altUI_ModalTitleEsc');
+			backButton.classList.add('material-icons');
+			backButton.innerText = 'back';
+			backButton.addEventListener('click', function(e){
+				scope.hide()
+			})
+		this.titleBar.prepend(backButton);
+	}
 	
 	this.content = document.createElement('div');
 	this.content.classList.add('altUI_ModalContent')
@@ -1053,7 +1064,7 @@ UI.Modal.prototype.constructor = UI.Modal;
 UI.Modal.prototype.show = function ( content, newTitle ) {
 	this.content.innerHTML = "";
 	this.content.append( content );
-	this.titleBar.innerHTML = newTitle;
+	this.titleBar.innerText = newTitle;
 	this.dom.style.display = 'flex';
 	return this;
 };
@@ -1065,7 +1076,7 @@ UI.Modal.prototype.hide = function () {
 	return this;
 };
 UI.Modal.prototype.setTitle = function (newTitle){
-	this.titleBar.innerHTML = newTitle;
+	this.titleBar.innerText = newTitle;
 	return this;
 }
 UI.Modal.prototype.requireAction = function(){
