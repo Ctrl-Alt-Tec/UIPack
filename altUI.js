@@ -1059,6 +1059,7 @@ UI.Modal.prototype.show = function ( content, newTitle ) {
 UI.Modal.prototype.hide = function () {
 	this.dom.style.display = 'none';
 	this.actionRequired = false;
+	this.container.classList.remove('altUI_ModalFull');
 	return this;
 };
 UI.Modal.prototype.setTitle = function (newTitle){
@@ -1067,6 +1068,7 @@ UI.Modal.prototype.setTitle = function (newTitle){
 }
 UI.Modal.prototype.requireAction = function(){
 	this.actionRequired = true;
+	this.container.classList.add('altUI_ModalFull');
 	return this;
 }
 
