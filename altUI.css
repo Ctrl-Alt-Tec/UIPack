@@ -78,9 +78,10 @@ html, body{
 		border: none;
 	}
 	input.altUI_InputViewInput:not([type="button"], [type="submit"]):focus{
+		border: none;
 		border-radius: 0px;
 		border-bottom: 2px solid rgb(0,122,255);
-		background: transparent
+		background: transparent;
 	}
 	.altUI_InputView:has(>input[type="hidden"]){
 		padding: 0;
@@ -141,8 +142,7 @@ html, body{
 	.altUI_ModalTitle{
 		border-top-left-radius: 8px;
 		border-top-right-radius: 8px;
-		background: rgb(240,240,240);
-		border: 1px solid rgb(200,200,200);
+		background: rgb(245,245,245);
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 20px;
 		font-weight: 600;
@@ -159,6 +159,9 @@ html, body{
 		border: none;
 		font-size: 40px;
 	}
+	.altUI_Modal.altUI_ModalFull .altUI_ModalContent{
+		padding: 0px;
+	}
 
 .altUI_TabView{
 	width: 100%;
@@ -171,7 +174,7 @@ html, body{
 		width: 100%;
 		padding: 8px;
 		padding-bottom: 0px;
-		background: rgb(240,240,240);
+		background: rgb(245,245,245);
 		box-sizing: border-box;
 	}
 		.altUI_TabViewTabs .altUI_TabViewTab{
