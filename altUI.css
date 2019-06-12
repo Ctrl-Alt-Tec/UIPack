@@ -76,6 +76,9 @@ html, body{
 		border-radius: 8px;
 		border: 1px solid rgb(200,200,200);
 	}
+	.altUI_InputView:has(>input[type="hidden"]){
+		padding: 0;
+	}
 	input[type="button"].altUI_InputViewInput, input[type="submit"].altUI_InputViewInput, .altUI_Button{
 		padding: 16px;
 		font-weight: 600;
