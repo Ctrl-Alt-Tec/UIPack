@@ -114,6 +114,18 @@ html, body{
 	font-size: 18px
 }
 
+.altUI_Modal{
+	display: flex;
+	flex-direction: column;
+	padding: 24px;
+	background: white;
+	border-radius: 8px;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24);
+	width: 100%;
+	max-width: 800px;
+	margin: 8px
+}
+
 .altUI_TabView{
 	width: 100%;
 	display: flex;
