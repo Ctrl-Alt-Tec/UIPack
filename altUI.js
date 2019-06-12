@@ -1009,9 +1009,8 @@ UI.Button.prototype.yellow = function(){
 UI.Modal = function ( value ) {
 
 	var scope = this;
-
+	this.actionRequired = false;
 	this.dom = document.createElement( 'div' );
-
 	this.dom.style.position = 'absolute';
 	this.dom.style.width = '100%';
 	this.dom.style.height = '100%';
@@ -1021,8 +1020,9 @@ UI.Modal = function ( value ) {
 	this.dom.style.justifyContent = 'center';
 	this.dom.style.backdropFilter = 'blur(8px)';
 	this.dom.addEventListener( 'click', function ( e ) {
-		scope.hide();
-		console.log(e.target);
+		if(!scope.actionRequired){
+			scope.hide();
+		}
 		e.stopPropagation();
 		e.stopImmediatePropagation();
 	} );
@@ -1035,7 +1035,6 @@ UI.Modal = function ( value ) {
 	this.content = document.createElement('div');
 	this.content.classList.add('altUI_ModalContent')
 	this.container.addEventListener('click', function(e){
-		//e.preventDefault();
 		e.stopImmediatePropagation();
 		e.stopPropagation();
 	})
@@ -1059,13 +1058,16 @@ UI.Modal.prototype.show = function ( content, newTitle ) {
 
 UI.Modal.prototype.hide = function () {
 	this.dom.style.display = 'none';
+	this.actionRequired = false;
 	return this;
 };
 UI.Modal.prototype.setTitle = function (newTitle){
 	this.titleBar.innerHTML = newTitle;
 	return this;
 }
-
+UI.Modal.prototype.requireAction(){
+	this.actionRequired = true;
+}
 
 //
 UI.AppBar = function(logo, toolbar){
