@@ -1028,7 +1028,7 @@ UI.Modal = function ( value ) {
 	this.container = document.createElement('div');
 	this.container.classList.add('altUI_Modal');
 	
-	this.titlebar = document.createElement('div');
+	this.titleBar = document.createElement('div');
 	this.titleBar.classList.add('altUI_ModalTitle');
 	
 	this.content = document.createElement('div');
