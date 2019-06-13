@@ -377,11 +377,9 @@ UI.Select = function () {
 
 	var scope = this;
 
-	var dom = document.createElement( 'select' );
-	dom.className = 'Select';
-	dom.style.padding = '2px';
-
-	this.dom = dom;
+	this.dom = document.createElement( 'select' );
+	this.dom.classList.add('altUI_InputViewIntput');
+	this.dom.classList.add('altUI_InputSelect')
 
 	return this;
 
