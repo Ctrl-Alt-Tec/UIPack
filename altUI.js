@@ -371,15 +371,28 @@ UI.TextArea.prototype.setValue = function ( value ) {
 
 // Select
 
-UI.Select = function () {
+UI.Select = function (hint, value, name) {
 
 	UI.Element.call( this );
 
 	var scope = this;
 
-	this.dom = document.createElement( 'select' );
-	this.dom.classList.add('altUI_InputViewInput');
-	this.dom.classList.add('altUI_InputSelect')
+	this.dom = document.createElement('div');
+	this.dom.classList.add('altUI_InputView');
+	
+	let hintText = document.createElement('label');
+	//hintText.for=name;
+	hintText.classList.add('altUI_InputViewHint');
+	hintText.textContent = hint;
+	
+	this.input = document.createElement( 'select' );
+	this.input.classList.add('altUI_InputViewInput');
+	this.input.classList.add('altUI_InputSelect');
+	this.input.name = name;
+	
+	this.dom.append(hintText);
+	this.dom.append(this.input);
+	this.setValue(value);
 
 	return this;
 
@@ -390,7 +403,7 @@ UI.Select.prototype.constructor = UI.Select;
 
 UI.Select.prototype.setMultiple = function ( boolean ) {
 
-	this.dom.multiple = boolean;
+	this.input.multiple = boolean;
 
 	return this;
 
@@ -398,11 +411,11 @@ UI.Select.prototype.setMultiple = function ( boolean ) {
 
 UI.Select.prototype.setOptions = function ( options ) {
 
-	var selected = this.dom.value;
+	var selected = this.input.value;
 
 	while ( this.dom.children.length > 0 ) {
 
-		this.dom.removeChild( this.dom.firstChild );
+		this.input.removeChild( this.dom.firstChild );
 
 	}
 
@@ -411,11 +424,11 @@ UI.Select.prototype.setOptions = function ( options ) {
 		var option = document.createElement( 'option' );
 		option.value = key;
 		option.innerHTML = options[ key ];
-		this.dom.appendChild( option );
+		this.input.appendChild( option );
 
 	}
 
-	this.dom.value = selected;
+	this.input.value = selected;
 
 	return this;
 
@@ -423,7 +436,7 @@ UI.Select.prototype.setOptions = function ( options ) {
 
 UI.Select.prototype.getValue = function () {
 
-	return this.dom.value;
+	return this.input.value;
 
 };
 
@@ -431,9 +444,9 @@ UI.Select.prototype.setValue = function ( value ) {
 
 	value = String( value );
 
-	if ( this.dom.value !== value ) {
+	if ( this.input.value !== value ) {
 
-		this.dom.value = value;
+		this.input.value = value;
 
 	}
 
