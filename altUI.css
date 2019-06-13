@@ -86,6 +86,7 @@ html, body{
 		background: rgb(245,245,245);
 		border: none;
 	}
+	
 		select.altUI_InputViewInput option{
 			font-size: 16px;
 		}
@@ -174,6 +175,16 @@ html, body{
 	.altUI_Modal.altUI_ModalFull .altUI_ModalContent{
 		padding: 0px;
 	}
+
+.altUI_SegmentedControl{
+	font-size: 1.2em;
+	padding: 0px;
+	border-radius: 8px;
+	background: rgb(245,245,245);
+	border: 1px solid rgb(200,200,200);
+	margin: 8px
+}
+
 
 .altUI_TabView{
 	width: 100%;
