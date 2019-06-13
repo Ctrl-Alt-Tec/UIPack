@@ -1229,6 +1229,17 @@ UI.Heading = function(level, value){
 UI.Heading.prototype = Object.create(UI.Element.prototype);
 UI.Heading.prototype.constructor = UI.Heading;
 
+
+UI.SegmentedControl = function(options){
+	UI.Element.call(this);
+	this.dom = document.createElement('div');
+	this.dom.classList.add('altUI_InputViewInput');
+	this.dom.innerText="altUI_SegmentedControl"
+	return this.dom
+}
+UI.SegmentedControl.prototype = Object.create(UI.Element.prototype);
+UI.SegmentedControl.constructor = UI.SegmentedControl;
+
 /*UI.ToggleSwitch = function(hint, value, name){
 	UI.Element.call(this);
 	this.dom = document.createElement('label');
