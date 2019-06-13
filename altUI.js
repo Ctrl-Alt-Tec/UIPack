@@ -1217,7 +1217,7 @@ UI.ListViewItemMaster.prototype.makeCard = function(){
 	this.dom.classList.add('altUI_ListViewItemCard');
 	return this;
 }
-let UI.Heading = function(level, value){
+UI.Heading = function(level, value){
 	UI.Element.call(this);
 	this.dom = document.createElement('span');
 	this.dom.classList.add('altUI_Heading');
