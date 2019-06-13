@@ -378,7 +378,7 @@ UI.Select = function () {
 	var scope = this;
 
 	this.dom = document.createElement( 'select' );
-	this.dom.classList.add('altUI_InputViewIntput');
+	this.dom.classList.add('altUI_InputViewInput');
 	this.dom.classList.add('altUI_InputSelect')
 
 	return this;
