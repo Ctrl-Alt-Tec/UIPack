@@ -1217,6 +1217,16 @@ UI.ListViewItemMaster.prototype.makeCard = function(){
 	this.dom.classList.add('altUI_ListViewItemCard');
 	return this;
 }
+let UI.Heading = function(level, value){
+	UI.Element.call(this);
+	this.dom = document.createElement('span');
+	this.dom.classList.add('altUI_Heading');
+	this.dom.classList.add('altUI_Heading'+level);
+	this.dom.style.margin = '8px';
+	return this;
+}
+UI.Heading.prototype = Object.create(UI.Element.prototype);
+UI.Heading.prototype.constructor = UI.Heading;
 
 /*UI.ToggleSwitch = function(hint, value, name){
 	UI.Element.call(this);
