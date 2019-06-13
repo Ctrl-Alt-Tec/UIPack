@@ -77,6 +77,9 @@ html, body{
 		background: rgb(245,245,245);
 		border: none;
 	}
+		select.altUI_InputViewInput option{
+			font-size: 16px;
+		}
 	input.altUI_InputViewInput:not([type="button"], [type="submit"]):focus{
 		border: none;
 		border-radius: 0px;
@@ -86,7 +89,7 @@ html, body{
 	.altUI_InputView:has(>input[type="hidden"]){
 		padding: 0;
 	}
-	input[type="button"].altUI_InputViewInput, input[type="submit"].altUI_InputViewInput, .altUI_Button, select.altUI_InputViewInput{
+	input[type="button"].altUI_InputViewInput, input[type="submit"].altUI_InputViewInput, .altUI_Button{
 		padding: 16px;
 		font-weight: 600;
 		font-size: 18px
