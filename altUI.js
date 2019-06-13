@@ -1235,7 +1235,7 @@ UI.SegmentedControl = function(options){
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_InputViewInput');
 	this.dom.innerText="altUI_SegmentedControl"
-	return this.dom
+	return this;
 }
 UI.SegmentedControl.prototype = Object.create(UI.Element.prototype);
 UI.SegmentedControl.constructor = UI.SegmentedControl;
