@@ -1223,6 +1223,7 @@ UI.Heading = function(level, value){
 	this.dom.classList.add('altUI_Heading');
 	this.dom.classList.add('altUI_Heading'+level);
 	this.dom.style.margin = '8px';
+	this.dom.innerText = value;
 	return this;
 }
 UI.Heading.prototype = Object.create(UI.Element.prototype);
