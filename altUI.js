@@ -413,7 +413,7 @@ UI.Select.prototype.setOptions = function ( options ) {
 
 	var selected = this.input.value;
 
-	while ( this.dom.children.length > 0 ) {
+	while ( this.input.children.length > 0 ) {
 
 		this.input.removeChild( this.input.firstChild );
 
