@@ -1159,15 +1159,15 @@ UI.TabView = function(){
 }
 UI.TabView.prototype = Object.create(UI.Element.prototype);
 UI.TabView.prototype.constructor = UI.TabView;
-UI.TabView.prototype.addTab = function(label, content){
+UI.TabView.prototype.addTab = function(i, label, content){
 	let t = this;
 	let TabLabel = document.createElement('div');
 	TabLabel.classList.add('altUI_TabViewTab');
 	TabLabel.textContent = label;
-	TabLabel.id = label;
+	TabLabel.id = altUI_TabViewTab_´+i;
 	let TabContent = document.createElement('div');
 	TabContent.classList.add('altUI_TabViewContent');
-	TabContent.id = label;
+	TabContent.id = altUI_TabViewContent_´+i;
 	TabContent.innerHTML = '';
 	TabContent.append(content)
 	this.dom.querySelector('.altUI_TabViewTabs').append(TabLabel);
@@ -1176,15 +1176,15 @@ UI.TabView.prototype.addTab = function(label, content){
 	this.setTab(label);
 	return this;
 }
-UI.TabView.prototype.setTab = function(tab){
+UI.TabView.prototype.setTab = function(i){
 	this.dom.querySelector('.altUI_TabViewViews').querySelectorAll('.altUI_TabViewContent').forEach(function(l){
 		l.classList.remove('altUI_TabViewContentActive')
 	})
-	this.dom.querySelector('.altUI_TabViewViews').querySelector(`#${tab}`).classList.add('altUI_TabViewContentActive')
+	this.dom.querySelector('.altUI_TabViewViews').querySelector(`#altUI_TabViewContent_${i}`).classList.add('altUI_TabViewContentActive')
 	this.dom.querySelector('.altUI_TabViewTabs').querySelectorAll('.altUI_TabViewTab').forEach(function(l){
 		l.classList.remove('altUI_TabViewTabActive')
 	})
-	this.dom.querySelector('.altUI_TabViewTabs').querySelector(`#${tab}`).classList.add('altUI_TabViewTabActive')
+	this.dom.querySelector('.altUI_TabViewTabs').querySelector(`#altUI_TabViewTab_${i}`).classList.add('altUI_TabViewTabActive')
 	return this;
 }
 
