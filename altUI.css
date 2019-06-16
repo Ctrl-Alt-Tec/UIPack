@@ -211,7 +211,8 @@ html, body{
 			text-align: center;
 			border-bottom: 1px solid rgb(160,160,160);
 			display: flex;
-			align-items: center
+			align-items: center;
+			justify-content: center
 		}
 		.altUI_TabVIewTabs .altUI_TabViewTabActive{
 			background: white;
