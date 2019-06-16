@@ -1159,12 +1159,17 @@ UI.TabView = function(){
 }
 UI.TabView.prototype = Object.create(UI.Element.prototype);
 UI.TabView.prototype.constructor = UI.TabView;
-UI.TabView.prototype.addTab = function(i, label, content){
+UI.TabView.prototype.addTab = function(i, label, content, iconName=''){
 	let t = this;
 	let TabLabel = document.createElement('div');
 	TabLabel.classList.add('altUI_TabViewTab');
 	TabLabel.textContent = label;
 	TabLabel.id = "altUI_TabViewTab_"+i;
+	let icon = document.createElement('i');
+	icon.classList.add('material-icons');
+	icon.textContent = iconName;
+	TabLabe.append(icon)
+	
 	let TabContent = document.createElement('div');
 	TabContent.classList.add('altUI_TabViewContent');
 	TabContent.id = "altUI_TabViewContent_"+i;
