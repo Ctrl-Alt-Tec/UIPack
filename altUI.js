@@ -1176,7 +1176,7 @@ UI.TabView.prototype.addTab = function(i, label, content){
 	this.setTab(label);
 	return this;
 }
-UI.TabView.prototype.setTab = function(i){
+UI.TabView.prototype.setTab = function(i=0){
 	this.dom.querySelector('.altUI_TabViewViews').querySelectorAll('.altUI_TabViewContent').forEach(function(l){
 		l.classList.remove('altUI_TabViewContentActive')
 	})
