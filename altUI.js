@@ -1164,10 +1164,10 @@ UI.TabView.prototype.addTab = function(i, label, content){
 	let TabLabel = document.createElement('div');
 	TabLabel.classList.add('altUI_TabViewTab');
 	TabLabel.textContent = label;
-	TabLabel.id = altUI_TabViewTab_´+i;
+	TabLabel.id = "altUI_TabViewTab_"+i;
 	let TabContent = document.createElement('div');
 	TabContent.classList.add('altUI_TabViewContent');
-	TabContent.id = altUI_TabViewContent_´+i;
+	TabContent.id = "altUI_TabViewContent_"+i;
 	TabContent.innerHTML = '';
 	TabContent.append(content)
 	this.dom.querySelector('.altUI_TabViewTabs').append(TabLabel);
