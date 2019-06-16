@@ -1168,7 +1168,7 @@ UI.TabView.prototype.addTab = function(i, label, content, iconName=''){
 	let icon = document.createElement('i');
 	icon.classList.add('material-icons');
 	icon.textContent = iconName;
-	TabLabe.append(icon)
+	TabLabel.prepend(icon)
 	
 	let TabContent = document.createElement('div');
 	TabContent.classList.add('altUI_TabViewContent');
