@@ -209,7 +209,9 @@ html, body{
 			padding: 4px 8px;
 			flex: 1;
 			text-align: center;
-			border-bottom: 1px solid rgb(160,160,160)
+			border-bottom: 1px solid rgb(160,160,160);
+			display: flex;
+			align-items: center
 		}
 		.altUI_TabVIewTabs .altUI_TabViewTabActive{
 			background: white;
