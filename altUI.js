@@ -1149,7 +1149,7 @@ UI.AppBar.prototype.setTitle = function(title){
 	return this;
 }
 UI.AppBar.prototype.setLogo = function(imageURL){
-	this.AppBarLogo.src = logo;
+	this.AppBarLogo.src = imageURL;
 	return this;
 }
 
