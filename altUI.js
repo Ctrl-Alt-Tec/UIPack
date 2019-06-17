@@ -1181,7 +1181,7 @@ UI.TabView.prototype.addTab = function(i, label, content, iconName=''){
 	this.setTab(i);
 	return this;
 }
-UI.TabView.prototype.setTab = function(i=0){
+UI.TabView.prototype.setTab = function(i=0, callback=function(){}){
 	this.dom.querySelector('.altUI_TabViewViews').querySelectorAll('.altUI_TabViewContent').forEach(function(l){
 		l.classList.remove('altUI_TabViewContentActive')
 	})
@@ -1189,7 +1189,8 @@ UI.TabView.prototype.setTab = function(i=0){
 	this.dom.querySelector('.altUI_TabViewTabs').querySelectorAll('.altUI_TabViewTab').forEach(function(l){
 		l.classList.remove('altUI_TabViewTabActive')
 	})
-	this.dom.querySelector('.altUI_TabViewTabs').querySelector("#altUI_TabViewTab_"+i).classList.add('altUI_TabViewTabActive')
+	this.dom.querySelector('.altUI_TabViewTabs').querySelector("#altUI_TabViewTab_"+i).classList.add('altUI_TabViewTabActive');
+	callback();
 	return this;
 }
 
@@ -1234,14 +1235,18 @@ UI.Heading = function(level, value){
 UI.Heading.prototype = Object.create(UI.Element.prototype);
 UI.Heading.prototype.constructor = UI.Heading;
 
-
+/*
 UI.SegmentedControl = function(options){
 	UI.Element.call(this);
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_SegmentedControl');
-	this.dom.innerText="altUI_SegmentedControl"
-	return this;
-}
+	options.forEach(function(l){
+		let element = document.createElement('div');
+		element.classList.add('altUI_SegmentedControl_Option');
+	})
+	//this.dom.innerText="altUI_SegmentedControl"
+	//return this;
+}*/
 UI.SegmentedControl.prototype = Object.create(UI.Element.prototype);
 UI.SegmentedControl.constructor = UI.SegmentedControl;
 
