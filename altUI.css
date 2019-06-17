@@ -163,6 +163,8 @@ html, body{
 	}
 	.altUI_ModalContent{
 		padding: 16px;
+		height: 100%;
+		overflow: auto;
 	}
 .altUI_Modal.altUI_ModalFull{
 	height: 100%;
