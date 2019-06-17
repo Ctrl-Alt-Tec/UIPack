@@ -1118,11 +1118,11 @@ UI.AppBar = function(logo, toolbar){
 	let AppBarTop = document.createElement('div');
 	AppBarTop.classList.add('altUI_AppBarTop');
 
-	let AppBarLogo = document.createElement('img');
-	AppBarLogo.classList.add('altUI_AppBarLogo');
-  	AppBarLogo.src = logo;
+	this.AppBarLogo = document.createElement('img');
+	this.AppBarLogo.classList.add('altUI_AppBarLogo');
+  	this.AppBarLogo.src = logo;
 
-  	AppBarTop.append(AppBarLogo);
+  	AppBarTop.append(this.AppBarLogo);
   	this.dom.append(AppBarTop);
 
   	let AppBarToolbar =  document.createElement( 'div' );
@@ -1146,6 +1146,10 @@ UI.AppBar.prototype.showBackButton = function(callback){
 }
 UI.AppBar.prototype.setTitle = function(title){
 	this.dom.querySelector(".altUI_AppBarToolbar").querySelector("h1").textContent = title;
+	return this;
+}
+UI.AppBar.prototype.setLogo = function(imageURL){
+	this.AppBarLogo.src = logo;
 	return this;
 }
 
