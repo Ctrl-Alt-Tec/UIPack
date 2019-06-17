@@ -290,7 +290,11 @@ UI.InputView = function (hint, value, name, type) {
 	this.dom.append(hintText);
 	this.dom.append(input);
 	
-	//this.setValue( value );
+	if(value == undefined || value == ''){
+		if(type=='date'){
+			input.value = new Date().toISOString().split('T')[0]
+		}
+	}
 
 	return this;
 
