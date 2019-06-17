@@ -1256,7 +1256,7 @@ UI.MasterDetailView = function(sections){
 		sidebarItem.classList.append('altUI_AppViewSidebar_item');
 		sidebarItem.innerHTML = l.sectionItem;
 		sidebarItem.addEventListener('click', function(){
-			this.detailView.innerHTML = l.sectionContent:
+			this.detailView.innerHTML = l.sectionContent;
 		})
 		this.sideBar.append(sidebarItem)
 	})
