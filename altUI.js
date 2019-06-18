@@ -1331,7 +1331,7 @@ UI.StackNavigator.prototype.goBack = function(){
 	console.log(this.dom)
 	if(this.stacks.length > 0){
 		this.stacks.pop();
-		//this.dom.pop();
+		this.dom.lastElementChild.remove();
 	}
 	return this;
 }
