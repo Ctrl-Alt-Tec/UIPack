@@ -1347,7 +1347,7 @@ UI.StackNavigator.prototype.goBack = function(){
 }
 
 
-UI.SegmentedControl = function(options){
+UI.SegmentedControl = function(options, name){
 	let scope=this;
 	UI.Element.call(this);
 	this.dom = document.createElement('div');
@@ -1360,6 +1360,7 @@ UI.SegmentedControl = function(options){
 		let input = document.createElement('input');
 		input.type = 'radio';
 		input.value = l;
+		input.name = name;
 		element.append(label);
 		element.append(input);
 		scope.dom.append(element)
