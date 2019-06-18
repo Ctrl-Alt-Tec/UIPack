@@ -1299,7 +1299,8 @@ UI.StackNavigator = function(initialContent){
 	this.dom = initialContent;
 	this.stacks.forEach(function(l,i){
 		scope.appendStack(l)
-	})
+	});
+	return this;
 }
 UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
 UI.StackNavigator.prototype.constructor = UI.StackNavigator;
