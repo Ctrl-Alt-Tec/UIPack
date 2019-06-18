@@ -1304,6 +1304,7 @@ UI.StackNavigator = function(initialContent){
 UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
 UI.StackNavigator.prototype.constructor = UI.StackNavigator;
 UI.StackNavigator.prototype.appendStack = function(content){
+	let scope = this;
 	this.stacks.push(content);
 	let backdrop = document.createElement('div');
 		backdrop.style.position = 'absolute';
@@ -1311,14 +1312,23 @@ UI.StackNavigator.prototype.appendStack = function(content){
 		backdrop.style.height= '100%';
 		backdrop.style.paddingLeft=48*this.stacks.length+'px';
 		backdrop.style.background='rgba(0,0,0,0.2)';
-		this.style.display = 'flex';
-		
+		backdrop.style.display = 'flex';
+		backdrop.addEventListener('click', function(){
+			scope.goBack()
+		})
 	let stack = document.createElement('div');
-	stack.classList.add('altUI_NavStack');
+	stack.classList.add('altUI_AppView_Content');
 	stack.innerHTML='';
 	stack.append(content)
 	backdrop.append(stack);
 	this.dom.append(backdrop);
+	return this;
+}
+UI.StackNavigator.prototype.goBack = function(){
+	if(this.stacks.length > 0){
+		this.stacks.pop();
+		this.dom.pop();
+	}
 	return this;
 }
 
