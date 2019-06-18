@@ -1264,7 +1264,7 @@ UI.MasterDetailView = function(sections){
 	this.dom.append(this.detailView);
 	
 	this.sections.forEach(function(l){
-		this.addSection(l)
+		scope.addSection(l)
 	})
 	
 	return this;
