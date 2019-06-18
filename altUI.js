@@ -280,7 +280,7 @@ UI.InputView = function (hint, value, name, type) {
 	
 	this.input = null;
 	if(type=='button'){
-		this.input = new UI.Button(hint).dom;
+		this.input = new UI.Button(value).dom;
 	}else{
 		this.input = document.createElement( 'input' );
 		this.input.type = type;			
