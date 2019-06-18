@@ -278,14 +278,10 @@ UI.InputView = function (hint, value, name, type) {
 	hintText.classList.add('altUI_InputViewHint');
 	hintText.textContent = hint;
 	
-	this.input = null;
-	if(type=='button'){
-		this.input = new UI.Button(value).dom;
-		this.input.classList.remove('altUI_Button');
-	}else{
-		this.input = document.createElement( 'input' );
-		this.input.type = type;			
-	}
+	
+	this.input = document.createElement( 'input' );
+	this.input.type = type;			
+	
 	
 	this.input.classList.add('altUI_InputViewInput');
 	this.input.name = name;
@@ -299,7 +295,7 @@ UI.InputView = function (hint, value, name, type) {
 	
 	if(value == undefined || value == ''){
 		if(type=='date'){
-			input.value = new Date().toISOString().split('T')[0]
+			this.input.value = new Date().toISOString().split('T')[0]
 		}
 	}
 
