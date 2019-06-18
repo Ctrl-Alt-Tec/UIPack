@@ -1250,6 +1250,7 @@ UI.Heading.prototype.constructor = UI.Heading;
 
 UI.MasterDetailView = function(sections){
 	UI.Element.call(this);
+	this.sections = sections;
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_AppView');
 	let scope = this;
@@ -1262,7 +1263,7 @@ UI.MasterDetailView = function(sections){
 	this.dom.append(this.sidebar);
 	this.dom.append(this.detailView);
 	
-	sections.forEach(function(l){
+	this.sections.forEach(function(l){
 		let sidebarItem = document.createElement('div');
 		sidebarItem.classList.add('altUI_AppViewSidebar_item');
 		sidebarItem.innerHTML = l.sectionItem;
@@ -1276,6 +1277,10 @@ UI.MasterDetailView = function(sections){
 }
 UI.MasterDetailView.prototype = Object.create(UI.Element.prototype);
 UI.MasterDetailView.prototype.constructor = UI.MasterDetailView;
+UI.MasterDetailView.prototype.addSection = function(obj){
+	this.sections.append(obj);
+	return this;
+}
 /*
 UI.SegmentedControl = function(options){
 	UI.Element.call(this);
