@@ -946,7 +946,7 @@ UI.HorizontalRule.prototype.constructor = UI.HorizontalRule;
 
 // Button
 
-UI.Button = function ( value, icon ) {
+UI.Button = function ( value, icon, hintPadding ) {
 
 	UI.Element.call( this );
 
@@ -957,6 +957,12 @@ UI.Button = function ( value, icon ) {
 	}
 	if(icon){
 		this.dom.classList.add('material-icons')
+	}
+	if(hintPadding){
+		let hint = document.createElement('span');
+			hint.classList.add('altUI_InputViewHint');
+			hint.innerText = '';
+		this.dom.prepend(hint);
 	}
 	return this;
 
