@@ -1249,8 +1249,8 @@ UI.MasterDetailView = function(sections){
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_AppView');
 	
-	this.sidebar = document.createElement('div');
-	this.sidebar.classList.add('altUI_AppViewSidebar');
+	let sidebar = document.createElement('div');
+	let sidebar.classList.add('altUI_AppViewSidebar');
 	sections.forEach(function(l){
 		let sidebarItem = document.createElement('div');
 		sidebarItem.classList.add('altUI_AppViewSidebar_item');
@@ -1258,12 +1258,12 @@ UI.MasterDetailView = function(sections){
 		sidebarItem.addEventListener('click', function(){
 			this.detailView.innerHTML = l.sectionContent;
 		})
-		this.sidebar.append(sidebarItem)
+		sidebar.append(sidebarItem)
 	})
 	
 	this.detailView = document.createElement('div');
 	this.detailView.classList.add('altUI_AppView_Content');
-	this.dom.append(this.sidebar);
+	this.dom.append(sidebar);
 	this.dom.append(this.detailView);
 	return this;
 }
