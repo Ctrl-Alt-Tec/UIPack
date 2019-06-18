@@ -1375,7 +1375,7 @@ UI.SegmentedControl.prototype = Object.create(UI.Element.prototype);
 UI.SegmentedControl.prototype.constructor = UI.SegmentedControl;
 UI.SegmentedControl.prototype.setSelection = function(index){
 	if(index<this.options.length){
-		this.dom.querySelectorAll('> input[type="radio"]')[index].checked=true;
+		this.dom.querySelectorAll('input[type="radio"]')[index].checked=true;
 		this.checked=index;
 	}
 	return this;
