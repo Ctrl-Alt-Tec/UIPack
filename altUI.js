@@ -1306,7 +1306,7 @@ UI.StackNavigator = function(initialContent){
 }
 UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
 UI.StackNavigator.prototype.constructor = UI.StackNavigator;
-UI.StackNavigator.prototype.appendStack = function(content){
+UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 	let scope = this;
 	this.stacks.push(content);
 	let backdrop = document.createElement('div');
@@ -1328,6 +1328,9 @@ UI.StackNavigator.prototype.appendStack = function(content){
 			e.stopImmediatePropagation();
 			e.stopPropagation();
 		})
+	if(renderFn!=undefined){
+		renderFn('', stack);
+	}
 	backdrop.append(stack);
 	this.dom.append(backdrop);
 	return this;
