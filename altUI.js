@@ -1316,12 +1316,13 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 		backdrop.style.paddingLeft=32*this.stacks.length+'px';
 		backdrop.style.background='rgba(0,0,0,0.2)';
 		backdrop.style.display = 'flex';
+		backdrop.style.backdropFilter = 'blur(1.2px)'
 		backdrop.addEventListener('click', function(){
 			scope.goBack()
 		})
 	let stack = document.createElement('div');
 		stack.classList.add('altUI_AppView_Content');
-		stack.style.boxShadow = '-13px 0px 20px 0px rgba(0,0,0,.3)'
+		stack.style.boxShadow = '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);'
 		stack.innerHTML='';
 		stack.append(content)<
 		stack.addEventListener('click', function(e){
