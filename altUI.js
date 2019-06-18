@@ -1348,11 +1348,13 @@ UI.StackNavigator.prototype.goBack = function(){
 
 
 UI.SegmentedControl = function(options, name, callback=function(){}){
+	this.options = options;
+	this.checked = 1;
 	let scope=this;
 	UI.Element.call(this);
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_SegmentedControl');
-	options.forEach(function(l,i){
+	this.options.forEach(function(l,i){
 		let label = document.createElement('label');
 		label.innerText = l;
 		label.htmlFor = "_altUI_SegmentedControl-"+name+"_Option-"+i;
@@ -1364,14 +1366,20 @@ UI.SegmentedControl = function(options, name, callback=function(){}){
 		input.id = "_altUI_SegmentedControl-"+name+"_Option-"+i;
 		scope.dom.append(input);
 		scope.dom.append(label);
-		input.addEventListener('change', function(){ callback(i) })
+		input.addEventListener('change', function(){ callback(i); scope.checked=i })
 	})
 	//this.dom.innerText="altUI_SegmentedControl"
 	return this;
 }
 UI.SegmentedControl.prototype = Object.create(UI.Element.prototype);
 UI.SegmentedControl.prototype.constructor = UI.SegmentedControl;
-
+UI.SegmentedControl.prototype.setSelection = function(index){
+	if(index<this.options.length){
+		this.dom.querySelectorAll('input[type="radio"]')[index].checked=true;
+		this.checked=index;
+	}
+	return this;
+}
 /*UI.ToggleSwitch = function(hint, value, name){
 	UI.Element.call(this);
 	this.dom = document.createElement('label');
