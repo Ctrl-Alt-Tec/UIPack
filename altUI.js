@@ -1320,9 +1320,13 @@ UI.StackNavigator.prototype.appendStack = function(content){
 			scope.goBack()
 		})
 	let stack = document.createElement('div');
-	stack.classList.add('altUI_AppView_Content');
-	stack.innerHTML='';
-	stack.append(content)
+		stack.classList.add('altUI_AppView_Content');
+		stack.innerHTML='';
+		stack.append(content)<
+		stack.addEventListener('click', function(e){
+			e.stopImmediatePropagation();
+			e.stopPropagation();
+		})
 	backdrop.append(stack);
 	this.dom.append(backdrop);
 	return this;
