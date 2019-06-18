@@ -1292,6 +1292,34 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 	
 	return this;
 }
+
+UI.StackNavigator = function(initialContent){
+	let scope = this;
+	this.stacks = [];
+	this.dom = initialContent;
+	stacks.forEach(function(l,i){
+		scope.appendStack(l)
+	})
+}
+UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
+UI.StackNavigator.prototype.constructor = UI.StackNavigator;
+UI.StackNavigator.prototype.appendStack = function(content){
+	this.stacks.push(content);
+	let backdrop = document.createElement('div');
+		backdrop.style.position = 'absolute';
+		backdrop.style.width= 100%;
+		backdrop.style.height= 100%;
+		backdrop.style.paddingLeft=16*this.stacks.length+'px';
+		
+	let stack = document.createElement('div');
+	stack.classList.add('altUI_NavStack');
+	stack.innerHTML='';
+	stack.append(content)
+	backdrop.append(stack);
+	this.dom.append(backdrop);
+	return this;
+}
+
 /*
 UI.SegmentedControl = function(options){
 	UI.Element.call(this);
