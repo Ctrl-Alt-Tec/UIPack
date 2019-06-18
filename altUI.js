@@ -1036,6 +1036,7 @@ UI.Modal = function ( value ) {
 	this.dom.style.backdropFilter = 'blur(8px)';
 	this.dom.style.boxSizing = 'border-box';
 	this.dom.style.padding = '16px';
+	this.dom.style.zIndex = '1000';
 	this.dom.addEventListener( 'click', function ( e ) {
 		if(!scope.actionRequired){
 			scope.hide();
