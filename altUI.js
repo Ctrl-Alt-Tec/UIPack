@@ -1329,7 +1329,7 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 			e.stopPropagation();
 		})
 	if(renderFn!=undefined){
-		renderFn('', stack);
+		renderFn(content, stack);
 	}
 	backdrop.append(stack);
 	this.dom.append(backdrop);
