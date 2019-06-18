@@ -1297,7 +1297,7 @@ UI.StackNavigator = function(initialContent){
 	let scope = this;
 	this.stacks = [];
 	this.dom = initialContent;
-	stacks.forEach(function(l,i){
+	this.stacks.forEach(function(l,i){
 		scope.appendStack(l)
 	})
 }
