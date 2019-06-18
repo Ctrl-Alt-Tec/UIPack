@@ -1282,9 +1282,11 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 	
 	let sidebarItem = document.createElement('div');
 	sidebarItem.classList.add('altUI_AppViewSidebar_item');
-	sidebarItem.innerHTML = obj.sectionItem;
+	sidebarItem.innerHTML = '';
+	sidebarItem.append(obj.sectionItem)
 	sidebarItem.addEventListener('click', function(){
-		scope.detailView.innerHTML = obj.sectionContent;
+		scope.detailView.innerHTML = '';
+		scope.detailView.append(obj.sectionContent)
 	})
 	this.sidebar.append(sidebarItem)
 	
