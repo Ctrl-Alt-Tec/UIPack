@@ -281,6 +281,7 @@ UI.InputView = function (hint, value, name, type) {
 	this.input = null;
 	if(type=='button'){
 		this.input = new UI.Button(value).dom;
+		this.input.classList.remove('altUI_Button');
 	}else{
 		this.input = document.createElement( 'input' );
 		this.input.type = type;			
