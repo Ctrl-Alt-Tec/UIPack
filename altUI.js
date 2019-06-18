@@ -1347,14 +1347,12 @@ UI.StackNavigator.prototype.goBack = function(){
 }
 
 
-UI.SegmentedControl = function(options, name){
+UI.SegmentedControl = function(options, name, callback=function(){}){
 	let scope=this;
 	UI.Element.call(this);
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_SegmentedControl');
 	options.forEach(function(l,i){
-		//let element = document.createElement('div');
-		//element.classList.add('altUI_SegmentedControl_Option');
 		let label = document.createElement('label');
 		label.innerText = l;
 		label.htmlFor = "_altUI_SegmentedControl-"+name+"_Option-"+i;
@@ -1366,7 +1364,7 @@ UI.SegmentedControl = function(options, name){
 		input.id = "_altUI_SegmentedControl-"+name+"_Option-"+i;
 		scope.dom.append(input);
 		scope.dom.append(label);
-		//.dom.append(element)
+		input.addEventListener('change', function(){ callback(i) })
 	})
 	//this.dom.innerText="altUI_SegmentedControl"
 	return this;
