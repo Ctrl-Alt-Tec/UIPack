@@ -1307,8 +1307,8 @@ UI.StackNavigator.prototype.appendStack = function(content){
 	this.stacks.push(content);
 	let backdrop = document.createElement('div');
 		backdrop.style.position = 'absolute';
-		backdrop.style.width= 100%;
-		backdrop.style.height= 100%;
+		backdrop.style.width= '100%';
+		backdrop.style.height= '100%';
 		backdrop.style.paddingLeft=16*this.stacks.length+'px';
 		
 	let stack = document.createElement('div');
