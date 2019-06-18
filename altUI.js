@@ -1313,7 +1313,7 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 		backdrop.style.position = 'absolute';
 		backdrop.style.width= '100%';
 		backdrop.style.height= '100%';
-		backdrop.style.paddingLeft=48*this.stacks.length+'px';
+		backdrop.style.paddingLeft=32*this.stacks.length+'px';
 		backdrop.style.background='rgba(0,0,0,0.2)';
 		backdrop.style.display = 'flex';
 		backdrop.addEventListener('click', function(){
