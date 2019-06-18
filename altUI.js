@@ -1321,6 +1321,7 @@ UI.StackNavigator.prototype.appendStack = function(content){
 		})
 	let stack = document.createElement('div');
 		stack.classList.add('altUI_AppView_Content');
+		stack.style.boxShadow = '-13px 0px 20px 0px rgba(0,0,0,.3)'
 		stack.innerHTML='';
 		stack.append(content)<
 		stack.addEventListener('click', function(e){
