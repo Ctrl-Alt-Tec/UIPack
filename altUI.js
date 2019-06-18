@@ -1348,6 +1348,7 @@ UI.StackNavigator.prototype.goBack = function(){
 
 
 UI.SegmentedControl = function(options){
+	let scope=this;
 	UI.Element.call(this);
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_SegmentedControl');
@@ -1361,7 +1362,7 @@ UI.SegmentedControl = function(options){
 		input.value = l;
 		element.append(label);
 		element.append(input);
-		this.dom.append(element)
+		scope.dom.append(element)
 	})
 	//this.dom.innerText="altUI_SegmentedControl"
 	return this;
