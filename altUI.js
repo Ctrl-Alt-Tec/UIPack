@@ -946,7 +946,7 @@ UI.HorizontalRule.prototype.constructor = UI.HorizontalRule;
 
 // Button
 
-UI.Button = function ( value ) {
+UI.Button = function ( value, icon ) {
 
 	UI.Element.call( this );
 
@@ -954,6 +954,9 @@ UI.Button = function ( value ) {
 	this.dom.classList.add('altUI_Button');
 	if(value){
 		this.dom.textContent = value;
+	}
+	if(icon){
+		this.dom.classList.add('material-icons')
 	}
 	return this;
 
@@ -1014,6 +1017,11 @@ UI.Button.prototype.teal = function(){
 UI.Button.prototype.yellow = function(){
 	this.dom.style.backgroundColor = 'rgb(255,204,0)';
 	this.dom.style.color = 'rgb(255,255,255)';
+	return this;
+}
+UI.Button.prototype.transparent = function(textColor){
+	this.dom.style.backgroundColor = 'transparent';
+	this.dom.style.color = textColor;
 	return this;
 }
 
