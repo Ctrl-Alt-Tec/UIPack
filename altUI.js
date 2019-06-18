@@ -1309,7 +1309,8 @@ UI.StackNavigator.prototype.appendStack = function(content){
 		backdrop.style.position = 'absolute';
 		backdrop.style.width= '100%';
 		backdrop.style.height= '100%';
-		backdrop.style.paddingLeft=16*this.stacks.length+'px';
+		backdrop.style.paddingLeft=24*this.stacks.length+'px';
+		backdrop.style.background='rgba(0,0,0,0.6)'
 		
 	let stack = document.createElement('div');
 	stack.classList.add('altUI_NavStack');
