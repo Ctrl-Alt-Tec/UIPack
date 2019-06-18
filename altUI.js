@@ -278,17 +278,17 @@ UI.InputView = function (hint, value, name, type) {
 	hintText.classList.add('altUI_InputViewHint');
 	hintText.textContent = hint;
 	
-	let input = document.createElement( 'input' );
-	input.classList.add('altUI_InputViewInput');
-	input.name = name;
-	input.type = type;
-	input.value = value;
-	input.addEventListener( 'keydown', function ( event ) {
+	this.input = document.createElement( 'input' );
+	this.input.classList.add('altUI_InputViewInput');
+	this.input.name = name;
+	this.input.type = type;
+	this.input.value = value;
+	this.input.addEventListener( 'keydown', function ( event ) {
 		event.stopPropagation();
 	}, false );
 
 	this.dom.append(hintText);
-	this.dom.append(input);
+	this.dom.append(this.input);
 	
 	if(value == undefined || value == ''){
 		if(type=='date'){
@@ -305,13 +305,13 @@ UI.InputView.prototype.constructor = UI.InputView;
 
 UI.InputView.prototype.getValue = function () {
 
-	return this.dom.querySelector('.altUI_InputViewInput').value;
+	return this.input.value;
 
 };
 
 UI.InputView.prototype.setValue = function ( value ) {
 
- 	this.dom.querySelector('.altUI_InputViewInput').value = value;
+ 	this.input.value = value;
 
 	return this;
 
