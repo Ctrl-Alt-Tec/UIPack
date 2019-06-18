@@ -1346,7 +1346,7 @@ UI.StackNavigator.prototype.goBack = function(){
 	return this;
 }
 
-/*
+
 UI.SegmentedControl = function(options){
 	UI.Element.call(this);
 	this.dom = document.createElement('div');
@@ -1354,12 +1354,20 @@ UI.SegmentedControl = function(options){
 	options.forEach(function(l){
 		let element = document.createElement('div');
 		element.classList.add('altUI_SegmentedControl_Option');
+		let label = document.createElement('label');
+		label.innerText = l;
+		let input = document.createElement('input');
+		input.type = 'radio';
+		input.value = l;
+		element.append(label);
+		element.append(input);
+		this.dom.append(element)
 	})
 	//this.dom.innerText="altUI_SegmentedControl"
-	//return this;
-}*/
-//UI.SegmentedControl.prototype = Object.create(UI.Element.prototype);
-//UI.SegmentedControl.constructor = UI.SegmentedControl;
+	return this;
+}
+UI.SegmentedControl.prototype = Object.create(UI.Element.prototype);
+UI.SegmentedControl.prototype.constructor = UI.SegmentedControl;
 
 /*UI.ToggleSwitch = function(hint, value, name){
 	UI.Element.call(this);
