@@ -227,15 +227,14 @@ div{
 	font-size: 1.2em;
 	padding: 0px;
 	border-radius: 8px;
-	background: rgb(245,245,245);
-	border: 1px solid rgb(200,200,200);
+	background: rgb(200,200,200);
 	margin: 8px;
 	display: flex
 }
 	.altUI_SegmentedControl .altUI_SegmentedControl_Option{
 		flex: 1;
 		padding: 4px 8px;
-		border-radius: 8px;
+		border-radius: 6px;
 		margin: 2px
 	}
 	.altUI_SegmentedControl input[type="radio"]:checked+.altUI_SegmentedControl_Option{
