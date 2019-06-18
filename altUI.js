@@ -1265,7 +1265,7 @@ UI.MasterDetailView = function(sections){
 		sidebarItem.addEventListener('click', function(){
 			this.detailView.innerHTML = l.sectionContent;
 		})
-		this.sidebar.append(sidebarItem)
+		scope.sidebar.append(sidebarItem)
 	})
 	
 	return this;
