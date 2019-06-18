@@ -278,10 +278,16 @@ UI.InputView = function (hint, value, name, type) {
 	hintText.classList.add('altUI_InputViewHint');
 	hintText.textContent = hint;
 	
-	this.input = document.createElement( 'input' );
+	this.input = null;
+	if(type='button'){
+		this.input = new UI.Button(hint);
+	}else{
+		this.input = document.createElement( 'input' );
+		this.input.type = type;			
+	}
+	
 	this.input.classList.add('altUI_InputViewInput');
 	this.input.name = name;
-	this.input.type = type;
 	this.input.value = value;
 	this.input.addEventListener( 'keydown', function ( event ) {
 		event.stopPropagation();
@@ -957,12 +963,6 @@ UI.Button = function ( value, icon, hintPadding ) {
 	}
 	if(icon){
 		this.dom.classList.add('material-icons')
-	}
-	if(hintPadding){
-		let hint = document.createElement('span');
-			hint.classList.add('altUI_InputViewHint');
-			hint.innerText = '';
-		this.dom.prepend(hint);
 	}
 	return this;
 
