@@ -241,7 +241,7 @@ div{
 		padding: 4px 8px;
 		border-radius: 8px
 	}
-	.altUI_SegmentedControl .altUI_SegmentedControl_Option:has(input[type="radio"]:checked){
+	.altUI_SegmentedControl .altUI_SegmentedControl_Option input[type="radio"]:checked+label{
 		font-weight: bold
 	}
 
