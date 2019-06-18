@@ -1248,9 +1248,9 @@ UI.MasterDetailView = function(sections){
 	UI.Element.call(this);
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_AppView');
-	
+	let scope = this;
 	let sidebar = document.createElement('div');
-	let sidebar.classList.add('altUI_AppViewSidebar');
+	sidebar.classList.add('altUI_AppViewSidebar');
 	sections.forEach(function(l){
 		let sidebarItem = document.createElement('div');
 		sidebarItem.classList.add('altUI_AppViewSidebar_item');
