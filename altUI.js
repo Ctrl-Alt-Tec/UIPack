@@ -1202,7 +1202,11 @@ UI.TabView.prototype.setTab = function(i=0, callback=function(){}){
 	return this;
 }
 
-UI.ListViewItemMaster = function(leftElement, textLabel, detailTextLabel, rightElement){
+UI.ListViewItemMaster = function(
+	leftElement=document.createElement('div'), 
+	textLabel='', detailTextLabel='', 
+	rightElement=document.createElement('div'),
+){
 	UI.Element.call(this);
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_ListViewItem');
