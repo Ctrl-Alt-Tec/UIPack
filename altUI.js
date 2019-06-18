@@ -1296,7 +1296,9 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 UI.StackNavigator = function(initialContent){
 	let scope = this;
 	this.stacks = [];
-	this.dom = initialContent;
+	this.dom = document.createElement('div');
+	this.dom.classList.add('altUI_AppView_Content');
+	this.dom.append(initialContent);
 	this.stacks.forEach(function(l,i){
 		scope.appendStack(l)
 	});
