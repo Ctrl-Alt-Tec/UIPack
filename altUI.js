@@ -1278,7 +1278,7 @@ UI.MasterDetailView = function(sections){
 UI.MasterDetailView.prototype = Object.create(UI.Element.prototype);
 UI.MasterDetailView.prototype.constructor = UI.MasterDetailView;
 UI.MasterDetailView.prototype.addSection = function(obj){
-	this.sections.append(obj);
+	this.sections.push(obj);
 	return this;
 }
 /*
