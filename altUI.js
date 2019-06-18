@@ -1353,8 +1353,8 @@ UI.SegmentedControl = function(options, name){
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_SegmentedControl');
 	options.forEach(function(l,i){
-		let element = document.createElement('div');
-		element.classList.add('altUI_SegmentedControl_Option');
+		//let element = document.createElement('div');
+		//element.classList.add('altUI_SegmentedControl_Option');
 		let label = document.createElement('label');
 		label.innerText = l;
 		label.htmlFor = "_altUI_SegmentedControl-"+name+"_Option-"+i;
@@ -1363,9 +1363,9 @@ UI.SegmentedControl = function(options, name){
 		input.value = l;
 		input.name = name;
 		input.id = "_altUI_SegmentedControl-"+name+"_Option-"+i;
-		element.append(input);
-		element.append(label);
-		scope.dom.append(element)
+		scope.dom.append(input);
+		scope.dom.append(label);
+		//.dom.append(element)
 	})
 	//this.dom.innerText="altUI_SegmentedControl"
 	return this;
