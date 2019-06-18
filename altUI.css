@@ -117,7 +117,7 @@ div{
 		font-size: 18px;
 		font-weight: 600;
 	}
-	.altUI_InputView input.altUI_InputViewInput, .altUI_Button, select.altUI_InputViewInput{
+	.altUI_InputView input.altUI_InputViewInput, button.altUI_InputViewInput, .altUI_Button, select.altUI_InputViewInput{
 		font-size: 1.2em;
 		padding: 8px;
 		border-radius: 8px;
