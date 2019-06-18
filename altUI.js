@@ -1357,10 +1357,12 @@ UI.SegmentedControl = function(options, name){
 		element.classList.add('altUI_SegmentedControl_Option');
 		let label = document.createElement('label');
 		label.innerText = l;
+		label.htmlFor = "_altUI_SegmentedControl-"+name+"_Option"+l;
 		let input = document.createElement('input');
 		input.type = 'radio';
 		input.value = l;
 		input.name = name;
+		input.id = "_altUI_SegmentedControl-"+name+"_Option"+l;
 		element.append(label);
 		element.append(input);
 		scope.dom.append(element)
