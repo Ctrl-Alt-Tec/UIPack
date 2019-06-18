@@ -1328,6 +1328,7 @@ UI.StackNavigator.prototype.appendStack = function(content){
 	return this;
 }
 UI.StackNavigator.prototype.goBack = function(){
+	console.log(this.dom)
 	if(this.stacks.length > 0){
 		this.stacks.pop();
 		//this.dom.pop();
