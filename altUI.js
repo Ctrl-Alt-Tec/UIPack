@@ -1363,8 +1363,8 @@ UI.SegmentedControl = function(options, name){
 		input.value = l;
 		input.name = name;
 		input.id = "_altUI_SegmentedControl-"+name+"_Option-"+i;
-		element.append(label);
 		element.append(input);
+		element.append(label);
 		scope.dom.append(element)
 	})
 	//this.dom.innerText="altUI_SegmentedControl"
