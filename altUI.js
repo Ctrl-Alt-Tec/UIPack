@@ -1258,11 +1258,14 @@ UI.MasterDetailView = function(sections){
 		sidebarItem.addEventListener('click', function(){
 			this.detailView.innerHTML = l.sectionContent;
 		})
-			this.sidebar.append(sidebarItem)
+		this.sidebar.append(sidebarItem)
 	})
 	
 	this.detailView = document.createElement('div');
 	this.detailView.classList.add('altUI_AppView_Content');
+	this.dom.append(this.sidebar);
+	this.dom.append(this.detailView);
+	return this;
 }
 UI.MasterDetailView.prototype = Object.create(UI.Element.prototype);
 UI.MasterDetailView.prototype.constructor = UI.MasterDetailView;
@@ -1278,8 +1281,8 @@ UI.SegmentedControl = function(options){
 	//this.dom.innerText="altUI_SegmentedControl"
 	//return this;
 }*/
-UI.SegmentedControl.prototype = Object.create(UI.Element.prototype);
-UI.SegmentedControl.constructor = UI.SegmentedControl;
+//UI.SegmentedControl.prototype = Object.create(UI.Element.prototype);
+//UI.SegmentedControl.constructor = UI.SegmentedControl;
 
 /*UI.ToggleSwitch = function(hint, value, name){
 	UI.Element.call(this);
