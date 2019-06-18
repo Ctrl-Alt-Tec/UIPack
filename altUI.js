@@ -1214,7 +1214,7 @@ UI.ListViewItemMaster = function(
 	if(leftElement!=null){
 		leftElement.style.width = '1em';
 		leftElement.style.height = '1em';
-		leftElement.style.marginRight = '16px';
+		leftElement.style.marginRight = '8px';
 		leftElement.style.marginLeft = '8px';
 		leftElement.style.fontSize = '4em';
 		leftElement.classList.add('altUI_ListViewItemLeft')
@@ -1223,6 +1223,7 @@ UI.ListViewItemMaster = function(
 	let textContainer = document.createElement('div');
 	textContainer.classList.add('altUI_ListViewItemCenter');
 	textContainer.innerHTML = `<span class="altUI_ListViewItemLabel">${textLabel}</span><span class="altUI_ListViewItemDetail">${detailTextLabel}</span>`
+	textContainer.style.marginLeft='8px';
 	this.dom.append(textContainer);
 	if(rightElement!=null){
 		rightElement.style.width = '1.5em';
