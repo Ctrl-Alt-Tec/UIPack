@@ -1330,7 +1330,7 @@ UI.StackNavigator.prototype.appendStack = function(content){
 UI.StackNavigator.prototype.goBack = function(){
 	if(this.stacks.length > 0){
 		this.stacks.pop();
-		this.dom.pop();
+		//this.dom.pop();
 	}
 	return this;
 }
