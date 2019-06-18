@@ -1264,13 +1264,7 @@ UI.MasterDetailView = function(sections){
 	this.dom.append(this.detailView);
 	
 	this.sections.forEach(function(l){
-		let sidebarItem = document.createElement('div');
-		sidebarItem.classList.add('altUI_AppViewSidebar_item');
-		sidebarItem.innerHTML = l.sectionItem;
-		sidebarItem.addEventListener('click', function(){
-			scope.detailView.innerHTML = l.sectionContent;
-		})
-		scope.sidebar.append(sidebarItem)
+		this.addSection(l)
 	})
 	
 	return this;
@@ -1279,6 +1273,15 @@ UI.MasterDetailView.prototype = Object.create(UI.Element.prototype);
 UI.MasterDetailView.prototype.constructor = UI.MasterDetailView;
 UI.MasterDetailView.prototype.addSection = function(obj){
 	this.sections.push(obj);
+	
+	let sidebarItem = document.createElement('div');
+	sidebarItem.classList.add('altUI_AppViewSidebar_item');
+	sidebarItem.innerHTML = obj.sectionItem;
+	sidebarItem.addEventListener('click', function(){
+		scope.detailView.innerHTML = obj.sectionContent;
+	})
+	this.sidebar.append(sidebarItem)
+	
 	return this;
 }
 /*
