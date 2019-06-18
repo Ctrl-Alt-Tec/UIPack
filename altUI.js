@@ -1168,7 +1168,7 @@ UI.TabView = function(){
 UI.TabView.prototype = Object.create(UI.Element.prototype);
 UI.TabView.prototype.constructor = UI.TabView;
 UI.TabView.prototype.addTab = function(i, label, content, iconName=''){
-	let t = this;
+	let scope = this;
 	let TabLabel = document.createElement('div');
 	TabLabel.classList.add('altUI_TabViewTab');
 	TabLabel.textContent = label;
@@ -1185,7 +1185,7 @@ UI.TabView.prototype.addTab = function(i, label, content, iconName=''){
 	TabContent.append(content)
 	this.dom.querySelector('.altUI_TabViewTabs').append(TabLabel);
 	this.dom.querySelector('.altUI_TabViewViews').append(TabContent);
-	TabLabel.addEventListener('click', function(){t.setTab(i)});
+	TabLabel.addEventListener('click', function(){scope.setTab(i)});
 	this.setTab(i);
 	return this;
 }
@@ -1211,22 +1211,26 @@ UI.ListViewItemMaster = function(
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_ListViewItem');
 	this.dom.classList.add('altUI_ListViewItemMaster');
-	leftElement.style.width = '1em';
-	leftElement.style.height = '1em';
-	leftElement.style.marginRight = '16px';
-	leftElement.style.marginLeft = '8px';
-	leftElement.style.fontSize = '4em';
-	leftElement.classList.add('altUI_ListViewItemLeft')
-	this.dom.append(leftElement);
+	if(leftElement!=null){
+		leftElement.style.width = '1em';
+		leftElement.style.height = '1em';
+		leftElement.style.marginRight = '16px';
+		leftElement.style.marginLeft = '8px';
+		leftElement.style.fontSize = '4em';
+		leftElement.classList.add('altUI_ListViewItemLeft')
+		this.dom.append(leftElement);
+	}
 	let textContainer = document.createElement('div');
 	textContainer.classList.add('altUI_ListViewItemCenter');
 	textContainer.innerHTML = `<span class="altUI_ListViewItemLabel">${textLabel}</span><span class="altUI_ListViewItemDetail">${detailTextLabel}</span>`
 	this.dom.append(textContainer);
-	rightElement.style.width = '1.5em';
-	rightElement.style.height = '1.5em';
-	rightElement.style.marginLeft = '8px';
-	rightElement.classList.add('altUI_ListViewItemRight');
-	this.dom.append(rightElement);
+	if(rightElement!=null){
+		rightElement.style.width = '1.5em';
+		rightElement.style.height = '1.5em';
+		rightElement.style.marginLeft = '8px';
+		rightElement.classList.add('altUI_ListViewItemRight');
+		this.dom.append(rightElement);
+	}
 	return this;
 }
 UI.ListViewItemMaster.prototype = Object.create(UI.Element.prototype);
@@ -1272,6 +1276,7 @@ UI.MasterDetailView = function(sections){
 UI.MasterDetailView.prototype = Object.create(UI.Element.prototype);
 UI.MasterDetailView.prototype.constructor = UI.MasterDetailView;
 UI.MasterDetailView.prototype.addSection = function(obj){
+	let scope = this;
 	this.sections.push(obj);
 	
 	let sidebarItem = document.createElement('div');
