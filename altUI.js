@@ -460,6 +460,12 @@ UI.Select.prototype.setValue = function ( value ) {
 
 };
 
+UI.Select.prototype.hor = function (){
+	this.dom.style.flexDirection = 'row';
+	this.dom.style.alignItems = 'center';
+	return this;
+}
+
 // Checkbox
 
 UI.Checkbox = function ( boolean ) {
