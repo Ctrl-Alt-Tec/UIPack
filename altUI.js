@@ -307,19 +307,18 @@ UI.InputView.prototype = Object.create( UI.Element.prototype );
 UI.InputView.prototype.constructor = UI.InputView;
 
 UI.InputView.prototype.getValue = function () {
-
 	return this.input.value;
-
 };
 
 UI.InputView.prototype.setValue = function ( value ) {
-
  	this.input.value = value;
-
 	return this;
-
 };
-
+UI.InputView.prototype.hor = function(){
+	this.dom.style.flexDirection = 'row';
+	this.dom.style.alignItems = 'center';
+	return this;
+}
 
 // TextArea
 
