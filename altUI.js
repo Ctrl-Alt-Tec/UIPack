@@ -1228,6 +1228,7 @@ UI.ListViewItemMaster = function(
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_ListViewItem');
 	this.dom.classList.add('altUI_ListViewItemMaster');
+	this.dom.style.overflow='hidden';
 	if(leftElement!=null){
 		leftElement.style.width = '1em';
 		leftElement.style.height = '1em';
@@ -1270,7 +1271,7 @@ UI.Heading.prototype = Object.create(UI.Element.prototype);
 UI.Heading.prototype.constructor = UI.Heading;
 
 
-UI.MasterDetailView = function(sections){
+UI.MasterDetailView = function(sections=[]){
 	UI.Element.call(this);
 	this.sections = sections;
 	this.dom = document.createElement('div');
