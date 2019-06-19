@@ -1054,7 +1054,7 @@ UI.Modal = function ( value ) {
 	this.dom.style.padding = '16px';
 	this.dom.style.zIndex = '1000';
 	this.dom.addEventListener( 'click', function ( e ) {
-		if(!scope.actionRequired){
+		if(!scope.actionRequired && !document.querySelector(':focus')){
 			scope.hide();
 		}
 		e.stopPropagation();
@@ -1341,7 +1341,9 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 		backdrop.style.display = 'flex';
 		backdrop.style.backdropFilter = 'blur(1.2px)'
 		backdrop.addEventListener('click', function(){
-			scope.goBack()
+			if(!document.querySelector(:focus)){
+				scope.goBack()
+			}
 		})
 	let stack = document.createElement('div');
 		stack.classList.add('altUI_AppView_Content');
