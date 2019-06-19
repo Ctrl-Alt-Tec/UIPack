@@ -1341,7 +1341,7 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 		backdrop.style.display = 'flex';
 		backdrop.style.backdropFilter = 'blur(1.2px)'
 		backdrop.addEventListener('click', function(){
-			if(!document.querySelector(:focus)){
+			if(!document.querySelector(':focus')){
 				scope.goBack()
 			}
 		})
@@ -1349,7 +1349,7 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 		stack.classList.add('altUI_AppView_Content');
 		stack.style.boxShadow = '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);'
 		stack.innerHTML='';
-		stack.append(content)<
+		stack.append(content);
 		stack.addEventListener('click', function(e){
 			e.stopImmediatePropagation();
 			e.stopPropagation();
