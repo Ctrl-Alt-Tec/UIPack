@@ -320,7 +320,7 @@ UI.InputView.prototype.hor = function(){
 	return this;
 }
 UI.InputView.prototype.nocheck = function(){
-	this.input.setAttrubute('check-form', 'false');
+	this.input.setAttribute('check-form', 'false');
 	return this;
 }
 
