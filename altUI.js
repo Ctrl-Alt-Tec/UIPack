@@ -1378,7 +1378,7 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 	if(this.appBar != undefined){
 		let backButton = new UI.Button('arrow_back_ios', 'icon').transparent('rgb(0,122,255)')
 		this.appBar.setBackButton( backButton.dom )
-		backbutton.dom.addEventListener('click', function(){
+		backButton.dom.addEventListener('click', function(){
 			scope.goBack();
 		})
 	}
@@ -1390,7 +1390,7 @@ UI.StackNavigator.prototype.goBack = function(){
 		this.stacks.pop();
 		this.dom.lastElementChild.remove();
 	}
-	if(this.stacs.length < 2){
+	if(this.stacks.length < 2){
 		this.appBar.setBackButton('');
 	}
 	return this;
