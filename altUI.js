@@ -1376,7 +1376,7 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 	backdrop.append(stack);
 	this.dom.append(backdrop);
 	if(this.appBar != undefined){
-		this.appBar.setBackBtn( new UI.Button('back', 'icon').gray().dom )
+		this.appBar.setBackButton( new UI.Button('back', 'icon').gray().dom )
 	}
 	return this;
 }
