@@ -298,6 +298,9 @@ UI.InputView = function (hint, value, name, type) {
 			this.input.value = new Date().toISOString().split('T')[0]
 		}
 	}
+	if(type=='checkbox'){
+		this.input.checked = value;
+	}
 
 	return this;
 
