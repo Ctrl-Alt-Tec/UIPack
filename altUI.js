@@ -1376,7 +1376,11 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 	backdrop.append(stack);
 	this.dom.append(backdrop);
 	if(this.appBar != undefined){
-		this.appBar.setBackButton( new UI.Button('back', 'icon').gray().dom )
+		let backButton = new UI.Button('arrow_back_ios', 'icon').transparent('rgb(0,122,255)')
+		this.appBar.setBackButton( backButton.dom )
+		backbutton.dom.addEventListener('click', function(){
+			scope.goBack();
+		})
 	}
 	return this;
 }
@@ -1385,6 +1389,9 @@ UI.StackNavigator.prototype.goBack = function(){
 	if(this.stacks.length > 0){
 		this.stacks.pop();
 		this.dom.lastElementChild.remove();
+	}
+	if(this.stacs.length < 2){
+		this.appBar.setBackButton('');
 	}
 	return this;
 }
