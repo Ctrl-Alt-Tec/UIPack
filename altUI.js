@@ -319,6 +319,10 @@ UI.InputView.prototype.hor = function(){
 	this.dom.style.alignItems = 'center';
 	return this;
 }
+UI.InputView.prototype.nocheck = function(){
+	this.input.setAttrubute('check-form', 'false');
+	return this;
+}
 
 // TextArea
 
