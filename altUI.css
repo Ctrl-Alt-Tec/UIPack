@@ -265,6 +265,8 @@ div{
 		background: rgb(245,245,245);
 		box-sizing: border-box;
 		flex-shrink: 0;
+		position: sticky;
+		top: 0
 	}
 		.altUI_TabViewTabs .altUI_TabViewTab{
 			font-size: 24px;
