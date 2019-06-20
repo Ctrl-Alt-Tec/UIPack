@@ -1390,7 +1390,7 @@ UI.StackNavigator.prototype.goBack = function(){
 		this.stacks.pop();
 		this.dom.lastElementChild.remove();
 	}
-	if(this.stacks.length < 2){
+	if(this.stacks.length < 1){
 		this.appBar.setBackButton('');
 	}
 	return this;
