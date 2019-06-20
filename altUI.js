@@ -1331,9 +1331,10 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 	return this;
 }
 
-UI.StackNavigator = function(initialContent){
+UI.StackNavigator = function(initialContent, appBar){
 	let scope = this;
 	this.stacks = [];
+	this.appBar = appBar;
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_AppView_Content');
 	this.dom.append(initialContent);
@@ -1374,6 +1375,9 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 	}
 	backdrop.append(stack);
 	this.dom.append(backdrop);
+	if(this.appBar != undefined){
+		this.appBar.setBackBtn( new UI.Button('back', 'icon').gray().dom )
+	}
 	return this;
 }
 UI.StackNavigator.prototype.goBack = function(){
