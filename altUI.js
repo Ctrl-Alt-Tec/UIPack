@@ -1376,7 +1376,8 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 	backdrop.append(stack);
 	this.dom.append(backdrop);
 	if(this.appBar != undefined){
-		let backButton = new UI.Button('arrow_back_ios', 'icon').transparent('rgb(0,122,255)')
+		let backButton = new UI.Button('arrow_back_ios', 'icon').transparent('rgb(0,122,255)')<
+		    backButton.dom.style.padding="4px";
 		this.appBar.setBackButton( backButton.dom )
 		backButton.dom.addEventListener('click', function(){
 			scope.goBack();
