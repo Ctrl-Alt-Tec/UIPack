@@ -1139,6 +1139,8 @@ UI.AppBar = function(logo, toolbar){
 	this.dom = document.createElement( 'div' );
 	this.dom.classList.add('altUI_AppBar');
 
+	this.leftNav = document.createElement('div')
+	this.dom.append(this.leftNav)
 	let AppBarTop = document.createElement('div');
 	AppBarTop.classList.add('altUI_AppBarTop');
 
@@ -1176,6 +1178,12 @@ UI.AppBar.prototype.setLogo = function(imageURL){
 	this.AppBarLogo.src = imageURL;
 	return this;
 }
+UI.AppBar.prototype.setBackButton = function(content){
+	this.leftNav.innerHTML="";
+	this.leftNav.append(content)
+}
+
+
 
 UI.TabView = function(){
 	UI.Element.call(this);
