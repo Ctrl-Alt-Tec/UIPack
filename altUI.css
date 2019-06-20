@@ -102,6 +102,10 @@ div{
 	font-size: 32px;
 	text-transform: uppercase
 }
+.altUI_Heading.altUI_Heading3{
+	font-size: 32px;
+	font-weight: 600;
+}
 
 .altUI_HorizontalRule{
 	margin: 16px 8px;
