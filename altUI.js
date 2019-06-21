@@ -1234,6 +1234,27 @@ UI.TabView.prototype.setTab = function(i=0, callback=function(){}){
 	return this;
 }
 
+
+UI.ListViewItemKeyValue = function( leftText="", rightText ){
+	UI.Element.call(this);
+	this.dom = document.createElement('div');
+	this.dom.classList.add('altUI_ListViewItem');
+	this.dom.classList.add('altUI_ListViewItemKeyValue');
+	this.dom.style.overflow="hidden";
+	this.leftElement = document.createElement('div');
+	this.leftElement.clssList.add('altUI_ListViewItemKeyValue_Key');
+	this.leftElement.append(leftText)
+	this.rightElement = document.createElement('div');
+	this.rightElement.clssList.add('altUI_ListViewItemKeyValue_Value');
+	this.rightElement.append(rightText);
+	this.dom.append(this.leftElement);
+	this.dom.append(this.rightElement);
+	return this;
+}
+
+UI.ListViewItemKeyValue.prototype = Object.create(UI.Element.prototype);
+UI.ListViewItemKeyValue.prototype.constructor = UI.ListViewItemKeyValue;
+
 UI.ListViewItemMaster = function(
 	leftElement=document.createElement('div'), 
 	textLabel='', detailTextLabel='', 
