@@ -1242,10 +1242,10 @@ UI.ListViewItemKeyValue = function( leftText="", rightText ){
 	this.dom.classList.add('altUI_ListViewItemKeyValue');
 	this.dom.style.overflow="hidden";
 	this.leftElement = document.createElement('div');
-	this.leftElement.clssList.add('altUI_ListViewItemKeyValue_Key');
+	this.leftElement.classList.add('altUI_ListViewItemKeyValue_Key');
 	this.leftElement.append(leftText)
 	this.rightElement = document.createElement('div');
-	this.rightElement.clssList.add('altUI_ListViewItemKeyValue_Value');
+	this.rightElement.classList.add('altUI_ListViewItemKeyValue_Value');
 	this.rightElement.append(rightText);
 	this.dom.append(this.leftElement);
 	this.dom.append(this.rightElement);
