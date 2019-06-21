@@ -155,13 +155,17 @@ div{
 
 .altUI_ListViewItem{
 	display: flex;
-	flex: 1;
 	justify-content: space-between;
 	padding: 16px 0px;
 	border-bottom: 1px solid rgb(200,200,200);
 	align-items: center;
 	font-size: 16px
 }
+	.altUI_ListViewItemKeyValue .altUI_ListViewItemKeyValue_Key{
+		font-weight: '600';
+		text-transform: uppercase;
+	}
+
 	.altUI_ListViewItemMaster .altUI_ListViewItemCenter{
 		display: flex;
 		flex: 1;
