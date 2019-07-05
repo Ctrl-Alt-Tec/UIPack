@@ -1409,7 +1409,7 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 UI.StackNavigator.prototype.goBack = function(){
 	console.log(this.dom)
 	if(this.stacks.length > 1){
-		this.appBar.setTitle( tthis.stacks[this.stacks.length-1].options.appBarTitle )
+		this.appBar.setTitle( this.stacks[this.stacks.length-1].options.appBarTitle )
 	}
 	else if(this.stacks.length > 0){
 		this.stacks.pop();
