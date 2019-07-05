@@ -1367,7 +1367,7 @@ UI.StackNavigator = function(initialContent, appBar){
 UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
 UI.StackNavigator.prototype.constructor = UI.StackNavigator;
 UI.StackNavigator.prototype.appendStack = function(content, options = {
-	appBarTitle = ''
+	appBarTitle: ''
 }){
 	let scope = this;
 	this.stacks.push({content: content, options: options});
