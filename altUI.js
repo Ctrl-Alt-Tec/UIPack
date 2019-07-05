@@ -1408,7 +1408,7 @@ UI.StackNavigator.prototype.goBack = function(){
 	console.log(this.dom)
 	if(this.stacks.length > 0){
 		this.stacks.pop();
-		this.appBar.setTitle( this.stacks[this.stacks.length-1].appBarTitle ? this.stacks[this.stacks.length-1].appBarTitle : '' )
+		this.appBar.setTitle( this.stacks[this.stacks.length-1].options.appBarTitle!=undefined ? this.stacks[this.stacks.length-1].options.appBarTitle : '' )
 		this.dom.lastElementChild.remove();
 	}
 	if(this.stacks.length < 1){
