@@ -1408,12 +1408,10 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 }
 UI.StackNavigator.prototype.goBack = function(){
 	console.log(this.dom)
-	if(this.stacks.length > 1){
-		this.appBar.setTitle( this.stacks[this.stacks.length-1].options.appBarTitle )
-	}
 	if(this.stacks.length > 0){
 		this.stacks.pop();
 		this.dom.lastElementChild.remove();
+		this.appBar.setTitle( this.stacks[this.stacks.length-1].options.appBarTitle )
 	}
 	else if(this.stacks.length < 1){
 		this.appBar.setBackButton('');
