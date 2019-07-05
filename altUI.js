@@ -1368,7 +1368,7 @@ UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
 UI.StackNavigator.prototype.constructor = UI.StackNavigator;
 UI.StackNavigator.prototype.appendStack = function(content, options = {
 	appBarTitle: '',
-	appBarIcon: '', 
+	appBarLogo: '', 
 }){
 	let scope = this;
 	this.stacks.push({content: content, options: options});
@@ -1405,7 +1405,7 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 		})
 	}
 	this.appBar.setTitle( options.appBarTitle )
-	this.appBar.setIcon( options.appBarIcon )
+	this.appBar.setLogo( options.appBarLogo )
 	return this;
 }
 UI.StackNavigator.prototype.goBack = function(){
@@ -1415,7 +1415,7 @@ UI.StackNavigator.prototype.goBack = function(){
 		this.dom.lastElementChild.remove();
 		if(this.stacks.length != 0){
 			this.appBar.setTitle( this.stacks[this.stacks.length-1].options.appBarTitle )	
-			this.appBar.setIcon( this.stacks[this.stacks.length-1].options.appBarIcon )	
+			this.appBar.setLogo( this.stacks[this.stacks.length-1].options.appBarLogo )	
 		}else{
 			this.appBar.setTitle('d')
 		}
@@ -1423,7 +1423,7 @@ UI.StackNavigator.prototype.goBack = function(){
 	if(this.stacks.length < 1){
 		this.appBar.setBackButton('');
 		this.appBar.setTitle( '' )
-		this.appBar.setIcon('')
+		this.appBar.setLogo('')
 	}
 	return this;
 }
