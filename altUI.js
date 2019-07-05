@@ -1411,11 +1411,11 @@ UI.StackNavigator.prototype.goBack = function(){
 	if(this.stacks.length > 1){
 		this.appBar.setTitle( this.stacks[this.stacks.length-1].options.appBarTitle )
 	}
-	else if(this.stacks.length > 0){
+	if(this.stacks.length > 0){
 		this.stacks.pop();
 		this.dom.lastElementChild.remove();
 	}
-	if(this.stacks.length < 1){
+	else if(this.stacks.length < 1){
 		this.appBar.setBackButton('');
 		this.appBar.setTitle( '' )
 	}
