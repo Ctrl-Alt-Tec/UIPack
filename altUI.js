@@ -1360,7 +1360,7 @@ UI.StackNavigator = function(initialContent, appBar){
 	this.dom.classList.add('altUI_AppView_Content');
 	this.dom.append(initialContent);
 	this.stacks.forEach(function(l,i){
-		scope.appendStack(l)
+		scope.appendStack(l.content)
 	});
 	return this;
 }
@@ -1368,7 +1368,7 @@ UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
 UI.StackNavigator.prototype.constructor = UI.StackNavigator;
 UI.StackNavigator.prototype.appendStack = function(content, options){
 	let scope = this;
-	this.stacks.push(content);
+	this.stacks.push({content: content, options: options});
 	let backdrop = document.createElement('div');
 		backdrop.style.position = 'absolute';
 		backdrop.style.width= '100%';
@@ -1408,7 +1408,7 @@ UI.StackNavigator.prototype.goBack = function(){
 	console.log(this.dom)
 	if(this.stacks.length > 0){
 		this.stacks.pop();
-		this.appBar.setTitle( this.stacks[this.stacks.length-1].appBarTitle )
+		this.appBar.setTitle( this.stacks[this.stacks.length-1].appBarTitle ? this.stacks[this.stacks.length-1].appBarTitle : '' )
 		this.dom.lastElementChild.remove();
 	}
 	if(this.stacks.length < 1){
