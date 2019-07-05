@@ -1417,7 +1417,7 @@ UI.StackNavigator.prototype.goBack = function(){
 			this.appBar.setTitle('d')
 		}
 	}
-	else if(this.stacks.length < 1){
+	if(this.stacks.length < 1){
 		this.appBar.setBackButton('');
 		this.appBar.setTitle( '' )
 	}
