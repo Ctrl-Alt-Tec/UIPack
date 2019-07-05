@@ -1413,6 +1413,7 @@ UI.StackNavigator.prototype.goBack = function(){
 	}
 	if(this.stacks.length < 1){
 		this.appBar.setBackButton('');
+		this.appBar.setTitle( '' )
 	}
 	return this;
 }
