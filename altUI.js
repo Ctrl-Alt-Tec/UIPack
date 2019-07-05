@@ -1366,7 +1366,7 @@ UI.StackNavigator = function(initialContent, appBar){
 }
 UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
 UI.StackNavigator.prototype.constructor = UI.StackNavigator;
-UI.StackNavigator.prototype.appendStack = function(content, renderFn){
+UI.StackNavigator.prototype.appendStack = function(content, options){
 	let scope = this;
 	this.stacks.push(content);
 	let backdrop = document.createElement('div');
@@ -1391,9 +1391,6 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 			e.stopImmediatePropagation();
 			e.stopPropagation();
 		})
-	if(renderFn!=undefined){
-		renderFn(content, stack);
-	}
 	backdrop.append(stack);
 	this.dom.append(backdrop);
 	if(this.appBar != undefined){
@@ -1404,12 +1401,14 @@ UI.StackNavigator.prototype.appendStack = function(content, renderFn){
 			scope.goBack();
 		})
 	}
+	this.appBar.setTitle( options.appBarTitle )
 	return this;
 }
 UI.StackNavigator.prototype.goBack = function(){
 	console.log(this.dom)
 	if(this.stacks.length > 0){
 		this.stacks.pop();
+		this.appBar.setTitle( this.stacks[this.stacks.length-1].appBarTitle )
 		this.dom.lastElementChild.remove();
 	}
 	if(this.stacks.length < 1){
