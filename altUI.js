@@ -1366,7 +1366,9 @@ UI.StackNavigator = function(initialContent, appBar){
 }
 UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
 UI.StackNavigator.prototype.constructor = UI.StackNavigator;
-UI.StackNavigator.prototype.appendStack = function(content, options){
+UI.StackNavigator.prototype.appendStack = function(content, options = {
+	appBarTitle = ''
+}){
 	let scope = this;
 	this.stacks.push({content: content, options: options});
 	let backdrop = document.createElement('div');
@@ -1406,9 +1408,11 @@ UI.StackNavigator.prototype.appendStack = function(content, options){
 }
 UI.StackNavigator.prototype.goBack = function(){
 	console.log(this.dom)
-	if(this.stacks.length > 0){
+	if(this.stacks.length > 1){
+		this.appBar.setTitle( tthis.stacks[this.stacks.length-1].options.appBarTitle )
+	}
+	else if(this.stacks.length > 0){
 		this.stacks.pop();
-		this.appBar.setTitle( this.stacks[this.stacks.length-1].options.appBarTitle!=undefined ? this.stacks[this.stacks.length-1].options.appBarTitle : '' )
 		this.dom.lastElementChild.remove();
 	}
 	if(this.stacks.length < 1){
