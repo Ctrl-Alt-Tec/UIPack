@@ -1154,9 +1154,16 @@ UI.AppBar = function(logo, toolbar){
   	this.AppBarToolbar =  document.createElement( 'div' );
   	this.AppBarToolbar.classList.add('altUI_AppBarToolbar');
 	this.AppBarToolbar.innerHTML = "<h1></h1>"
-	[...toolbar].forEach(function(l){
-		this.addToolbarItem(l)
-	})
+	
+	if(toolbar.split !=undefined){
+		this.addToolbarItem(toolbar)
+	}else if( toolbar.length>0 ){
+		toolbar.forEach(function(l){
+			this.addToolbarItem(l)
+		})
+	}
+	
+	
 	
 	//AppBarToolbar.append(toolbar);
 	
