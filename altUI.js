@@ -1154,7 +1154,7 @@ UI.AppBar = function(logo, toolbar){
   	let AppBarToolbar =  document.createElement( 'div' );
   	AppBarToolbar.classList.add('altUI_AppBarToolbar');
 	AppBarToolbar.innerHTML = "<h1></h1>"
-	AppBarToolbar.append(toolbar);
+	AppBarToolbar.append([...toolbar]);
 	
 	this.dom.append(AppBarToolbar)
   
