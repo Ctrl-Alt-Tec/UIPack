@@ -1151,12 +1151,16 @@ UI.AppBar = function(logo, toolbar){
   	AppBarTop.append(this.AppBarLogo);
   	this.dom.append(AppBarTop);
 
-  	let AppBarToolbar =  document.createElement( 'div' );
-  	AppBarToolbar.classList.add('altUI_AppBarToolbar');
-	AppBarToolbar.innerHTML = "<h1></h1>"
-	AppBarToolbar.append([...toolbar]);
+  	this.AppBarToolbar =  document.createElement( 'div' );
+  	this.AppBarToolbar.classList.add('altUI_AppBarToolbar');
+	this.AppBarToolbar.innerHTML = "<h1></h1>"
+	[...toolbar].forEach(function(l){
+		this.addToolbarItem(l)
+	})
 	
-	this.dom.append(AppBarToolbar)
+	//AppBarToolbar.append(toolbar);
+	
+	this.dom.append(this.AppBarToolbar)
   
 	return this;
 }
@@ -1180,7 +1184,12 @@ UI.AppBar.prototype.setLogo = function(imageURL){
 }
 UI.AppBar.prototype.setBackButton = function(content){
 	this.leftNav.innerHTML="";
-	this.leftNav.append(content)
+	this.leftNav.append(content);
+	return this;
+}
+UI.AppBar.prototype.addToolbarItem = function(item){
+	this.AppBarToolbar.append(item);
+	return this;
 }
 
 
