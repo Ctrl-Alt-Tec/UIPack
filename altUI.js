@@ -1,5 +1,5 @@
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author edvilme, inspired from mrdoob's UI.js
  */
 
 var UI = {};
