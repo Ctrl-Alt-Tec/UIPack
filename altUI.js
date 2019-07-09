@@ -1473,6 +1473,13 @@ UI.StackNavigator.prototype.goBack = function(){
 	return this;
 }
 
+UI.StackNavigator.prototype.updateDefaultOptions = function(defaultOptions={}){
+	for(let key in defaultOptions){
+		this.defaultOptions[key] = defaultOptions[key]
+	}
+	return this;
+}
+
 
 UI.SegmentedControl = function(options, name, callback=function(){}){
 	this.options = options;
