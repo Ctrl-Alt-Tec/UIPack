@@ -1389,6 +1389,7 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 	sidebarItem.addEventListener('click', function(){
 		scope.detailView.innerHTML = '';
 		scope.detailView.append(obj.sectionContent);
+		scope.hideSidebar();
 	})
 	this.sidebar.append(sidebarItem)
 	
