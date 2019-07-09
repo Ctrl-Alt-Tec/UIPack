@@ -1337,9 +1337,12 @@ UI.Heading.prototype = Object.create(UI.Element.prototype);
 UI.Heading.prototype.constructor = UI.Heading;
 
 
-UI.MasterDetailView = function(sections=[]){
+UI.MasterDetailView = function(sections=[], options={
+	stackNavigator: null, 
+}){
 	UI.Element.call(this);
 	this.sections = sections;
+	this.options = options;
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_AppView');
 	let scope = this;
@@ -1355,6 +1358,13 @@ UI.MasterDetailView = function(sections=[]){
 	this.sections.forEach(function(l){
 		scope.addSection(l)
 	})
+	
+	this.sideBarBttn = new UI.Button('arrow_back_ios', 'icon').transparent('rgb(0,122,255)');
+		this.sideBarBttn.classList.add('altUI_SidebarBttn')
+		this.sideBarBtn.dom.style.padding="4px";
+	if(this.options.stackNavigator != null){
+		this.options.stackNavigator.updateDefaultOptions({appBarBackButton: this.sideBarBttn.dom})
+	}
 	
 	return this;
 }
