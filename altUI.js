@@ -1394,7 +1394,7 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 	
 	return this;
 }
-UI.MasterDetailView.protoype.hideSidebar = function(){
+UI.MasterDetailView.prototype.hideSidebar = function(){
 	if(window.innerWidth < 800){
 		this.sidebar.style.display = 'none'
 	}
