@@ -1399,9 +1399,11 @@ UI.StackNavigator = function(initialContent, appBar, defaultOptions={
 		scope.appendStack(l.content)
 	});
 	//return this;
-	this.appBar.setTitle(this.defaultOptions.appBarTitle);
-	this.appBar.setLogo(this.defaultOptions.appBarLogo);
-	this.appBar.setBackButton(this.defaultOptions.appBarBackBttn)
+	this.appBar.set({
+		title: defaultOptions.appBarTitle,
+		logo: defaultOptions.appBarLogo,
+		backButton: defaultOptions.appBarBackBttn
+	})
 	
 	return this;
 }
@@ -1440,13 +1442,15 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 	if(this.appBar != undefined){
 		let backButton = new UI.Button('arrow_back_ios', 'icon').transparent('rgb(0,122,255)');
 		    backButton.dom.style.padding="4px";
-		this.appBar.setBackButton( backButton.dom )
+		this.appBar.set({backButton: backButton.dom})
 		backButton.dom.addEventListener('click', function(){
 			scope.goBack();
 		})
 	}
-	this.appBar.setTitle( options.appBarTitle )
-	this.appBar.setLogo( options.appBarLogo )
+	this.appBar.set({ 
+		title: options.appBarTitle,
+		logo: options.appBarLogo
+	})
 	return this;
 }
 UI.StackNavigator.prototype.goBack = function(){
