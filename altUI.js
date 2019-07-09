@@ -1384,12 +1384,12 @@ UI.StackNavigator = function(initialContent, appBar, defaultOptions={
 	this.stacks.forEach(function(l,i){
 		scope.appendStack(l.content)
 	});
-	return this;
-	
+	//return this;
 	this.appBar.setTitle(this.defaultOptions.appBarTitle);
 	this.appBar.setLogo(this.defaultOptions.appBarLogo);
-	this.appBar.setBackButton(this.appBarBackBttn)
+	this.appBar.setBackButton(this.defaultOptions.appBarBackBttn)
 	
+	return this;
 }
 UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
 UI.StackNavigator.prototype.constructor = UI.StackNavigator;
