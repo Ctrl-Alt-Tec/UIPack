@@ -1443,13 +1443,9 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 	let scope = this;
 	this.stacks.push({content: content, options: options});
 	let backdrop = document.createElement('div');
-		backdrop.style.position = 'absolute';
-		backdrop.style.width= '100%';
-		backdrop.style.height= '100%';
+		backdrop.classList.add('alUI_StackNavigatorStackCont')
 		backdrop.style.paddingLeft=this.stacks.length+'ch';
-		backdrop.style.background='rgba(0,0,0,0.2)';
-		backdrop.style.display = 'flex';
-		backdrop.style.backdropFilter = 'blur(1.2px)'
+		
 		backdrop.addEventListener('click', function(){
 			if(!document.querySelector(':focus')){
 				scope.goBack()
