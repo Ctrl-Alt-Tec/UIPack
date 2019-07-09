@@ -1397,14 +1397,14 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 }
 UI.MasterDetailView.prototype.hideSidebar = function(){
 	if(window.innerWidth < 800){
-		this.sidebar.style.display = 'none'
+		this.sidebar.classList.add('altUI_AppViewSidebarHidden')
 	}
 	return this;
 }
 
 UI.MasterDetailView.prototype.showSidebar = function(){
 	if(window.innerWidth < 800){
-		this.sidebar.style.display = 'flex'
+		this.sidebar.classList.remove('altUI_AppViewSidebarHidden')
 	}
 	return this;
 }
