@@ -278,30 +278,29 @@ div{
 		width: 100%;
 		padding: 8px;
 		padding-bottom: 0px;
-		background: rgb(245,245,245);
+		background: white;
 		box-sizing: border-box;
 		flex-shrink: 0;
 		position: sticky;
 		top: 0
 	}
 		.altUI_TabViewTabs .altUI_TabViewTab{
-			font-size: 24px;
+			font-size: 32px;
+			color: rgb(160,160,160);
 			font-weight: 400;
-			border-top-left-radius: 8px;
-			border-top-right-radius: 8px;
+			
 			padding: 4px 8px;
 			flex: 1;
 			text-align: center;
-			border-bottom: 1px solid rgb(160,160,160);
+			border-bottom: 2px solid transparent;
 			display: flex;
 			align-items: center;
 			justify-content: center
 		}
 		.altUI_TabVIewTabs .altUI_TabViewTabActive{
-			background: white;
-			border: 1px solid rgb(160,160,160);
-			border-bottom-color: transparent;
+			color: black;
 			font-weight: 600;
+			border-bottom: 2px solid black;
 		}
 	.altUI_TabViewContent{
 		padding: 16px;
