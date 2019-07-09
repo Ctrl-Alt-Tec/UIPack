@@ -1199,6 +1199,20 @@ UI.AppBar.prototype.addToolbarItem = function(item){
 	return this;
 }
 
+UI.AppBar.prototype.set = function(options){
+	if(options.title!=undefined){
+		this.dom.querySelector(".altUI_AppBarToolbar").querySelector("h1").textContent = options.title;
+	}
+	if(options.logo!=undefined){
+		this.AppBarLogo.src = options.logo;
+	}
+	if(options.backButton!=undefined){
+		this.leftNav.innerHTML="";
+		this.leftNav.append(options.backButton);
+	}
+	return this;
+}
+
 
 
 UI.TabView = function(){
