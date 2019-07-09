@@ -314,6 +314,9 @@ div{
 	  	padding: 8px;
 	  	background: white
         }
+	 	.altUI_AppViewSidebar.altUI_AppViewSidebarHidden{
+	 		display: none;
+	 	}
         .altUI_AppBar .altUI_SidebarBttn{
           	display: flex
         }
