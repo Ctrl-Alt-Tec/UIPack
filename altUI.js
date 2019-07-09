@@ -1395,7 +1395,7 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 UI.StackNavigator = function(initialContent, appBar, defaultOptions={
 	appBarTitle: '',
 	appBarLogo: '',
-	appBarBackBttn: '',
+	appBarBackButton: '',
 	
 }){
 	this.defaultOptions = defaultOptions
@@ -1412,7 +1412,7 @@ UI.StackNavigator = function(initialContent, appBar, defaultOptions={
 	this.appBar.set({
 		title: this.defaultOptions.appBarTitle,
 		logo: this.defaultOptions.appBarLogo,
-		backButton: this.defaultOptions.appBarBackBttn
+		backButton: this.defaultOptions.appBarBackButton
 	})
 	
 	return this;
@@ -1476,7 +1476,7 @@ UI.StackNavigator.prototype.goBack = function(){
 		}
 	}
 	if(this.stacks.length < 1){
-		this.appBar.setBackButton(this.defaultOptions.appBarBackBttn);
+		this.appBar.setBackButton(this.defaultOptions.appBarBackButton);
 		this.appBar.setTitle(this.defaultOptions.appBarTitle);
 		this.appBar.setLogo(this.defaultOptions.appBarLogo);
 	}
