@@ -1490,7 +1490,7 @@ UI.StackNavigator.prototype.updateDefaultOptions = function(defaultOptions={}){
 	this.appBar.set({
 		title: this.defaultOptions.appBarTitle,
 		logo: this.defaultOptions.appBarLogo,
-		backButton: this.defaultOptions.appBarBackBttn
+		backButton: this.defaultOptions.appBarBackButton
 	})
 	return this;
 }
