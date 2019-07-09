@@ -1388,7 +1388,7 @@ UI.StackNavigator = function(initialContent, appBar, defaultOptions={
 	
 	this.appBar.setTitle(this.defaultOptions.appBarTitle);
 	this.appBar.setLogo(this.defaultOptions.appBarLogo);
-	this.appBar.setBackButton('')
+	this.appBar.setBackButton(this.appBarBackBttn)
 	
 }
 UI.StackNavigator.prototype = Object.create(UI.Element.prototype);
