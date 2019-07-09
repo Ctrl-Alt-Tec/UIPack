@@ -1400,9 +1400,9 @@ UI.StackNavigator = function(initialContent, appBar, defaultOptions={
 	});
 	//return this;
 	this.appBar.set({
-		title: defaultOptions.appBarTitle,
-		logo: defaultOptions.appBarLogo,
-		backButton: defaultOptions.appBarBackBttn
+		title: this.defaultOptions.appBarTitle,
+		logo: this.defaultOptions.appBarLogo,
+		backButton: this.defaultOptions.appBarBackBttn
 	})
 	
 	return this;
