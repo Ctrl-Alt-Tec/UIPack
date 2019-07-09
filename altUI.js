@@ -1361,7 +1361,7 @@ UI.MasterDetailView = function(sections=[], options={
 	
 	this.sideBarBttn = new UI.Button('arrow_back_ios', 'icon').transparent('rgb(0,122,255)');
 		this.sideBarBttn.dom.classList.add('altUI_SidebarBttn')
-		this.sideBarBtn.dom.style.padding="4px";
+		this.sideBarBttn.dom.style.padding="4px";
 	if(this.options.stackNavigator != null){
 		this.options.stackNavigator.updateDefaultOptions({appBarBackButton: this.sideBarBttn.dom})
 	}
