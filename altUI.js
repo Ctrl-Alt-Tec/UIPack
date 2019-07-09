@@ -1368,7 +1368,13 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 	return this;
 }
 
-UI.StackNavigator = function(initialContent, appBar){
+UI.StackNavigator = function(initialContent, appBar, defaultOptions={
+	appBarTitle: '',
+	appBarLogo: '',
+	appBarBackBttn: '',
+	
+}){
+	this.defaultOptions = defaultOptions
 	let scope = this;
 	this.stacks = [];
 	this.appBar = appBar;
@@ -1437,9 +1443,9 @@ UI.StackNavigator.prototype.goBack = function(){
 		}
 	}
 	if(this.stacks.length < 1){
-		this.appBar.setBackButton('');
-		this.appBar.setTitle( '' )
-		this.appBar.setLogo('')
+		this.appBar.setBackButton(this.defaultOptions.appBarBackBttn);
+		this.appBar.setTitle(this.defaultOptions.appBarTitle);
+		this.appBar.setLogo(this.defaultOptions.appBarLogo);
 	}
 	return this;
 }
