@@ -1362,6 +1362,9 @@ UI.MasterDetailView = function(sections=[], options={
 	this.sideBarBttn = new UI.Button('arrow_back_ios', 'icon').transparent('rgb(0,122,255)');
 		this.sideBarBttn.dom.classList.add('altUI_SidebarBttn')
 		this.sideBarBttn.dom.style.padding="4px";
+		this.sideBarBttn.dom.addEventListener('click', function(){
+			scope.showSidebar();
+		})
 	if(this.options.stackNavigator != null){
 		this.options.stackNavigator.updateDefaultOptions({appBarBackButton: this.sideBarBttn.dom})
 	}
@@ -1385,10 +1388,23 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 	}
 	sidebarItem.addEventListener('click', function(){
 		scope.detailView.innerHTML = '';
-		scope.detailView.append(obj.sectionContent)
+		scope.detailView.append(obj.sectionContent);
 	})
 	this.sidebar.append(sidebarItem)
 	
+	return this;
+}
+UI.MasterDetailView.protoype.hideSidebar = function(){
+	if(window.innerWidth < 800){
+		this.sidebar.style.display = 'none'
+	}
+	return this;
+}
+
+UI.MasterDetailVIew.prototype.showSidebar = function(){
+	if(window.innerWidth < 800){
+		thi.sidebar.style.display = 'flex'
+	}
 	return this;
 }
 
