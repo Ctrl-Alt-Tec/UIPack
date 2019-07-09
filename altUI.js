@@ -1401,7 +1401,7 @@ UI.MasterDetailView.prototype.hideSidebar = function(){
 	return this;
 }
 
-UI.MasterDetailVIew.prototype.showSidebar = function(){
+UI.MasterDetailView.prototype.showSidebar = function(){
 	if(window.innerWidth < 800){
 		thi.sidebar.style.display = 'flex'
 	}
