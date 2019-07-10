@@ -144,11 +144,11 @@ div{
 		-webkit-appearance: none;
 		font-size: 1.2em;
 		font-family: 'Material Icons';
+		text-align: center;
 	}
 	input[type="checkbox"].altUI_InputViewInput::before{
-		content: 'chech';
+		content: 'check';
 		color: transparent;
-		text-align: center
 	}
 	input[type="checkbox"].altUI_InputViewInput:checked{
 		background-color: black
