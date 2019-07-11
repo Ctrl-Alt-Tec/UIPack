@@ -63,6 +63,9 @@ div{
     		height: 48px;
     		margin-right: 8px
   	}
+	img.altUI_AppBarLogo[src='undefined']{
+		display: none
+	}
   	.altUI_AppBarToolbar{
     		display: flex;
     		flex: 1;
