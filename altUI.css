@@ -59,6 +59,11 @@ div{
 	z-index: 999;
   
 }
+
+	.altUI_AppBar .altUI_SidebarBttn{
+		display: none;
+	}
+
 	.altUI_AppBarLogo{
     		height: 48px;
     		margin-right: 8px
