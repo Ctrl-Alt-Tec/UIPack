@@ -1444,7 +1444,7 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 	this.stacks.push({content: content, options: options});
 	let backdrop = document.createElement('div');
 		backdrop.classList.add('alUI_StackNavigatorStackCont')
-		backdrop.style.paddingLeft=this.stacks.length+'ch';
+		backdrop.style.paddingLeft=this.stacks.length*5+'ch';
 		
 		backdrop.addEventListener('click', function(){
 			if(!document.querySelector(':focus')){
