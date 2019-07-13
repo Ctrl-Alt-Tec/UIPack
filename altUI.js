@@ -1373,7 +1373,11 @@ UI.MasterDetailView = function(sections=[], options={
 }
 UI.MasterDetailView.prototype = Object.create(UI.Element.prototype);
 UI.MasterDetailView.prototype.constructor = UI.MasterDetailView;
-UI.MasterDetailView.prototype.addSection = function(obj){
+UI.MasterDetailView.prototype.addSection = function(obj={
+	sectionItem: new UI.ListViewItemMaster(null, 'Section', null).dom,
+	sectionContent: document.createElement('div'),
+	sectionName: ''
+}){
 	let scope = this;
 	this.sections.push(obj);
 	
@@ -1389,6 +1393,7 @@ UI.MasterDetailView.prototype.addSection = function(obj){
 	sidebarItem.addEventListener('click', function(){
 		scope.detailView.innerHTML = '';
 		scope.detailView.append(obj.sectionContent);
+		scope.options.stackNavigator.updateDefaultOptions({appBarTitle: obj.sectionName})
 		scope.hideSidebar();
 	})
 	this.sidebar.append(sidebarItem)
