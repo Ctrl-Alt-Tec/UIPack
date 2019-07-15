@@ -1391,7 +1391,7 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 		}
 	}
 	sidebarItem.addEventListener('click', function(){
-		scope.section.forEach(function(i){
+		scope.sections.forEach(function(i){
 			i.sectionItem.style.background = 'transparent'
 		})
 		scope.detailView.innerHTML = '';
