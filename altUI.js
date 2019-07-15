@@ -1391,8 +1391,12 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 		}
 	}
 	sidebarItem.addEventListener('click', function(){
+		scope.section.forEach(function(i){
+			i.sectionItem.style.background = 'transparent'
+		})
 		scope.detailView.innerHTML = '';
 		scope.detailView.append(obj.sectionContent);
+		sidebarItem.style.background = 'rgb(200,200,200)';
 		scope.options.stackNavigator.updateDefaultOptions({appBarTitle: obj.sectionName})
 		scope.hideSidebar();
 	})
