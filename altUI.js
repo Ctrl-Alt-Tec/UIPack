@@ -1381,10 +1381,10 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 	let scope = this;
 	this.sections.push(obj);
 	
-	let sidebarItem = document.createElement('div');
-	sidebarItem.classList.add('altUI_AppViewSidebar_item');
-	sidebarItem.innerHTML = '';
-	sidebarItem.append(obj.sectionItem)
+	//let sidebarItem = document.createElement('div');
+	obj.sectionItem.classList.add('altUI_AppViewSidebar_item');
+	//sidebarItem.innerHTML = '';
+	//sidebarItem.append(obj.sectionItem)
 	if(obj.sectionItemStyle!=undefined){
 		for(var k in obj.sectionItemStyle){
 			sidebarItem.style[k]=obj.sectionItemStyle[k]
@@ -1396,11 +1396,11 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 		})
 		scope.detailView.innerHTML = '';
 		scope.detailView.append(obj.sectionContent);
-		sidebarItem.style.background = 'rgb(200,200,200)';
+		obj.sectionItem.style.background = 'rgb(200,200,200)';
 		scope.options.stackNavigator.updateDefaultOptions({appBarTitle: obj.sectionName})
 		scope.hideSidebar();
 	})
-	this.sidebar.append(sidebarItem)
+	this.sidebar.append(obj.sectionItem)
 	
 	return this;
 }
