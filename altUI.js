@@ -1390,7 +1390,7 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 			sidebarItem.style[k]=obj.sectionItemStyle[k]
 		}
 	}
-	sidebarItem.addEventListener('click', function(){
+	obj.sectionItem.addEventListener('click', function(){
 		scope.sections.forEach(function(i){
 			i.sectionItem.style.background = 'transparent'
 		})
