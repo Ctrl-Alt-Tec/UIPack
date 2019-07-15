@@ -1387,7 +1387,7 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 	//sidebarItem.append(obj.sectionItem)
 	if(obj.sectionItemStyle!=undefined){
 		for(var k in obj.sectionItemStyle){
-			sidebarItem.style[k]=obj.sectionItemStyle[k]
+			obj.sectionItem.style[k]=obj.sectionItemStyle[k]
 		}
 	}
 	obj.sectionItem.addEventListener('click', function(){
