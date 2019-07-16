@@ -1182,7 +1182,7 @@ UI.AppBar.prototype.showBackButton = function(callback){
   	return this;
 }
 UI.AppBar.prototype.setTitle = function(title){
-	this.dom.querySelector(".altUI_AppBarToolbar").querySelector("h1").textContent = title;
+	this.AppBarToolbar.querySelector("h1").textContent = title;
 	return this;
 }
 UI.AppBar.prototype.setLogo = function(imageURL){
@@ -1201,6 +1201,7 @@ UI.AppBar.prototype.addToolbarItem = function(item){
 
 UI.AppBar.prototype.set = function(options){
 	if(options.title!=undefined){
+		this.title = options.title;
 		this.dom.querySelector(".altUI_AppBarToolbar").querySelector("h1").textContent = options.title;
 	}
 	if(options.logo!=undefined){
@@ -1209,6 +1210,15 @@ UI.AppBar.prototype.set = function(options){
 	if(options.backButton!=undefined){
 		this.leftNav.innerHTML="";
 		this.leftNav.append(options.backButton);
+	}
+	if(options.toolbar!=undefined){
+		this.AppBarToolbar.innerHTML = '<h1></h1>';
+		this.set({title: this.title});
+		options.toolbar.forEach(function(i){
+			if(i!=undefined){
+				this.AppBarToolbar.append(i);
+			}
+		})
 	}
 	return this;
 }
@@ -1422,7 +1432,7 @@ UI.StackNavigator = function(initialContent, appBar, defaultOptions={
 	appBarTitle: '',
 	appBarLogo: '',
 	appBarBackButton: '',
-	
+	appBarToolbar: [undfined]
 }){
 	this.defaultOptions = defaultOptions
 	let scope = this;
@@ -1438,7 +1448,8 @@ UI.StackNavigator = function(initialContent, appBar, defaultOptions={
 	this.appBar.set({
 		title: this.defaultOptions.appBarTitle,
 		logo: this.defaultOptions.appBarLogo,
-		backButton: this.defaultOptions.appBarBackButton
+		backButton: this.defaultOptions.appBarBackButton,
+		toolbar: this.defaultOptions.appBarToolbar
 	})
 	
 	return this;
@@ -1448,6 +1459,7 @@ UI.StackNavigator.prototype.constructor = UI.StackNavigator;
 UI.StackNavigator.prototype.appendStack = function(content, options = {
 	appBarTitle: '',
 	appBarLogo: '', 
+	appBarToolbar: this.defaultOptions.appBarToolbar
 }){
 	let scope = this;
 	this.stacks.push({content: content, options: options});
@@ -1481,7 +1493,8 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 	}
 	this.appBar.set({ 
 		title: options.appBarTitle,
-		logo: options.appBarLogo
+		logo: options.appBarLogo,
+		toolbar: options.appBarToolbar
 	})
 	return this;
 }
@@ -1491,16 +1504,22 @@ UI.StackNavigator.prototype.goBack = function(){
 		this.stacks.pop();
 		this.dom.lastElementChild.remove();
 		if(this.stacks.length != 0){
-			this.appBar.setTitle( this.stacks[this.stacks.length-1].options.appBarTitle )	
-			this.appBar.setLogo( this.stacks[this.stacks.length-1].options.appBarLogo )	
-		}else{
-			this.appBar.setTitle('d')
-		}
+			this.appBar.set({
+				title: this.stacks[this.stacks.length-1].options.appBarTitle,
+				logo: this.stacks[this.stacks.length-1].options.appBarLogo,
+				toolbar: this.stacks[this.stacks.length-1].options.appBarToolbar
+			})
+			//this.appBar.setTitle( this.stacks[this.stacks.length-1].options.appBarTitle )	
+			//this.appBar.setLogo( this.stacks[this.stacks.length-1].options.appBarLogo )	
 	}
 	if(this.stacks.length < 1){
-		this.appBar.setBackButton(this.defaultOptions.appBarBackButton);
-		this.appBar.setTitle(this.defaultOptions.appBarTitle);
-		this.appBar.setLogo(this.defaultOptions.appBarLogo);
+		this.appBar.set({
+			backButton: this.defaultOptions.appBarBackButton,
+			logo: this.defaultOptions.appBarLogo, 
+			title: this.defaultOptions.appBarTitle,
+			toolbar: this.defaultOptions.appBarToolbar
+		})
+
 	}
 	return this;
 }
@@ -1512,7 +1531,8 @@ UI.StackNavigator.prototype.updateDefaultOptions = function(defaultOptions={}){
 	this.appBar.set({
 		title: this.defaultOptions.appBarTitle,
 		logo: this.defaultOptions.appBarLogo,
-		backButton: this.defaultOptions.appBarBackButton
+		backButton: this.defaultOptions.appBarBackButton,
+		toolbar: this.defaultOptions.appBarToolbar
 	})
 	return this;
 }
