@@ -1388,7 +1388,7 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 	sectionItem: new UI.ListViewItemMaster(null, 'Section', null).dom,
 	sectionContent: document.createElement('div'),
 	sectionName: '',
-	appBarToolbar: []
+	appBarToolbar: [undefined]
 }){
 	let scope = this;
 	this.sections.push(obj);
@@ -1411,7 +1411,7 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 		obj.sectionItem.style.background = 'rgb(200,200,200)';
 		scope.options.stackNavigator.updateDefaultOptions({
 			appBarTitle: obj.sectionName,
-			appBarToolbar: obj.appBarToolbar
+			appBarToolbar: obj.appBarToolbar!=undefined ? obj.appBarToolbar: [undefined]
 		})
 		scope.hideSidebar();
 	})
