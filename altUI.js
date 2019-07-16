@@ -1560,7 +1560,7 @@ UI.Container = function(contents){
 	contents.forEach(function(i){
 		scope.dom.append(i)
 	})
-	return this:
+	return this;
 }
 
 UI.Container.prototype = Object.create(UI.Element.prototype);
