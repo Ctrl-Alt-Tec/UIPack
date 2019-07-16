@@ -1557,6 +1557,7 @@ UI.Container = function(contents){
 	UI.Element.call(this)
 	this.dom = document.createElement('div');
 	this.dom.style.display = 'flex';
+	this.dom.style.alignItems = 'center';
 	contents.forEach(function(i){
 		if(i!=undefined && i!=''){
 			scope.dom.append(i)
