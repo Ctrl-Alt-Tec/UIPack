@@ -1200,6 +1200,7 @@ UI.AppBar.prototype.addToolbarItem = function(item){
 }
 
 UI.AppBar.prototype.set = function(options){
+	let scope = this;
 	if(options.title!=undefined){
 		this.title = options.title;
 		this.dom.querySelector(".altUI_AppBarToolbar").querySelector("h1").textContent = options.title;
@@ -1216,7 +1217,7 @@ UI.AppBar.prototype.set = function(options){
 		this.set({title: this.title});
 		options.toolbar.forEach(function(i){
 			if(i!=undefined){
-				this.AppBarToolbar.append(i);
+				scope.AppBarToolbar.append(i);
 			}
 		})
 	}
