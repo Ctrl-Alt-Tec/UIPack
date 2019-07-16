@@ -1551,6 +1551,21 @@ UI.SegmentedControl.prototype.setSelection = function(index){
 	}
 	return this;
 }
+
+UI.Container = function(contents){
+	let scope = this;
+	UI.Element.call(this)
+	this.dom = document.createElement('div');
+	this.dom.style.display = 'flex';
+	contents.forEach(function(i){
+		scope.dom.append(i)
+	})
+	return this:
+}
+
+UI.Container.prototype = Object.create(UI.Element.prototype);
+UI.Container.prototype.constructor = UI.Container;
+
 /*UI.ToggleSwitch = function(hint, value, name){
 	UI.Element.call(this);
 	this.dom = document.createElement('label');
