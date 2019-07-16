@@ -75,7 +75,8 @@ div{
     		display: flex;
     		flex: 1;
     		width: 100%;
-    		flex-direction: row
+    		flex-direction: row;
+		align-items: center;
   	}
   		.altUI_AppBarToolbar h1{
     			font-size: 32px;
@@ -84,7 +85,10 @@ div{
     			margin: 0;
     			padding: 0;
 			text-align: center
-	}
+		}
+		.altUI_AppBarToolbar .altUI_Button{
+			padding: 8px
+		}
 
 
 .altUI_FormCardBlock{
