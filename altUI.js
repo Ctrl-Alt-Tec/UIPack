@@ -1509,6 +1509,7 @@ UI.StackNavigator.prototype.goBack = function(){
 				logo: this.stacks[this.stacks.length-1].options.appBarLogo,
 				toolbar: this.stacks[this.stacks.length-1].options.appBarToolbar
 			})
+		}
 			//this.appBar.setTitle( this.stacks[this.stacks.length-1].options.appBarTitle )	
 			//this.appBar.setLogo( this.stacks[this.stacks.length-1].options.appBarLogo )	
 	}
