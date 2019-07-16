@@ -1558,7 +1558,9 @@ UI.Container = function(contents){
 	this.dom = document.createElement('div');
 	this.dom.style.display = 'flex';
 	contents.forEach(function(i){
-		scope.dom.append(i)
+		if(i!=undefined && i!=''){
+			scope.dom.append(i)
+		}
 	})
 	return this;
 }
