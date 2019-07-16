@@ -1388,7 +1388,7 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 	sectionItem: new UI.ListViewItemMaster(null, 'Section', null).dom,
 	sectionContent: document.createElement('div'),
 	sectionName: '',
-	appBarToolbar: [undefined]
+	appBarToolbar: []
 }){
 	let scope = this;
 	this.sections.push(obj);
