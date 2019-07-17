@@ -1361,8 +1361,8 @@ UI.MasterDetailView = function(sections=[], options={
 	this.sidebar.classList.add('altUI_AppViewSidebar');
 	
 	
-	this.detailView = document.createElement('div');
-	this.detailView.classList.add('altUI_AppView_Content');
+	/*this.detailView = document.createElement('div');
+	this.detailView.classList.add('altUI_AppView_Content');*/
 	this.dom.append(this.sidebar);
 	this.dom.append(this.detailView);
 	
@@ -1393,6 +1393,7 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 	let scope = this;
 	this.sections.push(obj);
 	obj.sectionItem.classList.add('altUI_AppViewSidebar_item');
+	obj.sectionContent.classList.add('altUI_AppView_Content');
 	obj.sectionContent.style.width = '100%';
 	obj.sectionContent.style.height = '100%';
 	obj.sectionContent.style.padding = '8px';
@@ -1430,8 +1431,8 @@ UI.MasterDetailView.prototype.setSection = function(sectionName){
 		})
 	obj.sectionItem.style.background = 'rgb(200,200,200)'; 
 	
-	this.detailView.innerHTML = "";
-	this.detailView.append(obj.sectionContent);
+	this.detailView = obj.sectionContent;
+	//this.detailView.append(obj.sectionContent);
 	this.options.stackNavigator.updateDefaultOptions({
 		appBarTitle: obj.sectionName,
 		appBarToolbar: obj.appBarToolbar != undefined ? obj.appBarToolbar : [undefined]
