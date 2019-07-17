@@ -1427,7 +1427,7 @@ UI.MasterDetailView.prototype.showSidebar = function(){
 	return this;
 }
 UI.MasterDetailView.prototype.setSection = function(sectionName){
-	let obj = this.sections.find(function(i){return i.name == sectionName});
+	let obj = this.sections.find(function(i){return i.sectionName == sectionName});
 	this.detailView.innerHTML = "";
 	this.detailView.append(obj.sectionContent);
 	this.options.stackNavigator.updateDefaultOptions({
