@@ -1395,7 +1395,7 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 	obj.sectionItem.classList.add('altUI_AppViewSidebar_item');
 	obj.sectionContent.style.width = '100%';
 	obj.sectionContent.style.height = '100%';
-	
+	obj.sectionContent.style.padding = '8px';
 	
 	if(obj.sectionItemStyle!=undefined){
 		for(var k in obj.sectionItemStyle){
@@ -1404,10 +1404,7 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 	}
 	obj.sectionItem.addEventListener('click', function(){
 		scope.setSection(obj.sectionName)
-		scope.sections.forEach(function(i){
-			i.sectionItem.style.background = 'transparent'
-		})
-		obj.sectionItem.style.background = 'rgb(200,200,200)';
+		
 	})
 	this.sidebar.append(obj.sectionItem)
 	
@@ -1428,6 +1425,11 @@ UI.MasterDetailView.prototype.showSidebar = function(){
 }
 UI.MasterDetailView.prototype.setSection = function(sectionName){
 	let obj = this.sections.find(function(i){return i.sectionName == sectionName});
+	this.sections.forEach(function(i){
+			i.sectionItem.style.background = 'transparent'
+		})
+	obj.sectionItem.style.background = 'rgb(200,200,200)'; 
+	
 	this.detailView.innerHTML = "";
 	this.detailView.append(obj.sectionContent);
 	this.options.stackNavigator.updateDefaultOptions({
