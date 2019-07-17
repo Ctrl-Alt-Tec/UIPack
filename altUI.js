@@ -1392,11 +1392,11 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 }){
 	let scope = this;
 	this.sections.push(obj);
-	
-	//let sidebarItem = document.createElement('div');
 	obj.sectionItem.classList.add('altUI_AppViewSidebar_item');
-	//sidebarItem.innerHTML = '';
-	//sidebarItem.append(obj.sectionItem)
+	obj.sectionContent.style.width: '100%';
+	obj.sectionContent.style.height: '100%';
+	
+	
 	if(obj.sectionItemStyle!=undefined){
 		for(var k in obj.sectionItemStyle){
 			obj.sectionItem.style[k]=obj.sectionItemStyle[k]
