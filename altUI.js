@@ -1406,14 +1406,8 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 		scope.sections.forEach(function(i){
 			i.sectionItem.style.background = 'transparent'
 		})
-		scope.detailView.innerHTML = '';
-		scope.detailView.append(obj.sectionContent);
 		obj.sectionItem.style.background = 'rgb(200,200,200)';
-		scope.options.stackNavigator.updateDefaultOptions({
-			appBarTitle: obj.sectionName,
-			appBarToolbar: obj.appBarToolbar!=undefined ? obj.appBarToolbar: [undefined]
-		})
-		scope.hideSidebar();
+		scope.setSection(obj.sectionName)
 	})
 	this.sidebar.append(obj.sectionItem)
 	
@@ -1432,7 +1426,17 @@ UI.MasterDetailView.prototype.showSidebar = function(){
 	}
 	return this;
 }
-
+UI.MasterDetailView.prototype.setSection = function(sectionName){
+	let obj = this.sections.find(function(i){return i.name == sectionName});
+	this.detailView.innerHTML = "";
+	this.detailView.append(obj.sectionContent);
+	this.options.stackNavigator.updateDefaultOptions({
+		appBarTitle: obj.sectionName,
+		appBarToolbar: obj.appBarToolbar != undefined ? obj.appBarToolbar : [undefined]
+	})
+	this.hideSidebar()
+	return this;
+}
 UI.StackNavigator = function(initialContent, appBar, defaultOptions={
 	appBarTitle: '',
 	appBarLogo: '',
