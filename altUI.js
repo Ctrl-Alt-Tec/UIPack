@@ -1393,8 +1393,8 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 	let scope = this;
 	this.sections.push(obj);
 	obj.sectionItem.classList.add('altUI_AppViewSidebar_item');
-	obj.sectionContent.style.width: '100%';
-	obj.sectionContent.style.height: '100%';
+	obj.sectionContent.style.width = '100%';
+	obj.sectionContent.style.height = '100%';
 	
 	
 	if(obj.sectionItemStyle!=undefined){
