@@ -1403,11 +1403,11 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 		}
 	}
 	obj.sectionItem.addEventListener('click', function(){
+		scope.setSection(obj.sectionName)
 		scope.sections.forEach(function(i){
 			i.sectionItem.style.background = 'transparent'
 		})
 		obj.sectionItem.style.background = 'rgb(200,200,200)';
-		scope.setSection(obj.sectionName)
 	})
 	this.sidebar.append(obj.sectionItem)
 	
