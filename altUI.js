@@ -1360,11 +1360,11 @@ UI.MasterDetailView = function(sections=[], options={
 	this.sidebar = document.createElement('div');
 	this.sidebar.classList.add('altUI_AppViewSidebar');
 	
-	this.detailView = document.createElement('div')
+	//this.detailView = document.createElement('div')
 	/*this.detailView = document.createElement('div');
 	this.detailView.classList.add('altUI_AppView_Content');*/
 	this.dom.append(this.sidebar);
-	this.dom.append(this.detailView);
+	//this.dom.append(this.detailView);
 	
 	this.sections.forEach(function(l){
 		scope.addSection(l)
@@ -1437,6 +1437,9 @@ UI.MasterDetailView.prototype.setSection = function(sectionName){
 		appBarTitle: obj.sectionName,
 		appBarToolbar: obj.appBarToolbar != undefined ? obj.appBarToolbar : [undefined]
 	})
+	this.dom.innerHTML = '';
+	this.dom.append(this.sidebar);
+	this.dom.append(this.detailView);
 	this.hideSidebar()
 	return this;
 }
