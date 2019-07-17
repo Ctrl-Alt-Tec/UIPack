@@ -1487,16 +1487,14 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 				scope.goBack()
 			}
 		})
-	let stack = document.createElement('div');
-		stack.classList.add('altUI_AppView_Content');
-		stack.style.boxShadow = '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);'
-		stack.innerHTML='';
-		stack.append(content);
-		stack.addEventListener('click', function(e){
-			e.stopImmediatePropagation();
-			e.stopPropagation();
-		})
-	backdrop.append(stack);
+	
+	content.classList.add('altUI_AppView_Content');
+	content.style.boxShadow = '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);'
+	content.addEventListener('click', function(e){
+		e.stopImmediatePropagation();
+		e.stopPropagation();
+	})
+	backdrop.append(content);
 	this.dom.append(backdrop);
 	if(this.appBar != undefined){
 		let backButton = new UI.Button('arrow_back_ios', 'icon').transparent('rgb(0,122,255)');
