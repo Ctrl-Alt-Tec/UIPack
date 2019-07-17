@@ -1447,7 +1447,7 @@ UI.StackNavigator = function(initialContent, appBar, defaultOptions={
 	appBarTitle: '',
 	appBarLogo: '',
 	appBarBackButton: '',
-	appBarToolbar: [undfined]
+	appBarToolbar: [undefined]
 }){
 	this.defaultOptions = defaultOptions
 	let scope = this;
