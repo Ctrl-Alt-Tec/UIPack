@@ -1360,7 +1360,7 @@ UI.MasterDetailView = function(sections=[], options={
 	this.sidebar = document.createElement('div');
 	this.sidebar.classList.add('altUI_AppViewSidebar');
 	
-	
+	this.detailView = document.createElement('div')
 	/*this.detailView = document.createElement('div');
 	this.detailView.classList.add('altUI_AppView_Content');*/
 	this.dom.append(this.sidebar);
