@@ -1611,10 +1611,12 @@ UI.Picker = function(values = [], callback){
 	this.callback = callback;
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_Picker');
-	let select = document.createElement('div');
-	select.classList.add('altUI_Picker_Select');
-	let options = document.createElement('div');
-	options.classList.add('altUI_Picker_Options');
+	
+	this.select = document.createElement('div');
+	this.select.classList.add('altUI_Picker_Select');
+	
+	this.options = document.createElement('div');
+	this.options.classList.add('altUI_Picker_Options');
 	values.forEach(function(i){
 		let option = document.createElement('span');
 		option.innerText = i
@@ -1625,7 +1627,7 @@ UI.Picker = function(values = [], callback){
 			scope.setOption(option)
 		})
 		if(i!=undefined){
-			options.append(option)
+			scope.options.append(option)
 		}
 	})
 	select.addEventListener('click', function(e){
@@ -1645,7 +1647,11 @@ UI.Picker = function(values = [], callback){
 UI.Picker.prototype = Object.create(UI.Element.prototype);
 UI.Picker.prototype.constructor = UI.Picker;
 UI.Picker.prototype.setOption = function(option){
-	console.log(option)
+	this.options.querySelectorAll('span').forEach(function(i){
+		i.classList.remove('selected')
+	})
+	option.classList.add('selected');
+	this.callback(option.innerText);
 	return this
 }
 
