@@ -1622,7 +1622,7 @@ UI.Picker = function(values = [], callback){
 			scope.setOption(option)
 		})
 		if(i!=undefined){
-			options.append(i)
+			options.append(option)
 		}
 	})
 	this.dom.append(select);
