@@ -1630,7 +1630,7 @@ UI.Picker = function(values = [], callback){
 			scope.options.append(option)
 		}
 	})
-	select.addEventListener('click', function(e){
+	this.select.addEventListener('click', function(e){
 		e.preventDefault();
 		e.stopPropagation();
 		e.stopImmediatePropagation();
