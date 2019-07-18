@@ -1622,7 +1622,7 @@ UI.Picker = function(values = [], callback){
 			e.preventDefault();
 			e.stopPropagation();
 			e.stopImmediatePropagation();
-			//scope.setOption(option)
+			scope.setOption(option)
 		})
 		if(i!=undefined){
 			options.append(option)
@@ -1632,7 +1632,7 @@ UI.Picker = function(values = [], callback){
 		e.preventDefault();
 		e.stopPropagation();
 		e.stopImmediatePropagation();
-		options.style.display = 'flex';
+		options.style.display = 'block';
 	})
 	document.body.addEventListener('click', function(){
 		options.style.display = 'none';
@@ -1644,7 +1644,7 @@ UI.Picker = function(values = [], callback){
 }
 UI.Picker.prototype = Object.create(UI.Element.prototype);
 UI.Picker.prototype.constructor = UI.Picker;
-UI.Picker.setOption = function(option){
+UI.Picker.prototype.setOption = function(option){
 	console.log(option)
 	return this
 }
