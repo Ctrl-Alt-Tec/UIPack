@@ -267,13 +267,15 @@ div{
 	}
 	.altUI_Picker_Options{
 		display: none;
-		background: white;
+		background: rgb(200,200,200);
 		border-radius: 4px;
-		position: absolute
+		position: absolute;
+		z-index: 2;
+		width: 80%
 	}
 		.altui_Picker_Options span{
 			display: block;
-			padding: 4px 8px
+			padding: 8px
 		}
 
 .altUI_NavStack{
