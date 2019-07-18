@@ -1639,7 +1639,7 @@ UI.Picker = function(values = [], callback){
 	document.body.addEventListener('click', function(){
 		scope.options.style.display = 'none';
 	})
-	
+	this.setOption(values[0])	
 	this.dom.append(this.select);
 	this.dom.append(this.options)
 	return this
@@ -1648,12 +1648,16 @@ UI.Picker.prototype = Object.create(UI.Element.prototype);
 UI.Picker.prototype.constructor = UI.Picker;
 UI.Picker.prototype.setOption = function(option){
 	this.options.querySelectorAll('span').forEach(function(i){
-		i.classList.remove('selected')
+		if(i.innerText == option){
+			i.classList.add('selected')
+		}else{
+			i.classList.remove('selected')
+		}
 	})
-	option.classList.add('selected');
-	this.select.innerText = option.innerText;
+	//option.classList.add('selected');
+	this.select.innerText = option;
 	this.options.style.display = 'none'
-	this.callback(option.innerText);
+	this.callback(option);
 	return this
 }
 
