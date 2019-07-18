@@ -1660,7 +1660,7 @@ UI.Picker = function(values = [], callback){
 }
 UI.Picker.prototype = Object.create(UI.Element.prototype);
 UI.Picker.prototype.constructor = UI.Picker;
-UI.Picker.prototype.setOption = function(option){
+UI.Picker.prototype.setOption = function(option, callback = true){
 	this.options.querySelectorAll('span').forEach(function(i){
 		if(i.innerText == option){
 			i.classList.add('selected')
@@ -1671,7 +1671,9 @@ UI.Picker.prototype.setOption = function(option){
 	//option.classList.add('selected');
 	this.select.innerText = option;
 	this.options.style.display = 'none'
-	this.callback(option);
+	if(callback){
+		this.callback(option);
+	}
 	return this
 }
 
