@@ -258,19 +258,23 @@ div{
 	}
 
 
-.altUI_Picker_Select{
-	-webkit-appearance: menulist-button;
-	appearance: menulist-button
+.altUI_Picker{
+	margin: 8px
 }
-.altUI_Picker_Options{
-	display: none;
-	background: white;
-	border-radius: 4px;
-}
-.altui_Picker_Options span{
-	display: block;
-	padding: 4px 8px
-}
+	.altUI_Picker_Select{
+		-webkit-appearance: menulist-button;
+		appearance: menulist-button
+	}
+	.altUI_Picker_Options{
+		display: none;
+		background: white;
+		border-radius: 4px;
+		position: absolute
+	}
+		.altui_Picker_Options span{
+			display: block;
+			padding: 4px 8px
+		}
 
 .altUI_NavStack{
 	
