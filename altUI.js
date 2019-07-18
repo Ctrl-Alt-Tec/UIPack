@@ -1618,13 +1618,23 @@ UI.Picker = function(values = [], callback){
 	values.forEach(function(i){
 		let option = document.createElement('span');
 		option.innerText = i
-		option.addEventListener('click', function(){
+		option.addEventListener('click', function(e){
+			e.preventDefault();
+			e.stopPropagation();
+			e.stopImmediatePropagation();
 			scope.setOption(option)
 		})
 		if(i!=undefined){
 			options.append(option)
 		}
 	})
+	select.addEventListener('click', function(){
+		options.style.display = 'flex';
+	})
+	document.body.addEventListener('click', function(){
+		options.style.display = 'none';
+	})
+	
 	this.dom.append(select);
 	this.dom.append(options)
 	return this
