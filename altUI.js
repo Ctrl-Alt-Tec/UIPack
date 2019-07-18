@@ -1651,6 +1651,7 @@ UI.Picker.prototype.setOption = function(option){
 		i.classList.remove('selected')
 	})
 	option.classList.add('selected');
+	this.select.innerText = option.innerText;
 	this.callback(option.innerText);
 	return this
 }
