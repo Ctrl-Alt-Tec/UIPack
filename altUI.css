@@ -133,7 +133,7 @@ div{
 		font-size: 18px;
 		font-weight: 600;
 	}
-	.altUI_InputView input.altUI_InputViewInput, button.altUI_InputViewInput, .altUI_Button, select.altUI_InputViewInput, .altUI_Picker{
+	.altUI_InputView input.altUI_InputViewInput, button.altUI_InputViewInput, .altUI_Button, select.altUI_InputViewInput, .altUI_Picker_Select{
 		font-size: 1.2em;
 		padding: 8px;
 		border-radius: 8px;
@@ -257,6 +257,11 @@ div{
 		padding: 0px;
 	}
 
+
+.altUI_Picker_Select{
+	-webkit-appearance: menulist-button;
+	appearance: menulist-button
+}
 
 .altUI_NavStack{
 	
