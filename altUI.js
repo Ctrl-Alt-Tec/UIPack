@@ -1586,7 +1586,10 @@ UI.SegmentedControl.prototype.setSelection = function(index){
 	return this;
 }
 
-UI.Container = function(contents){
+UI.Container = function(contents, options={
+	itemStyle: {},
+	style: {},
+}){
 	let scope = this;
 	UI.Element.call(this)
 	this.dom = document.createElement('div');
@@ -1594,9 +1597,20 @@ UI.Container = function(contents){
 	this.dom.style.alignItems = 'center';
 	contents.forEach(function(i){
 		if(i!=undefined && i!=''){
+			//i.style = options.itemStyle;
+			if(options.itemStyle!=undefined){
+				for(let key in options.itemStyle){
+					i.style[key] = options.itemStyle[key]
+				}
+			}
 			scope.dom.append(i)
 		}
 	})
+	if(options.style!=undefined){
+		for(let key in options.style){
+			this.dom.style[key] = options.style[key]
+		}
+	}
 	return this;
 }
 
@@ -1640,8 +1654,8 @@ UI.Picker = function(values = [], callback){
 		scope.options.style.display = 'none';
 	})
 	this.setOption(values[0])	
-	this.dom.append(this.select);
-	this.dom.append(this.options)
+	this.dom.append(this.options);
+	this.dom.append(this.select)
 	return this
 }
 UI.Picker.prototype = Object.create(UI.Element.prototype);
