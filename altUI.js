@@ -1622,13 +1622,16 @@ UI.Picker = function(values = [], callback){
 			e.preventDefault();
 			e.stopPropagation();
 			e.stopImmediatePropagation();
-			scope.setOption(option)
+			//scope.setOption(option)
 		})
 		if(i!=undefined){
 			options.append(option)
 		}
 	})
-	select.addEventListener('click', function(){
+	select.addEventListener('click', function(e){
+		e.preventDefault();
+		e.stopPropagation();
+		e.stopImmediatePropagation();
 		options.style.display = 'flex';
 	})
 	document.body.addEventListener('click', function(){
