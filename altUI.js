@@ -1643,6 +1643,7 @@ UI.Picker.prototype = Object.create(UI.Element.prototype);
 UI.Picker.prototype.constructor = UI.Picker;
 UI.Picker.setOption = function(option){
 	console.log(option)
+	return this
 }
 
 
