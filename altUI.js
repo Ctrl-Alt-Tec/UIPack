@@ -1634,10 +1634,10 @@ UI.Picker = function(values = [], callback){
 		e.preventDefault();
 		e.stopPropagation();
 		e.stopImmediatePropagation();
-		options.style.display = 'block';
+		scope.options.style.display = 'block';
 	})
 	document.body.addEventListener('click', function(){
-		options.style.display = 'none';
+		scope.options.style.display = 'none';
 	})
 	
 	this.dom.append(select);
@@ -1652,6 +1652,7 @@ UI.Picker.prototype.setOption = function(option){
 	})
 	option.classList.add('selected');
 	this.select.innerText = option.innerText;
+	this.options.style.display = 'none'
 	this.callback(option.innerText);
 	return this
 }
