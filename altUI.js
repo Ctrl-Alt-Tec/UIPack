@@ -1624,7 +1624,7 @@ UI.Picker = function(values = [], callback){
 			e.preventDefault();
 			e.stopPropagation();
 			e.stopImmediatePropagation();
-			scope.setOption(option)
+			scope.setOption(i)
 		})
 		if(i!=undefined){
 			scope.options.append(option)
