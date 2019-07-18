@@ -263,11 +263,12 @@ div{
 }
 	.altUI_Picker_Select{
 		-webkit-appearance: menulist-button;
-		appearance: menulist-button
+		appearance: menulist-button;
+		position: relative
 	}
 	.altUI_Picker_Options{
 		display: none;
-		background: rgb(200,200,200);
+		background: white;
 		border-radius: 4px;
 		position: absolute;
 		z-index: 2;
