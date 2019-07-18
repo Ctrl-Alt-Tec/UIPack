@@ -1640,8 +1640,8 @@ UI.Picker = function(values = [], callback){
 		scope.options.style.display = 'none';
 	})
 	
-	this.dom.append(select);
-	this.dom.append(options)
+	this.dom.append(this.select);
+	this.dom.append(this.options)
 	return this
 }
 UI.Picker.prototype = Object.create(UI.Element.prototype);
