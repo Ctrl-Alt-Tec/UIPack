@@ -1603,6 +1603,39 @@ UI.Container = function(contents){
 UI.Container.prototype = Object.create(UI.Element.prototype);
 UI.Container.prototype.constructor = UI.Container;
 
+
+UI.Picker = function(values = [], callback){
+	let scope = this;
+	UI.Element.call(this);
+	this.values = values;
+	this.callback = callback;
+	this.dom = document.createElement('div');
+	this.dom.classList.add('altUI_Picker');
+	let select = document.createElement('div');
+	select.classList.add('altUI_Picker_Select');
+	let options = document.createElement('div');
+	options.classList.add('altUI_Picker_Options');
+	values.forEach(function(i){
+		let option = document.createElement('span');
+		option.innerText = i
+		option.addEventListener('click', function(){
+			scope.setOption(option)
+		})
+		if(i!=undefined){
+			options.append(i)
+		}
+	})
+	this.dom.append(select);
+	this.dom.append(options)
+	return this
+}
+UI.Picker.prototype = Object.create(UI.Element.prototype);
+UI.Picker.prototype.constructor = UI.Picker;
+UI.Picker.setOption = function(option){
+	console.log(option)
+}
+
+
 /*UI.ToggleSwitch = function(hint, value, name){
 	UI.Element.call(this);
 	this.dom = document.createElement('label');
