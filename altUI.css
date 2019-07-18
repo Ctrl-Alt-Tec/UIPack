@@ -262,6 +262,14 @@ div{
 	-webkit-appearance: menulist-button;
 	appearance: menulist-button
 }
+.altUI_Picker_Options{
+	background: white;
+	border-radius: 4px;
+}
+.altui_Picker_Options span{
+	display: block;
+	padding: 4px
+}
 
 .altUI_NavStack{
 	
