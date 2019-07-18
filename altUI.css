@@ -259,12 +259,12 @@ div{
 
 
 .altUI_Picker{
-	margin: 8px
+	margin: 8px;
+	position: relative;
 }
 	.altUI_Picker_Select{
 		-webkit-appearance: menulist-button;
 		appearance: menulist-button;
-		position: relative
 	}
 	.altUI_Picker_Options{
 		display: none;
