@@ -133,7 +133,7 @@ div{
 		font-size: 18px;
 		font-weight: 600;
 	}
-	.altUI_InputView input.altUI_InputViewInput, button.altUI_InputViewInput, .altUI_Button, select.altUI_InputViewInput, .altUI_Picker_Select{
+	.altUI_InputView input.altUI_InputViewInput, button.altUI_InputViewInput, .altUI_Button, select.altUI_InputViewInput, .altUI_Picker_Select, .altUI_Color{
 		font-size: 1.2em;
 		padding: 8px;
 		border-radius: 8px;
@@ -172,7 +172,7 @@ div{
 	.altUI_InputView:has(>input[type="hidden"]){
 		padding: 0;
 	}
-	input[type="button"].altUI_InputViewInput, input[type="submit"].altUI_InputViewInput, .altUI_Button{
+	input[type="button"].altUI_InputViewInput, input[type="submit"].altUI_InputViewInput, .altUI_Button, .altUI_Color{
 		padding: 16px;
 		font-weight: 600;
 		font-size: 18px
@@ -180,7 +180,7 @@ div{
 	.altUI_InputView input.altUI_InputViewInput{
 		margin: 0 !important;
 	}
-	.altUI_Button{
+	.altUI_Button, .altUI_Color{
 		margin: 8px
 	}
 
