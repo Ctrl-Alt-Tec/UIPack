@@ -558,7 +558,7 @@ UI.Color.prototype.setValue = function ( value ) {
 	this.value = value;
 	this.dom.innerHTML = '';
 	this.dom.textContent = this.textConent;
-	this.append(this.colorInput);
+	this.dom.append(this.colorInput);
 	this.dom.style.color = value;
 	return this;
 
