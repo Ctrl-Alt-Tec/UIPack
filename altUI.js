@@ -529,9 +529,6 @@ UI.Color = function (value, icon=false) {
 	let colorInput = document.createElement('input');
 	colorInput.type='color';
 	this.dom.append(colorInput)
-
-	this.dom = dom;
-
 	return this;
 
 };
