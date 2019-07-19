@@ -557,7 +557,7 @@ UI.Color.prototype.setValue = function ( value ) {
 	this.colorInput.value = value;
 	this.value = value;
 	this.dom.innerHTML = '';
-	this.dom.textContent = this.textConent;
+	this.dom.textContent = this.textContent;
 	this.dom.append(this.colorInput);
 	this.dom.style.color = value;
 	return this;
@@ -567,7 +567,11 @@ UI.Color.prototype.setValue = function ( value ) {
 UI.Color.prototype.setHexValue = function ( hex ) {
 	this.colorInput.value =  '#' + ( '000000' + hex.toString( 16 ) ).slice( - 6 );
 	this.value = '#' + ( '000000' + hex.toString( 16 ) ).slice( - 6 );
-
+	this.dom.innerHTML = '';
+	this.dom.textContent = this.textContent;
+	this.dom.append(this.colorInput);
+	this.dom.style.color = value;
+	return this;
 	return this;
 
 };
