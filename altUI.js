@@ -228,7 +228,7 @@ UI.Text = function ( text ) {
 	UI.Element.call( this );
 
 	this.dom = document.createElement( 'span' );
-	dom.classList.add('altUI_Text');
+	this.dom.classList.add('altUI_Text');
 	this.setValue( text );
 	return this;
 
