@@ -227,15 +227,9 @@ UI.Text = function ( text ) {
 
 	UI.Element.call( this );
 
-	var dom = document.createElement( 'span' );
-	dom.className = 'Text';
-	dom.style.cursor = 'default';
-	dom.style.display = 'inline-block';
-	dom.style.verticalAlign = 'middle';
-
-	this.dom = dom;
+	this.dom = document.createElement( 'span' );
+	dom.classList.add('altUI_Text');
 	this.setValue( text );
-
 	return this;
 
 };
@@ -244,21 +238,14 @@ UI.Text.prototype = Object.create( UI.Element.prototype );
 UI.Text.prototype.constructor = UI.Text;
 
 UI.Text.prototype.getValue = function () {
-
 	return this.dom.textContent;
-
 };
 
 UI.Text.prototype.setValue = function ( value ) {
-
 	if ( value !== undefined ) {
-
 		this.dom.textContent = value;
-
 	}
-
 	return this;
-
 };
 
 
