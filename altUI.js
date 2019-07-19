@@ -519,9 +519,7 @@ UI.Checkbox.prototype.setValue = function ( value ) {
 UI.Color = function (value, icon=false) {
 
 	UI.Element.call( this );
-
 	var scope = this;
-
 	this.dom = document.createElement( 'div' );
 	this.dom.classList.add('altUI_Color')
 	this.dom.textContent = value;
@@ -529,6 +527,10 @@ UI.Color = function (value, icon=false) {
 	let colorInput = document.createElement('input');
 	colorInput.type='color';
 	this.dom.append(colorInput)
+	
+	this.dom.addEventListener('click', function(){
+		colorInput.click();
+	})
 	return this;
 
 };
