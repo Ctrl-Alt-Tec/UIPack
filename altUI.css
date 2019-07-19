@@ -185,7 +185,12 @@ div{
 	.altUI_Button, .altUI_Color{
 		margin: 8px
 	}
-
+		.altUI_Color input[type='color']{
+			border: none;
+			padding: none;
+			margin: 2px
+		}
+		
 .altUI_ListViewItem{
 	display: flex;
 	justify-content: space-between;
