@@ -370,6 +370,13 @@ div{
 	}
 
 
+.altUI_Text{
+	font-size: 18px;
+	font-weight: 400;
+	margin: 8px;
+	text-align: center;
+}
+
  @media only screen and (max-width: 800px){
         .altUI_AppViewSidebar{
 	  	position: fixed;
