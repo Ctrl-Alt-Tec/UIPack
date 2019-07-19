@@ -175,7 +175,9 @@ div{
 	input[type="button"].altUI_InputViewInput, input[type="submit"].altUI_InputViewInput, .altUI_Button, .altUI_Color{
 		padding: 16px;
 		font-weight: 600;
-		font-size: 18px
+		font-size: 18px;
+		display: flex;
+		justify-content: space-between;
 	}
 	.altUI_InputView input.altUI_InputViewInput{
 		margin: 0 !important;
