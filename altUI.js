@@ -517,22 +517,23 @@ UI.Checkbox.prototype.setValue = function ( value ) {
 // Color
 
 UI.Color = function (value, icon=false) {
-
 	UI.Element.call( this );
 	var scope = this;
 	this.dom = document.createElement( 'div' );
 	this.dom.classList.add('altUI_Color')
 	this.dom.textContent = value;
 	if(icon){this.dom.classList.add('material-icons')};
-	let colorInput = document.createElement('input');
-	colorInput.type='color';
-	this.dom.append(colorInput)
+	this.colorInput = document.createElement('input');
+	this.colorInput.type='color';
+	this.value = this.colorInput.value;
+	this.dom.append(this.colorInput)
 	
 	this.dom.addEventListener('click', function(){
 		colorInput.click();
 	})
-	colorInput.addEventListener('change', function(){
-		scope.dom.style.color = colorInput.value
+	this.colorInput.addEventListener('change', function(){
+		scope.dom.style.color = colorInput.value;
+		scope.value = colorInput.value;
 	})
 	return this;
 
@@ -542,28 +543,25 @@ UI.Color.prototype = Object.create( UI.Element.prototype );
 UI.Color.prototype.constructor = UI.Color;
 
 UI.Color.prototype.getValue = function () {
-
-	return this.dom.value;
-
+	return this.value;
 };
 
 UI.Color.prototype.getHexValue = function () {
 
-	return parseInt( this.dom.value.substr( 1 ), 16 );
+	return parseInt( this.value.substr( 1 ), 16 );
 
 };
 
 UI.Color.prototype.setValue = function ( value ) {
-
-	this.dom.value = value;
-
+	this.colorInput.value = value;
+	this.value = value;
 	return this;
 
 };
 
 UI.Color.prototype.setHexValue = function ( hex ) {
-
-	this.dom.value = '#' + ( '000000' + hex.toString( 16 ) ).slice( - 6 );
+	this.colorInput.value =  '#' + ( '000000' + hex.toString( 16 ) ).slice( - 6 );
+	this.value = '#' + ( '000000' + hex.toString( 16 ) ).slice( - 6 );
 
 	return this;
 
