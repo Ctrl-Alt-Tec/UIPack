@@ -553,13 +553,13 @@ UI.Color.prototype.getHexValue = function () {
 
 };
 
-UI.Color.prototype.setValue = function ( value ) {
-	this.colorInput.value = value;
-	this.value = value;
+UI.Color.prototype.setValue = function ( hex ) {
+	this.colorInput.value =  '#' + ( '000000' + hex.toString( 16 ) ).slice( - 6 );
+	this.value =  '#' + ( '000000' + hex.toString( 16 ) ).slice( - 6 );
 	this.dom.innerHTML = '';
 	this.dom.textContent = this.textContent;
 	this.dom.append(this.colorInput);
-	this.dom.style.color = value;
+	this.dom.style.color = hex;
 	return this;
 
 };
