@@ -516,20 +516,21 @@ UI.Checkbox.prototype.setValue = function ( value ) {
 
 // Color
 
-UI.Color = function () {
+UI.Color = function (value, icon=false) {
 
 	UI.Element.call( this );
 
 	var scope = this;
 
 	var dom = document.createElement( 'input' );
-	dom.className = 'Color';
-	dom.style.width = '64px';
-	dom.style.height = '17px';
-	dom.style.border = '0px';
-	dom.style.padding = '2px';
-	dom.style.backgroundColor = 'transparent';
+	dom.classList.add('altUI_Color')
 
+	dom.textContent = value;
+	
+	if(icon){
+		dom.classList.add('material-icons')
+	}
+	
 	try {
 
 		dom.type = 'color';
