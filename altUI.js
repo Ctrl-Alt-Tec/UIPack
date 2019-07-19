@@ -519,9 +519,10 @@ UI.Checkbox.prototype.setValue = function ( value ) {
 UI.Color = function (value, icon=false) {
 	UI.Element.call( this );
 	var scope = this;
+	this.textContent = value;
 	this.dom = document.createElement( 'div' );
 	this.dom.classList.add('altUI_Color')
-	this.dom.textContent = value;
+	this.dom.textContent = this.textContent;
 	if(icon){this.dom.classList.add('material-icons')};
 	this.colorInput = document.createElement('input');
 	this.colorInput.type='color';
@@ -555,6 +556,10 @@ UI.Color.prototype.getHexValue = function () {
 UI.Color.prototype.setValue = function ( value ) {
 	this.colorInput.value = value;
 	this.value = value;
+	this.dom.innerHTML = '';
+	this.dom.textContent = this.textConent;
+	this.append(this.colorInput);
+	this.dom.style.color = value;
 	return this;
 
 };
