@@ -525,7 +525,7 @@ UI.Color = function (value, icon=false) {
 	this.dom = document.createElement( 'div' );
 	this.dom.classList.add('altUI_Color')
 	this.dom.textContent = value;
-	if(icon){dom.classList.add('material-icons')};
+	if(icon){this.dom.classList.add('material-icons')};
 	let colorInput = document.createElement('input');
 	colorInput.type='color';
 	this.dom.append(colorInput)
