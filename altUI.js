@@ -522,21 +522,13 @@ UI.Color = function (value, icon=false) {
 
 	var scope = this;
 
-	var dom = document.createElement( 'input' );
-	dom.classList.add('altUI_Color')
-
-	dom.textContent = value;
-	
-	if(icon){
-		dom.classList.add('material-icons')
-	}
-	
-	try {
-
-		dom.type = 'color';
-		dom.value = '#ffffff';
-
-	} catch ( exception ) {}
+	this.dom = document.createElement( 'div' );
+	this.dom.classList.add('altUI_Color')
+	this.dom.textContent = value;
+	if(icon){dom.classList.add('material-icons')};
+	let colorInput = document.createElement('input');
+	colorInput.type='color';
+	this.dom.append(colorInput)
 
 	this.dom = dom;
 
