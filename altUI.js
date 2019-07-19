@@ -531,6 +531,9 @@ UI.Color = function (value, icon=false) {
 	this.dom.addEventListener('click', function(){
 		colorInput.click();
 	})
+	colorInput.addEventListener('change', function(){
+		scope.dom.style.color = colorInput.value
+	})
 	return this;
 
 };
