@@ -177,7 +177,8 @@ div{
 		font-weight: 600;
 		font-size: 18px;
 		display: flex;
-		justify-content: center;
+		justify-content: space-around;
+		align-items: center;
 	}
 	.altUI_InputView input.altUI_InputViewInput{
 		margin: 0 !important;
@@ -188,7 +189,6 @@ div{
 		.altUI_Color input[type='color']{
 			border: none;
 			padding: 0px;
-			margin: 2px
 		}
 		
 .altUI_ListViewItem{
