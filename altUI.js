@@ -1473,8 +1473,8 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 		
 		backdrop.addEventListener('click', function(e){
 			e.stopPropagation();
-			e.stopImmediatePropagation();
-			if(!document.querySelector(':focus')){
+			//e.stopImmediatePropagation();
+			f(!document.querySelector(':focus')){
 				scope.goBack()
 			}
 		})
