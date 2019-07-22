@@ -1467,11 +1467,12 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 }){
 	let scope = this;
 	this.stacks.push({content: content, options: options});
+	let backdropListener = document.createElement('div');
 	let backdrop = document.createElement('div');
 		backdrop.classList.add('alUI_StackNavigatorStackCont')
-		backdrop.style.paddingLeft=this.stacks.length*5+'ch';
+		backdropListener.style.paddingLeft=this.stacks.length*5+'ch';
 		
-		backdrop.addEventListener('click', function(e){
+		backdropListener.addEventListener('click', function(e){
 			e.stopPropagation();
 			if(!document.querySelector(':focus')){
 				scope.goBack()
@@ -1485,6 +1486,7 @@ UI.StackNavigator.prototype.appendStack = function(content, options = {
 		e.stopImmediatePropagation();
 		e.stopPropagation();
 	})*/
+	backdrop.append(backdropListener)
 	backdrop.append(content);
 	this.dom.append(backdrop);
 	if(this.appBar != undefined){
