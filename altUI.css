@@ -394,7 +394,7 @@ div{
         .altUI_AppBar .altUI_SidebarBttn{
           	display: flex
         }
-	.alUI_StackNavigatorStackCont{
+	.alUI_StackNavigatorStackCont div{
 		padding: 0px !important;
 	}
 }
