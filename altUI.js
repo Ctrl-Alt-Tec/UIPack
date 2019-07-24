@@ -1679,7 +1679,7 @@ window.onload = function(){
 		dom.append(content);
 		document.body.append(dom)
 		setTimeout(function(){
-			scope.dom.remove()
+			dom.remove()
 		}, 3000)
 	}
 
