@@ -1283,14 +1283,14 @@ UI.CellViewItemKeyValue = function( topText = '', bottomText = '' ){
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_CellViewItem');
 	this.dom.classList.add('altUI_CellViewItemKeyValue');
-	this.key = document.createElement('div');
-	this.key.classList.add('altUI_CellViewItemKeyValue_Key')
-	this.key.append(topText);
-	this.value = document.createElement('div');
-	this.value.classList.add('altUI_CellViewItemKeyValue_Value');
-	this.key.append(bottomText);
-	this.dom.append(this.key);
-	this.dom.append(this.value);
+	this.keyElement = document.createElement('div');
+	this.keyElement.classList.add('altUI_CellViewItemKeyValue_Key')
+	this.keyElement.append(topText);
+	this.valueElement = document.createElement('div');
+	this.valueElement.classList.add('altUI_CellViewItemKeyValue_Value');
+	this.valueElement.append(bottomText);
+	this.dom.append(this.keyElement);
+	this.dom.append(this.valueElement);
 	return this
 }
 
