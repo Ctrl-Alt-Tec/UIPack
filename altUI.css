@@ -97,7 +97,8 @@ div{
 	padding: 8px;
 	border-radius: 8px;
 	background-color: rgb(200,200,200);
-	flex-shrink: 0
+	flex-shrink: 0;
+	font-size: 18px;
 }
 	.altUI_CellViewItemKeyValue{
 		display: flex;
@@ -366,6 +367,7 @@ div{
 	display: flex;
 	flex-direction: column;
 	height: 100%;
+	overflow: auto;
 }
 	.altUI_TabViewTabs{
 		display: flex;
@@ -377,7 +379,8 @@ div{
 		box-sizing: border-box;
 		flex-shrink: 0;
 		position: sticky;
-		top: 0
+		top: 0;
+		z-index: 3;
 	}
 		.altUI_TabViewTabs .altUI_TabViewTab{
 			font-size: 24px;
