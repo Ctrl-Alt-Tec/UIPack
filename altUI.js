@@ -1382,7 +1382,7 @@ UI.MasterDetailView = function(sections=[], options={
 	if(this.options.stackNavigator != null){
 		this.options.stackNavigator.updateDefaultOptions({appBarBackButton: this.sideBarBttn.dom})
 	}
-	
+	this.hideSidebar();
 	return this;
 }
 UI.MasterDetailView.prototype = Object.create(UI.Element.prototype);
@@ -1411,7 +1411,6 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 		
 	})
 	this.sidebar.append(obj.sectionItem)
-	
 	return this;
 }
 UI.MasterDetailView.prototype.hideSidebar = function(){
