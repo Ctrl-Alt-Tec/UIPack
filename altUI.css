@@ -406,7 +406,7 @@ div{
         .altUI_AppBar .altUI_SidebarBttn{
           	display: flex
         }
-	.alUI_StackNavigatorStackCont div:first-of-type{
+	.alUI_StackNavigatorStackCont div:first-child{
 		padding: 0px !important;
 	}
 }
