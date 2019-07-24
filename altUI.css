@@ -104,6 +104,8 @@ div{
 }
 
 .altUI_Heading{
+	display: block;
+	margin: 8px 0px;
 }
 .altUI_Heading.altUI_Heading1{
 	font-size: 48px;
