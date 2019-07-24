@@ -1671,15 +1671,18 @@ UI.Picker.prototype.setOption = function(option, callback = true){
 	return this
 }
 
+// App, Document and Window
+window.onload = function(){
+	document.body.showUINotificationFeedback = function(content, options){
+		let dom = document.createElement('div');
+		dom.classList.add('altUI_NotificationFeedback');
+		dom.append(content);
+		document.body.append(dom)
+		setTimeout(function(){
+			scope.dom.remove()
+		}, 3000)
+	}
 
-document.body.showUINotificationFeedback = function(content, options){
-	let dom = document.createElement('div');
-	dom.classList.add('altUI_NotificationFeedback');
-	dom.append(content);
-	document.body.append(dom)
-	setTimeout(function(){
-		scope.dom.remove()
-	}, 3000)
 }
 
 
