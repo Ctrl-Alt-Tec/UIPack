@@ -1671,19 +1671,19 @@ UI.Picker.prototype.setOption = function(option, callback = true){
 	return this
 }
 
-// App, Document and Window
-window.onload = function(){
-	document.body.showUINotificationFeedback = function(content, options){
-		let dom = document.createElement('div');
-		dom.classList.add('altUI_NotificationFeedback');
-		dom.append(content);
-		document.body.append(dom)
-		setTimeout(function(){
-			dom.remove()
-		}, 3000)
-	}
 
+UI.NotificationFeedback = function(content, options){
+	let dom = document.createElement('div');
+	dom.classList.add('altUI_NotificationFeedback');
+	dom.append(content);
+	document.querySelector('body').append(dom)
+	setTimeout(function(){
+		dom.remove()
+	}, 3000)
 }
+UI.NotificationFeedback.prototype = Object.create(UI.Element.prototype);
+UI.NotificationFeedback.prototype.constructor = UI.NotificationFeedback;
+
 
 
 /*UI.ToggleSwitch = function(hint, value, name){
