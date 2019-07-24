@@ -379,7 +379,6 @@ div{
 	}
 	.altUI_TabViewContent{
 		padding: 16px;
-		display: none;
 		height: 100%;
 		box-sizing: border-box;
 		flex-direction: column
