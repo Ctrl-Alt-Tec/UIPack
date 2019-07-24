@@ -1343,7 +1343,6 @@ UI.Heading = function(level, value){
 	this.dom = document.createElement('span');
 	this.dom.classList.add('altUI_Heading');
 	this.dom.classList.add('altUI_Heading'+level);
-	this.dom.style.margin = '8px';
 	this.dom.innerText = value;
 	return this;
 }
