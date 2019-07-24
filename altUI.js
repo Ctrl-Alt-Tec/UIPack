@@ -1218,19 +1218,29 @@ UI.AppBar.prototype.set = function(options){
 
 UI.TabView = function(){
 	UI.Element.call(this);
+	
+	this.views = [];
+	
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_TabView');
 	let tabs = document.createElement('div');
 	tabs.classList.add('altUI_TabViewTabs');
-	let views = document.createElement('div');
-	views.classList.add('altUI_TabViewViews');
+	
+	this.viewsContainer = document.createElement('div');
+	this.viewsContainer.classList.add('altUI_TabViewViews');
+	
 	this.dom.append(tabs);
-	this.dom.append(views)
+	this.dom.append(this.viewsContainer)
 	return this;
 }
 UI.TabView.prototype = Object.create(UI.Element.prototype);
 UI.TabView.prototype.constructor = UI.TabView;
 UI.TabView.prototype.addTab = function(i, label, content, iconName=''){
+	
+	content.classList.add('altUI_TabViewContent');
+	content.id = "altUI_TabViewContent_"+i;
+	this.views.push(content)
+	
 	let scope = this;
 	let TabLabel = document.createElement('div');
 	TabLabel.classList.add('altUI_TabViewTab');
@@ -1242,8 +1252,7 @@ UI.TabView.prototype.addTab = function(i, label, content, iconName=''){
 	TabLabel.prepend(icon)
 	
 	
-	content.classList.add('altUI_TabViewContent');
-	content.id = "altUI_TabViewContent_"+i;
+	
 	this.dom.querySelector('.altUI_TabViewTabs').append(TabLabel);
 	this.dom.querySelector('.altUI_TabViewViews').append(content);
 	TabLabel.addEventListener('click', function(){scope.setTab(i)});
@@ -1251,10 +1260,14 @@ UI.TabView.prototype.addTab = function(i, label, content, iconName=''){
 	return this;
 }
 UI.TabView.prototype.setTab = function(i=0, callback=function(){}){
-	this.dom.querySelector('.altUI_TabViewViews').querySelectorAll('.altUI_TabViewContent').forEach(function(l){
+	
+	/*this.dom.querySelector('.altUI_TabViewViews').querySelectorAll('.altUI_TabViewContent').forEach(function(l){
 		l.classList.remove('altUI_TabViewContentActive')
 	})
 	this.dom.querySelector('.altUI_TabViewViews').querySelector("#altUI_TabViewContent_"+i).classList.add('altUI_TabViewContentActive')
+	*/
+	this.viewsContainer.innerHTML = '';
+	this.viewsContainer.append(  this.views.find(function(view){ return view.id == 'altUI_TabViewContent_'+i }) )
 	this.dom.querySelector('.altUI_TabViewTabs').querySelectorAll('.altUI_TabViewTab').forEach(function(l){
 		l.classList.remove('altUI_TabViewTabActive')
 	})
