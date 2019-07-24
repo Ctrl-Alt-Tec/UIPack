@@ -1049,7 +1049,7 @@ UI.Modal = function ( value ) {
 	this.dom.style.boxSizing = 'border-box';
 	this.dom.style.paddingTop = '40px';
 	this.dom.style.zIndex = '1000';
-	this.dom.style.alignItems: 'flex-end';
+	this.dom.style.alignItems = 'flex-end';
 	this.dom.addEventListener( 'click', function ( e ) {
 		if(!scope.actionRequired && !document.querySelector(':focus')){
 			scope.hide();
