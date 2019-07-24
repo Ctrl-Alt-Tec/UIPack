@@ -1049,6 +1049,7 @@ UI.Modal = function ( value ) {
 	this.dom.style.boxSizing = 'border-box';
 	this.dom.style.paddingTop = '40px';
 	this.dom.style.zIndex = '1000';
+	this.dom.style.alignItems: 'flex-end';
 	this.dom.addEventListener( 'click', function ( e ) {
 		if(!scope.actionRequired && !document.querySelector(':focus')){
 			scope.hide();
@@ -1668,6 +1669,17 @@ UI.Picker.prototype.setOption = function(option, callback = true){
 		this.callback(option);
 	}
 	return this
+}
+
+
+document.body.showUINotificationFeedback = function(content, options){
+	let dom = document.createElement('div');
+	dom.classList.add('altUI_NotificationFeedback');
+	dom.append(content);
+	document.body.append(dom)
+	setTimeout(function(){
+		scope.dom.remove()
+	}, 3000)
 }
 
 
