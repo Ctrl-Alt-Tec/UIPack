@@ -90,6 +90,22 @@ div{
 			margin: 4px;
 		}
 
+altUI_CellViewItem{
+	width; 400px;
+	height: 400px;
+	margin: 4px;
+	padding: 8px;
+	border-radius: 8px;
+	background-color: rgb(200,200,200)
+}
+	.altUI_CellViewItemKeyValue{
+		display: flex;
+		flex-direction: column
+	}
+	.altUI_CellViewItemKeyValue_Value{
+		font-size: 2em;
+		font-weight: 600
+	}
 
 .altUI_FormCardBlock{
 	margin: 8px;
