@@ -341,7 +341,8 @@ div{
 .altUI_TabView{
 	width: 100%;
 	display: flex;
-	flex-direction: column
+	flex-direction: column;
+	height: 100%;
 }
 	.altUI_TabViewTabs{
 		display: flex;
@@ -373,9 +374,13 @@ div{
 			font-weight: 600;
 			border-bottom: 2px solid black;
 		}
+	.altUI_TabViewViews{
+		height: 100%;
+	}
 	.altUI_TabViewContent{
 		padding: 16px;
-		display: none
+		display: none;
+		height: 100%
 	}
 	.altUI_TabViewContentActive{
 		display: flex;
