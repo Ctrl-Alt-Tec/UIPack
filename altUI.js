@@ -955,6 +955,7 @@ UI.Button = function ( value, icon, hintPadding ) {
 	UI.Element.call( this );
 
 	this.dom = document.createElement( 'button' );
+        this.dom.type="button";
 	this.dom.classList.add('altUI_Button');
 	if(value){
 		this.dom.textContent = value;
