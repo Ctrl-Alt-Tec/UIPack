@@ -1241,13 +1241,11 @@ UI.TabView.prototype.addTab = function(i, label, content, iconName=''){
 	icon.textContent = iconName;
 	TabLabel.prepend(icon)
 	
-	let TabContent = document.createElement('div');
-	TabContent.classList.add('altUI_TabViewContent');
-	TabContent.id = "altUI_TabViewContent_"+i;
-	TabContent.innerHTML = '';
-	TabContent.append(content)
+	
+	content.classList.add('altUI_TabViewContent');
+	content.id = "altUI_TabViewContent_"+i;
 	this.dom.querySelector('.altUI_TabViewTabs').append(TabLabel);
-	this.dom.querySelector('.altUI_TabViewViews').append(TabContent);
+	this.dom.querySelector('.altUI_TabViewViews').append(content);
 	TabLabel.addEventListener('click', function(){scope.setTab(i)});
 	//this.setTab(0);
 	return this;
