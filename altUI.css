@@ -91,12 +91,13 @@ div{
 		}
 
 .altUI_CellViewItem{
-	width; 400px;
-	height: 400px;
+	width: 200px;
+	height: 200px;
 	margin: 4px;
 	padding: 8px;
 	border-radius: 8px;
-	background-color: rgb(200,200,200)
+	background-color: rgb(200,200,200);
+	flex-shrink: 0
 }
 	.altUI_CellViewItemKeyValue{
 		display: flex;
