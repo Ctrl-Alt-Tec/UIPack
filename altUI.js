@@ -1255,7 +1255,9 @@ UI.TabView.prototype.addTab = function(i, label, content, iconName=''){
 	
 	this.dom.querySelector('.altUI_TabViewTabs').append(TabLabel);
 	this.dom.querySelector('.altUI_TabViewViews').append(content);
-	TabLabel.addEventListener('click', function(){scope.setTab(i)});
+	TabLabel.addEventListener('click', function(){
+		scope.setTab( scope.views.indexOf(content) )
+	});
 	//this.setTab(0);
 	return this;
 }
@@ -1267,7 +1269,7 @@ UI.TabView.prototype.setTab = function(i=0, callback=function(){}){
 	this.dom.querySelector('.altUI_TabViewViews').querySelector("#altUI_TabViewContent_"+i).classList.add('altUI_TabViewContentActive')
 	*/
 	this.viewsContainer.innerHTML = '';
-	this.viewsContainer.append(  this.views.find(function(view){ return view.id == 'altUI_TabViewContent_'+i }) )
+	this.viewsContainer.append(  this.views[i] )
 	this.dom.querySelector('.altUI_TabViewTabs').querySelectorAll('.altUI_TabViewTab').forEach(function(l){
 		l.classList.remove('altUI_TabViewTabActive')
 	})
