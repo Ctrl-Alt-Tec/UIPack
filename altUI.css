@@ -360,6 +360,7 @@ div{
 	background: rgba(0,0,0,0.2);
 	display: flex;
 	backdrop-filter: blur(1.2px);
+	z-index: 4
 }
 
 .altUI_TabView{
