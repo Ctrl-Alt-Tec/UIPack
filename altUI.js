@@ -1701,6 +1701,17 @@ UI.Picker.prototype.setOption = function(option, callback = true){
 	return this
 }
 
+UI.Hero = function(imageURL, title){
+	let scope = this;
+	UI.Element.call(this);
+	this.dom = document.createElement('div');
+	this.dom.classList.add('altUI_Hero');
+	this.dom.style.backgroundImage: imageURL;
+	return this
+}
+UI.Hero.prototype = Object.create(UI.Element.prototype);
+UI.Hero.prototype.constructor = UI.Hero;
+
 
 UI.NotificationFeedback = function(content, options){
 	let dom = document.createElement('div');
