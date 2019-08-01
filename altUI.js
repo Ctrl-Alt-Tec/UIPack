@@ -1706,7 +1706,7 @@ UI.Hero = function(imageURL, title){
 	UI.Element.call(this);
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_Hero');
-	this.dom.style.backgroundImage: imageURL;
+	this.dom.style.backgroundImage = imageURL;
 	return this
 }
 UI.Hero.prototype = Object.create(UI.Element.prototype);
