@@ -142,6 +142,8 @@ div{
 .altUI_Hero{
 	width: 100%;
 	height: 20%;
+	background-position: center !important;
+	background-repeat: no-repeat !important;
 }
 
 .altUI_HorizontalRule{
