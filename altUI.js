@@ -1740,7 +1740,7 @@ UI.Chart.Percentage = function(data){
 		let section = document.createElement('div');
 		section.classList.add('altUI_Chart_Percentage_Data');
 		section.style.width = Math.floor(data[i]*100/all)+'%';
-		scope.append(section);
+		scope.dom.append(section);
 	});
 	return this;
 }
