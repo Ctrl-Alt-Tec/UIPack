@@ -1733,13 +1733,13 @@ UI.Chart.Percentage = function(data){
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_Chart_Percentage');
 	let all = 0;
-	Obejct.keys(data).map(i => {
+	Object.keys(data).map(i => {
 		all += data[i]
 	});
 	Object.keys(data).map(i => {
 		let section = document.createElement('div');
 		section.classList.add('altUI_Chart_Percentage_Data');
-		section.style = Math.floor(data[i]*100/all);
+		section.style.width = Math.floor(data[i]*100/all)+'%';
 	});
 	return this;
 }
