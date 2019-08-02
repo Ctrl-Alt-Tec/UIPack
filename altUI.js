@@ -1725,7 +1725,27 @@ UI.NotificationFeedback = function(content, options){
 UI.NotificationFeedback.prototype = Object.create(UI.Element.prototype);
 UI.NotificationFeedback.prototype.constructor = UI.NotificationFeedback;
 
+UI.Chart = {}
 
+UI.Chart.Percentage = function(data){
+	let scope = this;
+	UI.Element.call(this);
+	this.dom = document.createElement('div');
+	this.dom.classList.add('altUI_Chart_Percentage');
+	let all = 0;
+	Obejct.keys(data).map(i => {
+		all += data[i]
+	});
+	Object.keys(data).map(i => {
+		let section = document.createElement('div');
+		section.classList.add('altUI_Chart_Percentage_Data');
+		section.style = Math.floor(data[i]*100/all);
+	});
+	return this;
+}
+
+UI.Chart.Percentage.prototype = Object.create(UI.Element.prototype);
+UI.Chart.Percentage.prototype.constructor = UI.Chart.Percentage;
 
 /*UI.ToggleSwitch = function(hint, value, name){
 	UI.Element.call(this);
