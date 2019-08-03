@@ -116,10 +116,13 @@ div{
 	font-size: 16px
 }
 
-.altUI_Chart_Labels > span > span {
-	font-size: 20px;
-	margin: 0px 2px;
-}
+	.altUI_Chart_Labels > span {
+		margin: 0px 2px;
+	}
+	.altUI_Chart_Labels > span > span {
+		font-size: 20px;
+		margin: 0px 2px;
+	}
 
 .altUI_Chart_Percentage{
 	display: flex;
