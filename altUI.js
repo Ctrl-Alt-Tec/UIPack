@@ -1748,11 +1748,7 @@ UI.Chart.Percentage = function(data){
 		section.style.width = Math.round(data[i]*100/all)+'%';
 		section.style.background = color;
 		scope.chart.append(section);
-		scope.labels.append(function(){
-			let bullet = new UI.CellViewItemKeyValue(`${i} (${ data[i] })`, Math.round(data[i]*100/all)+'%').dom;
-			bullet.style.background = color;
-			return bullet;
-		}())
+		scope.labels.append(new UI.CellViewItemKeyValue(`${i} (${ data[i] })`, Math.round(data[i]*100/all)+'%').setBackgroundColor(color).dom)
 	});
 	this.dom.append(this.chart);
 	this.dom.append(this.labels)
