@@ -115,6 +115,7 @@ div{
 	margin: 8px;
 	height: 20px;
 	border-radius: 4px;
+	justify-content: space-between;
 }
 .altUI_Chart_Percentage .altUI_Chart_Percentage_Data{
 	background-color: rgba(0,122,255);
