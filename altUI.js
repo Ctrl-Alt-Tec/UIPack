@@ -1730,19 +1730,33 @@ UI.Chart = {}
 UI.Chart.Percentage = function(data){
 	let scope = this;
 	UI.Element.call(this);
-	this.dom = document.createElement('div');
-	this.dom.classList.add('altUI_Chart_Percentage');
+	this.chart = document.createElement('div');
+	this.chart.classList.add('altUI_Chart_Percentage');
+	this.labels = document.createElement('div');
+	this.labels.classList.add('altUI_Chart_Labels')
 	let all = 0;
 	Object.keys(data).map(i => {
 		all += data[i]
 	});
 	Object.keys(data).map(i => {
+		let color = '#' + parseInt(Math.random() * 0xffffff).toString(16);
 		let section = document.createElement('div');
 		section.classList.add('altUI_Chart_Percentage_Data');
 		section.style.width = Math.floor(data[i]*100/all)+'%';
-		section.style.background = '#' + parseInt(Math.random() * 0xffffff).toString(16);
-		scope.dom.append(section);
+		section.style.background = color;
+		scope.chart.append(section);
+		scope.labels.append(function(){
+			let bullet = document.createElement('span');
+			bullet.innerHTML = '&bull;';
+			bullet.style.color = color;
+			let label = document.createElement('span');
+			label.append(bullet);
+			label.append(i)
+			return label;
+		}())
 	});
+	this.dom.append(this.chart);
+	this.dom.append(this.labels)
 	return this;
 }
 
