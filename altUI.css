@@ -113,7 +113,7 @@ div{
 .altUI_Chart_Labels{
 	display: flex;
 	margin: 8px;
-	font-size: 16px
+	font-size: 24px
 }
 
 	.altUI_Chart_Labels > span {
