@@ -1751,7 +1751,7 @@ UI.Chart.Percentage = function(data){
 		scope.labels.append(function(){
 			let bullet = new UI.CellViewItemKeyValue(i, data[i]).dom;
 			//bullet.innerHTML = '&#11044;';
-			bullet.style.color = color;
+			bullet.style.background = color;
 			//let label = document.createElement('span');
 			//label.append(bullet);
 			//label.append(i)
