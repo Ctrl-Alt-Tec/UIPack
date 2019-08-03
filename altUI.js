@@ -1749,13 +1749,13 @@ UI.Chart.Percentage = function(data){
 		section.style.background = color;
 		scope.chart.append(section);
 		scope.labels.append(function(){
-			let bullet = document.createElement('span');
-			bullet.innerHTML = '&#11044;';
+			let bullet = new UI.CellViewItemKeyValue(i, data[i]).dom;
+			//bullet.innerHTML = '&#11044;';
 			bullet.style.color = color;
-			let label = document.createElement('span');
-			label.append(bullet);
-			label.append(i)
-			return label;
+			//let label = document.createElement('span');
+			//label.append(bullet);
+			//label.append(i)
+			return bullet;
 		}())
 	});
 	this.dom.append(this.chart);
