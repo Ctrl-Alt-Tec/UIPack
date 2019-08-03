@@ -1730,6 +1730,9 @@ UI.Chart = {}
 UI.Chart.Percentage = function(data){
 	let scope = this;
 	UI.Element.call(this);
+	
+	this.dom = document.createElement('div');
+	
 	this.chart = document.createElement('div');
 	this.chart.classList.add('altUI_Chart_Percentage');
 	this.labels = document.createElement('div');
