@@ -110,6 +110,17 @@ div{
 	}
 
 
+.altUI_Chart_Labels{
+	display: flex;
+	margin: 8px;
+	font-size: 16px
+}
+
+.altUI_Chart_Labels > span > span {
+	font-size: 20px;
+	margin: 0px 2px;
+}
+
 .altUI_Chart_Percentage{
 	display: flex;
 	margin: 8px;
@@ -117,10 +128,11 @@ div{
 	border-radius: 4px;
 	justify-content: space-between;
 }
-.altUI_Chart_Percentage .altUI_Chart_Percentage_Data{
-	background-color: rgba(0,122,255);
-	margin: 1px;
-}
+
+	.altUI_Chart_Percentage .altUI_Chart_Percentage_Data{
+		background-color: rgba(0,122,255);
+		margin: 1px;
+	}
 
 .altUI_FormCardBlock{
 	margin: 8px;
