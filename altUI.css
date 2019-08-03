@@ -109,6 +109,18 @@ div{
 		font-weight: 600
 	}
 
+
+.altUI_Chart_Percentage{
+	display: flex;
+	margin: 8px;
+	height: 20px;
+	border-radius: 4px;
+}
+.altUI_Chart_Percentage .altUI_Chart_Percentage_Data{
+	background-color: rgba(0,122,255);
+	margin: 1px;
+}
+
 .altUI_FormCardBlock{
 	margin: 8px;
 	padding: 8px;
