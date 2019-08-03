@@ -98,7 +98,9 @@ div{
 	border-radius: 8px;
 	background-color: rgb(200,200,200);
 	flex-shrink: 0;
-	font-size: 18px;
+	font-size: 24px;
+	align-items: center;
+	justify-content: center;
 }
 	.altUI_CellViewItemKeyValue{
 		display: flex;
@@ -112,8 +114,9 @@ div{
 
 .altUI_Chart_Labels{
 	display: flex;
-	margin: 8px;
-	font-size: 24px
+	padding: 8px;
+	font-size: 24px;
+	overflow: auto
 }
 
 	/*.altUI_Chart_Labels > span {
