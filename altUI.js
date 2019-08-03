@@ -1745,16 +1745,12 @@ UI.Chart.Percentage = function(data){
 		let color = '#' + parseInt(Math.random() * 0xffffff).toString(16);
 		let section = document.createElement('div');
 		section.classList.add('altUI_Chart_Percentage_Data');
-		section.style.width = Math.floor(data[i]*100/all)+'%';
+		section.style.width = Math.round(data[i]*100/all)+'%';
 		section.style.background = color;
 		scope.chart.append(section);
 		scope.labels.append(function(){
-			let bullet = new UI.CellViewItemKeyValue(i, data[i]).dom;
-			//bullet.innerHTML = '&#11044;';
+			let bullet = new UI.CellViewItemKeyValue(`${i} (${ data[i] })`, data[i]*100/all+'%').dom;
 			bullet.style.background = color;
-			//let label = document.createElement('span');
-			//label.append(bullet);
-			//label.append(i)
 			return bullet;
 		}())
 	});
