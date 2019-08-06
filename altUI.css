@@ -114,7 +114,7 @@ div{
 
 .altUI_Chart_Labels{
 	display: flex;
-	padding: 8px;
+	padding: 4px;
 	font-size: 24px;
 	overflow: auto
 }
