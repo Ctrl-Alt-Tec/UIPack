@@ -1453,10 +1453,12 @@ UI.MasterDetailView.prototype.setSection = function(sectionName){
 	
 	this.detailView = obj.sectionContent;
 	//this.detailView.append(obj.sectionContent);
-	this.options.stackNavigator.updateDefaultOptions({
+	if(this.options.stackNavigator != undefined){
+		this.options.stackNavigator.updateDefaultOptions({
 		appBarTitle: obj.sectionName,
 		appBarToolbar: obj.appBarToolbar != undefined ? obj.appBarToolbar : [undefined]
 	})
+	}
 	this.dom.innerHTML = '';
 	this.dom.append(this.sidebar);
 	this.dom.append(this.detailView);
