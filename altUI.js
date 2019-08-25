@@ -1322,13 +1322,14 @@ UI.ListViewItemMaster = function(
 	leftElement=document.createElement('div'), 
 	textLabel='', detailTextLabel='', 
 	rightElement=document.createElement('div'),
+	options = {leftIcon: true}
 ){
 	UI.Element.call(this);
 	this.dom = document.createElement('div');
 	this.dom.classList.add('altUI_ListViewItem');
 	this.dom.classList.add('altUI_ListViewItemMaster');
 	this.dom.style.overflow='hidden';
-	if(leftElement!=null){
+	if(leftElement!=null && options.leftIcon){
 		leftElement.style.width = '1em';
 		leftElement.style.height = '1em';
 		leftElement.style.marginRight = '8px';
