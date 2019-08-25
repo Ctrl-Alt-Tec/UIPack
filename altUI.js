@@ -1329,15 +1329,16 @@ UI.ListViewItemMaster = function(
 	this.dom.classList.add('altUI_ListViewItem');
 	this.dom.classList.add('altUI_ListViewItemMaster');
 	this.dom.style.overflow='hidden';
-	if(leftElement!=null && options.leftIcon){
+	if(leftElement!=null && options.leftIcon === true){
 		leftElement.style.width = '1em';
 		leftElement.style.height = '1em';
 		leftElement.style.marginRight = '8px';
 		leftElement.style.marginLeft = '8px';
 		leftElement.style.fontSize = '4em';
 		leftElement.classList.add('altUI_ListViewItemLeft')
-		this.dom.append(leftElement);
 	}
+		this.dom.append(leftElement);
+	
 	let textContainer = document.createElement('div');
 	textContainer.classList.add('altUI_ListViewItemCenter');
 	textContainer.innerHTML = `<span class="altUI_ListViewItemLabel">${textLabel}</span><span class="altUI_ListViewItemDetail">${detailTextLabel}</span>`
