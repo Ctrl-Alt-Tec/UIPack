@@ -1337,7 +1337,9 @@ UI.ListViewItemMaster = function(
 		leftElement.style.fontSize = '4em';
 		leftElement.classList.add('altUI_ListViewItemLeft')
 	}
+	if(leftELement!=null){
 		this.dom.append(leftElement);
+	}
 	
 	let textContainer = document.createElement('div');
 	textContainer.classList.add('altUI_ListViewItemCenter');
