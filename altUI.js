@@ -1429,6 +1429,7 @@ UI.MasterDetailView.prototype.addSection = function(obj={
 		
 	})
 	this.sidebar.append(obj.sectionItem)
+	this.setSection(obj.sectionName);
 	return this;
 }
 UI.MasterDetailView.prototype.hideSidebar = function(){
